@@ -19,13 +19,96 @@ import matplotlib.gridspec as gridspec
 from pathlib import Path
 from typing import Dict, List, Tuple, Any, Optional
 import cantera as ct
+import traceback
+from logging.handlers import RotatingFileHandler
+import datetime
+import platform
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+# Logger setup will be done after loading configuration
 logger = logging.getLogger('equilibrium_calc')
+
+def setup_logging(config: Dict) -> None:
+    """
+    Set up comprehensive logging based on configuration.
+    
+    Args:
+        config: Configuration dictionary with logging settings
+    """
+    # Get logging configuration
+    log_config = config.get('logging', {})
+    log_dir = log_config.get('directory', 'logs')
+    log_level_str = log_config.get('level', 'INFO').upper()
+    file_prefix = log_config.get('file_prefix', 'equilibrium_')
+    console_output = log_config.get('console_output', True)
+    max_file_size = log_config.get('max_file_size_mb', 10) * 1024 * 1024  # Convert MB to bytes
+    backup_count = log_config.get('backup_count', 5)
+    include_timestamps = log_config.get('include_timestamps', True)
+    
+    # Map string log level to logging constant
+    log_level_map = {
+        'DEBUG': logging.DEBUG,
+        'INFO': logging.INFO,
+        'WARNING': logging.WARNING,
+        'ERROR': logging.ERROR,
+        'CRITICAL': logging.CRITICAL
+    }
+    log_level = log_level_map.get(log_level_str, logging.INFO)
+    
+    # Create log directory if it doesn't exist
+    os.makedirs(log_dir, exist_ok=True)
+    
+    # Define log format
+    if include_timestamps:
+        log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    else:
+        log_format = '%(name)s - %(levelname)s - %(message)s'
+    
+    # Configure root logger
+    root_logger = logging.getLogger()
+    root_logger.setLevel(log_level)
+    
+    # Remove any existing handlers
+    for handler in root_logger.handlers[:]:
+        root_logger.removeHandler(handler)
+    
+    # Create formatter
+    formatter = logging.Formatter(log_format)
+    
+    # Set up file handler with rotation
+    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    log_file = os.path.join(log_dir, f"{file_prefix}{timestamp}.log")
+    file_handler = RotatingFileHandler(
+        log_file,
+        maxBytes=max_file_size,
+        backupCount=backup_count
+    )
+    file_handler.setLevel(log_level)
+    file_handler.setFormatter(formatter)
+    root_logger.addHandler(file_handler)
+    
+    # Set up console handler if enabled
+    if console_output:
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(log_level)
+        console_handler.setFormatter(formatter)
+        root_logger.addHandler(console_handler)
+    
+    # Log system information
+    logger.info("=" * 80)
+    logger.info("Equilibrium Concentration Calculator - Started")
+    logger.info("=" * 80)
+    logger.info(f"Date and Time: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info(f"Python Version: {sys.version}")
+    logger.info(f"Platform: {platform.platform()}")
+    logger.info(f"Cantera Version: {ct.__version__}")
+    logger.info(f"Numpy Version: {np.__version__}")
+    logger.info(f"Pandas Version: {pd.__version__}")
+    logger.info(f"Matplotlib Version: {plt.matplotlib.__version__}")
+    logger.info(f"Log Level: {log_level_str}")
+    logger.info(f"Log File: {log_file}")
+    logger.info("=" * 80)
+    
+    return
 
 def load_config(config_file: str = 'EquilibriumCalculation.yaml') -> Dict:
     """
@@ -136,6 +219,33 @@ def validate_config(config: Dict) -> Dict:
         out['log_max_concentrations'] = True
     if 'log_initial_mixture' not in out:
         out['log_initial_mixture'] = True
+    
+    # Logging section (add if not present)
+    if 'logging' not in config:
+        config['logging'] = {}
+    
+    log_config = config['logging']
+    if 'directory' not in log_config:
+        log_config['directory'] = "logs"
+    if 'level' not in log_config:
+        log_config['level'] = "INFO"
+    if 'file_prefix' not in log_config:
+        log_config['file_prefix'] = "equilibrium_"
+    if 'console_output' not in log_config:
+        log_config['console_output'] = True
+    if 'max_file_size_mb' not in log_config:
+        log_config['max_file_size_mb'] = 10
+    if 'backup_count' not in log_config:
+        log_config['backup_count'] = 5
+    if 'include_timestamps' not in log_config:
+        log_config['include_timestamps'] = True
+    
+    # Validate log level
+    valid_log_levels = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+    log_config['level'] = log_config['level'].upper()
+    if log_config['level'] not in valid_log_levels:
+        logger.warning(f"Invalid log level: {log_config['level']}. Using INFO instead.")
+        log_config['level'] = "INFO"
     
     # Validate initial_mixture
     mixture = config['initial_mixture']
@@ -778,48 +888,101 @@ def main():
     """Main function to run equilibrium calculations."""
     start_time = time.time()
     
-    # Load and validate configuration
-    config = load_config()
-    config = validate_config(config)
-    
-    # Set up output directory
-    output_dir = setup_output_directory(config)
-    
-    # Create temperature array
-    temperatures = create_temperature_array(config)
-    
-    # Set up Cantera gas mixture
-    gas = setup_cantera_gas(config)
-    
-    # Calculate equilibrium concentrations
-    pressure = config['calculation']['pressure']
-    solver_tolerance = config['calculation']['solver_tolerance']
-    max_iterations = config['calculation']['max_iterations']
-    
-    logger.info("Starting equilibrium calculations...")
-    result_df = calculate_equilibrium(
-        gas, 
-        temperatures, 
-        pressure,
-        solver_tolerance,
-        max_iterations
-    )
-    
-    # Save results to CSV
-    csv_file = save_results_to_csv(result_df, config, output_dir)
-    
-    # Create plots
-    if config['output']['create_plots']:
-        species_plots = create_species_plots(result_df, config, output_dir)
-        summary_plots = create_summary_plots(result_df, config, output_dir)
-    
-    # Log maximum concentrations
-    log_max_concentrations(result_df, config)
-    
-    # Log completion
-    elapsed_time = time.time() - start_time
-    logger.info(f"Equilibrium calculations completed in {elapsed_time:.2f} seconds")
-    logger.info(f"Results saved to {output_dir}")
+    try:
+        # Load and validate configuration
+        logger.debug("Loading configuration...")
+        config = load_config()
+        
+        # Set up logging based on configuration
+        setup_logging(config)
+        
+        logger.debug("Validating configuration...")
+        config = validate_config(config)
+        logger.info("Configuration loaded and validated")
+        
+        # Log the configuration details at debug level
+        logger.debug("Configuration details:")
+        for section, settings in config.items():
+            logger.debug(f"  {section}:")
+            if isinstance(settings, dict):
+                for key, value in settings.items():
+                    logger.debug(f"    {key}: {value}")
+            else:
+                logger.debug(f"    {settings}")
+        
+        # Set up output directory
+        logger.debug("Setting up output directory...")
+        output_dir = setup_output_directory(config)
+        
+        # Create temperature array
+        logger.debug("Creating temperature array...")
+        temperatures = create_temperature_array(config)
+        
+        # Set up Cantera gas mixture
+        logger.debug("Setting up Cantera gas mixture...")
+        gas = setup_cantera_gas(config)
+        
+        # Calculate equilibrium concentrations
+        pressure = config['calculation']['pressure']
+        solver_tolerance = config['calculation']['solver_tolerance']
+        max_iterations = config['calculation']['max_iterations']
+        
+        logger.info("Starting equilibrium calculations...")
+        result_df = calculate_equilibrium(
+            gas, 
+            temperatures, 
+            pressure,
+            solver_tolerance,
+            max_iterations
+        )
+        
+        # Save results to CSV
+        logger.debug("Saving results to CSV...")
+        csv_file = save_results_to_csv(result_df, config, output_dir)
+        
+        # Create plots
+        if config['output']['create_plots']:
+            logger.debug("Creating species plots...")
+            species_plots = create_species_plots(result_df, config, output_dir)
+            
+            logger.debug("Creating summary plots...")
+            summary_plots = create_summary_plots(result_df, config, output_dir)
+            
+            logger.info(f"Created {len(species_plots)} species plots and {len(summary_plots)} summary plots")
+        
+        # Log maximum concentrations
+        logger.debug("Logging maximum concentrations...")
+        log_max_concentrations(result_df, config)
+        
+        # Log completion
+        elapsed_time = time.time() - start_time
+        logger.info(f"Equilibrium calculations completed in {elapsed_time:.2f} seconds")
+        logger.info(f"Results saved to {output_dir}")
+        logger.info("=" * 80)
+        logger.info("Equilibrium Concentration Calculator - Completed Successfully")
+        logger.info("=" * 80)
+        
+    except Exception as e:
+        elapsed_time = time.time() - start_time
+        logger.error("=" * 80)
+        logger.error("ERROR: Equilibrium calculation failed!")
+        logger.error(f"Elapsed time before error: {elapsed_time:.2f} seconds")
+        logger.error(f"Error details: {str(e)}")
+        logger.error("Traceback:")
+        logger.error(traceback.format_exc())
+        logger.error("=" * 80)
+        sys.exit(1)
 
 if __name__ == "__main__":
-    main()
+    # Set up basic logging until config is loaded
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+    
+    try:
+        main()
+    except Exception as e:
+        logger.critical(f"Unhandled exception: {str(e)}")
+        logger.critical(traceback.format_exc())
+        sys.exit(1)

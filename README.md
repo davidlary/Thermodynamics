@@ -297,6 +297,33 @@ This tool is particularly useful for:
 - **Materials Science**: Phase equilibria and materials stability predictions
 - **Environmental Science**: Modeling of atmospheric processes and pollution chemistry
 
+## Comprehensive Logging
+
+The project includes comprehensive logging features to assist with debugging and monitoring:
+
+- **Log Directory**: All logs are stored in a configurable directory (default: `logs/`)
+- **Log Levels**: Configurable log levels (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+- **Rotation**: Log files are automatically rotated when they reach a specified size
+- **System Information**: Logs include detailed system and environment information
+- **Error Tracing**: Comprehensive error handling with full stack traces
+- **Performance Metrics**: Timing information for major operations
+
+### Configuration
+
+Logging can be configured in the YAML configuration files:
+
+```yaml
+# Logging Configuration in Species.yaml or EquilibriumCalculation.yaml
+logging:
+  directory: "logs"  # Directory for log files
+  level: "INFO"      # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file_prefix: "thermo_"  # Prefix for log files
+  console_output: true  # Also output logs to console
+  max_file_size_mb: 10  # Maximum log file size in MB
+  backup_count: 5       # Number of backup log files to keep
+  include_timestamps: true  # Include timestamps in log messages
+```
+
 ## Reproducible Environments
 
 To ensure reproducible results across different systems, we provide two methods:

@@ -1,4 +1,6 @@
-# List of chemical species
+# Species Configuration for Thermodynamic Data Generator
+
+# List of chemical species to generate thermodynamic data for
 species:
   - N2
   - O2
@@ -83,3 +85,13 @@ species:
   - Xe+
   - e-
   - HSO4-
+
+# Logging Configuration
+logging:
+  directory: "logs"  # Directory for log files
+  level: "INFO"      # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file_prefix: "thermo_"  # Prefix for log files
+  console_output: true  # Also output logs to console
+  max_file_size_mb: 10  # Maximum log file size in MB
+  backup_count: 5       # Number of backup log files to keep
+  include_timestamps: true  # Include timestamps in log messages

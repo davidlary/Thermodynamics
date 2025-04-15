@@ -25,8 +25,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy source code
 COPY . .
 
-# Create directories for outputs
-RUN mkdir -p results/plots results/summary
+# Create directories for outputs and logs
+RUN mkdir -p results/plots results/summary logs
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1

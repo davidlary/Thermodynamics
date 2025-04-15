@@ -14,20 +14,100 @@ import json
 import time
 import hashlib
 import logging
+import logging.handlers
 import requests
 import yaml
 import cantera as ct
+import sys
+import platform
+import traceback
 from pathlib import Path
 from typing import Dict, List, Set, Any, Optional, Union
 from datetime import datetime, timedelta
 import xml.etree.ElementTree as ET
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+# Initialize logger (will be fully configured later)
 logger = logging.getLogger('thermo_generator')
+
+def setup_logging(log_dir: str = "logs", log_level: str = "INFO", file_prefix: str = "thermo_",
+                console_output: bool = True, max_file_size_mb: int = 10, backup_count: int = 5,
+                include_timestamps: bool = True) -> None:
+    """
+    Set up comprehensive logging for thermo_generator.
+    
+    Args:
+        log_dir: Directory for log files
+        log_level: Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+        file_prefix: Prefix for log files
+        console_output: Whether to output logs to console
+        max_file_size_mb: Maximum log file size in MB
+        backup_count: Number of backup log files to keep
+        include_timestamps: Whether to include timestamps in log messages
+    """
+    # Map string log level to logging constant
+    log_level_map = {
+        "DEBUG": logging.DEBUG,
+        "INFO": logging.INFO,
+        "WARNING": logging.WARNING,
+        "ERROR": logging.ERROR,
+        "CRITICAL": logging.CRITICAL
+    }
+    log_level_enum = log_level_map.get(log_level.upper(), logging.INFO)
+    
+    # Create log directory if it doesn't exist
+    os.makedirs(log_dir, exist_ok=True)
+    
+    # Define log format
+    if include_timestamps:
+        log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    else:
+        log_format = '%(name)s - %(levelname)s - %(message)s'
+    
+    # Configure root logger
+    root_logger = logging.getLogger()
+    root_logger.setLevel(log_level_enum)
+    
+    # Remove any existing handlers
+    for handler in root_logger.handlers[:]:
+        root_logger.removeHandler(handler)
+    
+    # Create formatter
+    formatter = logging.Formatter(log_format)
+    
+    # Set up file handler with rotation
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    log_file = os.path.join(log_dir, f"{file_prefix}{timestamp}.log")
+    file_handler = logging.handlers.RotatingFileHandler(
+        log_file,
+        maxBytes=max_file_size_mb * 1024 * 1024,
+        backupCount=backup_count
+    )
+    file_handler.setLevel(log_level_enum)
+    file_handler.setFormatter(formatter)
+    root_logger.addHandler(file_handler)
+    
+    # Set up console handler if enabled
+    if console_output:
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(log_level_enum)
+        console_handler.setFormatter(formatter)
+        root_logger.addHandler(console_handler)
+    
+    # Log system information
+    logger.info("=" * 80)
+    logger.info("Thermodynamic Data Generator - Started")
+    logger.info("=" * 80)
+    logger.info(f"Date and Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info(f"Python Version: {sys.version}")
+    logger.info(f"Platform: {platform.platform()}")
+    try:
+        import cantera
+        logger.info(f"Cantera Version: {cantera.__version__}")
+    except:
+        logger.warning("Cantera not found")
+    logger.info(f"Log Level: {log_level.upper()}")
+    logger.info(f"Log File: {log_file}")
+    logger.info("=" * 80)
 
 # Constants
 # Define multiple temperature ranges with appropriate overlap for better accuracy
@@ -3289,29 +3369,101 @@ def generate_cantera_yaml(species_list: List[str], output_file: str) -> None:
 
 def main():
     """Main function to read species list and generate thermodynamic data."""
-    # Read species list
-    with open('Species.yaml', 'r') as f:
-        species_data = yaml.safe_load(f)
+    start_time = time.time()
     
-    raw_species_list = species_data.get('species', [])
-    
-    # Clean the species list to ensure all entries are strings
-    species_list = []
-    for species in raw_species_list:
-        if isinstance(species, str):
-            species_list.append(species)
-        else:
-            logger.warning(f"Skipping non-string species: {species}")
-    
-    if not species_list:
-        logger.error("No valid species found in Species.yaml")
-        return
-    
-    logger.info(f"Found {len(species_list)} valid species in Species.yaml")
-    
-    # Generate Cantera-compatible YAML file
-    generate_cantera_yaml(species_list, 'Thermodynamics.yaml')
+    try:
+        # Initial basic logging to read configuration
+        logger.debug("Reading Species.yaml for configuration...")
+        
+        # Read Species.yaml
+        try:
+            with open('Species.yaml', 'r') as f:
+                species_data = yaml.safe_load(f)
+        except Exception as e:
+            logger.error(f"Failed to read Species.yaml: {e}")
+            return
+            
+        # Get logging configuration
+        log_config = species_data.get('logging', {})
+        log_dir = log_config.get('directory', 'logs')
+        log_level = log_config.get('level', 'INFO')
+        file_prefix = log_config.get('file_prefix', 'thermo_')
+        console_output = log_config.get('console_output', True)
+        max_file_size_mb = log_config.get('max_file_size_mb', 10)
+        backup_count = log_config.get('backup_count', 5)
+        include_timestamps = log_config.get('include_timestamps', True)
+        
+        # Set up advanced logging with configuration from YAML
+        setup_logging(
+            log_dir=log_dir,
+            log_level=log_level,
+            file_prefix=file_prefix,
+            console_output=console_output,
+            max_file_size_mb=max_file_size_mb,
+            backup_count=backup_count,
+            include_timestamps=include_timestamps
+        )
+        
+        # Now with proper logging, proceed with the rest of the operation
+        logger.info("Processing species list from Species.yaml...")
+        
+        raw_species_list = species_data.get('species', [])
+        logger.debug(f"Raw species count: {len(raw_species_list)}")
+        
+        # Clean the species list to ensure all entries are strings
+        species_list = []
+        for species in raw_species_list:
+            if isinstance(species, str):
+                species_list.append(species)
+            else:
+                logger.warning(f"Skipping non-string species: {species}")
+        
+        if not species_list:
+            logger.error("No valid species found in Species.yaml")
+            return
+        
+        logger.info(f"Found {len(species_list)} valid species in Species.yaml")
+        
+        # Log species list at debug level
+        logger.debug("Species to process:")
+        for i, species in enumerate(species_list):
+            logger.debug(f"  {i+1}. {species}")
+        
+        # Generate Cantera-compatible YAML file
+        logger.info("Generating Cantera-compatible YAML file...")
+        output_file = 'Thermodynamics.yaml'
+        generate_cantera_yaml(species_list, output_file)
+        
+        # Calculate elapsed time
+        elapsed_time = time.time() - start_time
+        logger.info("=" * 80)
+        logger.info(f"Thermodynamic data generation completed successfully in {elapsed_time:.2f} seconds")
+        logger.info(f"Output file: {output_file}")
+        logger.info("=" * 80)
+        
+    except Exception as e:
+        # Log the exception with traceback
+        elapsed_time = time.time() - start_time
+        logger.error("=" * 80)
+        logger.error("ERROR: Thermodynamic data generation failed!")
+        logger.error(f"Elapsed time before failure: {elapsed_time:.2f} seconds")
+        logger.error(f"Error details: {str(e)}")
+        logger.error("Traceback:")
+        logger.error(traceback.format_exc())
+        logger.error("=" * 80)
+        sys.exit(1)
 
 
 if __name__ == '__main__':
-    main()
+    # Set up basic logging until properly configured in main()
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+    
+    try:
+        main()
+    except Exception as e:
+        logger.critical(f"Unhandled exception: {str(e)}")
+        logger.critical(traceback.format_exc())
+        sys.exit(1)

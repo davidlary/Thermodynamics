@@ -40,3 +40,13 @@ output:
   concentration_threshold: 1.0e-12  # Minimum concentration to include in results
   log_max_concentrations: true  # Log maximum concentrations for each species
   log_initial_mixture: true  # Log initial mixture composition
+
+# Logging Configuration
+logging:
+  directory: "logs"  # Directory for log files
+  level: "INFO"      # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file_prefix: "equilibrium_"  # Prefix for log files
+  console_output: true  # Also output logs to console
+  max_file_size_mb: 10  # Maximum log file size in MB
+  backup_count: 5       # Number of backup log files to keep
+  include_timestamps: true  # Include timestamps in log messages
