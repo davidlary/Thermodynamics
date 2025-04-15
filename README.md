@@ -356,19 +356,42 @@ For maximum reproducibility, use our Docker container which provides an isolated
 docker build -t thermodynamics .
 ```
 
-2. Run calculations in the container:
+2. Run the complete workflow with a single command:
 ```bash
-# Generate thermodynamic data
+docker run -it --rm -v $(pwd):/app thermodynamics run-all
+```
+
+3. Run individual calculations:
+```bash
+# Generate thermodynamic data only
 docker run -it --rm -v $(pwd):/app thermodynamics python thermo_generator.py
 
-# Calculate equilibrium concentrations
+# Calculate equilibrium concentrations only
 docker run -it --rm -v $(pwd):/app thermodynamics python EquilibriumCalculation.py
 ```
 
-3. Interactive shell in the container:
+4. Interactive shell in the container:
 ```bash
 docker run -it --rm -v $(pwd):/app thermodynamics bash
 ```
+
+5. Access logs and results:
+```bash
+# View log files
+docker run -it --rm -v $(pwd):/app thermodynamics ls -l logs/
+
+# View results
+docker run -it --rm -v $(pwd):/app thermodynamics ls -l results/
+```
+
+#### Docker Container Features:
+
+- **Persistent Volumes**: The container uses persistent volume mounts for `/app/logs` and `/app/results` to preserve data between runs
+- **Entrypoint Script**: Includes a convenience `run-all` command to execute the complete workflow
+- **Debugging Tools**: Pre-installed with `vim` and `less` for log inspection
+- **Proper Permissions**: Directories have write permissions to avoid issues with mounted volumes
+- **UTF-8 Support**: Environment variables ensure proper character encoding for logs
+- **Compatibility**: Works on Linux, macOS, and Windows (via Docker Desktop)
 
 The container mounts your current directory (`$(pwd)`) to `/app` inside the container, so all outputs are saved to your local filesystem.
 
