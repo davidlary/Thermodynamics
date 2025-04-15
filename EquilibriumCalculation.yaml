@@ -36,15 +36,7 @@ output:
   log_scale: true
   plot_type: "concentration"  # Options: concentration, mole_fraction, partial_pressure
   plot_scale: "log"  # Options: linear, log
-  focus_species:  # List of species to include in focus plots (empty means all)
-    - O3
-    - NO
-    - NO2
-    - OH
-    - HO2
-    - H2O2
-    - SO2
-    - SO3
+  focus_species: []  # Empty list means plot all species
   concentration_threshold: 1.0e-12  # Minimum concentration to include in results
   log_max_concentrations: true  # Log maximum concentrations for each species
   log_initial_mixture: true  # Log initial mixture composition

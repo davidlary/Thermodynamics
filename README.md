@@ -207,7 +207,7 @@ The `EquilibriumCalculation.yaml` file provides extensive configuration options:
 - **Output Options**:
   - Control file formats, plotting styles, and what information to log
   - Specify plot scales (linear or logarithmic)
-  - Choose which species to highlight in focused plots
+  - By default, plots all species (can be filtered using focus_species if needed)
 - **Initial Mixture**: Define the starting gas composition with precise mole fractions
 
 ### Output Files
