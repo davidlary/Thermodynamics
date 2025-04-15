@@ -4,9 +4,51 @@ This project calculates thermodynamic equilibrium concentrations of chemical spe
 
 Developed by David Lary (davidlary@me.com)
 
-The project consists of two main components:
+## Process Overview
+
+The calculation is performed in two distinct stages:
+
+### Stage 1: Generate Thermodynamic Data
+First, we generate high-quality NASA-9 polynomial thermodynamic data from various sources:
+```bash
+# Standard method
+python thermo_generator.py
+
+# Using Docker
+docker run -it --rm -v $(pwd):/app thermodynamics python thermo_generator.py
+```
+This reads the list of species from `Species.yaml` and generates `Thermodynamics.yaml` with NASA-9 polynomial data.
+
+### Stage 2: Calculate Equilibrium Concentrations
+Then, we use the generated thermodynamic data to calculate equilibrium concentrations:
+```bash
+# Standard method
+python EquilibriumCalculation.py
+
+# Using Docker
+docker run -it --rm -v $(pwd):/app thermodynamics python EquilibriumCalculation.py
+```
+This reads configuration from `EquilibriumCalculation.yaml` and uses the thermodynamic data from `Thermodynamics.yaml`.
+
+IMPORTANT: The two stages must be run in sequence. You must first generate the thermodynamic data (Stage 1) before calculating equilibrium concentrations (Stage 2).
+
+### Automated Workflow
+
+For convenience, we provide a shell script that runs both stages in sequence:
+```bash
+./run_all.sh
+```
+
+This script automatically detects if Docker is available and uses it if possible, otherwise falls back to the local Python installation.
+
+## Key Components
 1. **Thermodynamic Data Generator** (`thermo_generator.py`): Creates NASA-9 polynomial thermodynamic data from multiple sources, with special focus on cold temperature accuracy for atmospheric research
 2. **Equilibrium Concentration Calculator** (`EquilibriumCalculation.py`): Calculates equilibrium concentrations across a temperature range using Cantera, with our custom thermodynamic data
+
+## Configuration Files
+- `Species.yaml`: List of chemical species to include in the thermodynamic data generation
+- `Thermodynamics.yaml`: Generated thermodynamic data in NASA-9 polynomial format
+- `EquilibriumCalculation.yaml`: Configuration for equilibrium calculations (temperature range, pressure, initial mixture, etc.)
 
 ## Features
 
@@ -30,8 +72,24 @@ The project consists of two main components:
 
 ## Installation
 
+### Method 1: Standard Installation
+
 ```bash
-pip install cantera pyyaml requests
+pip install -r requirements.txt
+```
+
+### Method 2: Docker (Recommended for Reproducibility)
+
+We provide a Docker container that comes pre-loaded with all dependencies:
+
+1. Build the Docker image:
+```bash
+docker build -t thermodynamics .
+```
+
+2. Run the container with your local directory mounted:
+```bash
+docker run -it --rm -v $(pwd):/app thermodynamics
 ```
 
 ## Usage
@@ -55,7 +113,11 @@ species:
 Generate NASA-9 polynomial thermodynamic data:
 
 ```bash
+# Standard method
 python thermo_generator.py
+
+# Using Docker
+docker run -it --rm -v $(pwd):/app thermodynamics python thermo_generator.py
 ```
 
 This will create a `Thermodynamics.yaml` file with the NASA-9 polynomial data ready for use in Cantera.
@@ -94,7 +156,11 @@ IMPORTANT NOTE: The equilibrium calculator is designed to use our custom thermod
 Calculate equilibrium concentrations across the temperature range:
 
 ```bash
+# Standard method
 python EquilibriumCalculation.py
+
+# Using Docker
+docker run -it --rm -v $(pwd):/app thermodynamics python EquilibriumCalculation.py
 ```
 
 This will:
@@ -230,6 +296,54 @@ This tool is particularly useful for:
 - **Combustion Analysis**: High-temperature reaction modeling
 - **Materials Science**: Phase equilibria and materials stability predictions
 - **Environmental Science**: Modeling of atmospheric processes and pollution chemistry
+
+## Reproducible Environments
+
+To ensure reproducible results across different systems, we provide two methods:
+
+### Requirements File
+
+The `requirements.txt` file specifies exact versions of all dependencies:
+
+```
+cantera==2.6.0
+numpy==1.24.3
+pandas==2.0.3
+matplotlib==3.7.2
+PyYAML==6.0
+requests==2.31.0
+scipy==1.10.1
+```
+
+Install with:
+```bash
+pip install -r requirements.txt
+```
+
+### Docker Container
+
+For maximum reproducibility, use our Docker container which provides an isolated environment with all dependencies pre-installed:
+
+1. Build the Docker image:
+```bash
+docker build -t thermodynamics .
+```
+
+2. Run calculations in the container:
+```bash
+# Generate thermodynamic data
+docker run -it --rm -v $(pwd):/app thermodynamics python thermo_generator.py
+
+# Calculate equilibrium concentrations
+docker run -it --rm -v $(pwd):/app thermodynamics python EquilibriumCalculation.py
+```
+
+3. Interactive shell in the container:
+```bash
+docker run -it --rm -v $(pwd):/app thermodynamics bash
+```
+
+The container mounts your current directory (`$(pwd)`) to `/app` inside the container, so all outputs are saved to your local filesystem.
 
 ## Future Work
 
