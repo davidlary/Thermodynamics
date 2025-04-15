@@ -1,50 +1,50 @@
-# Equilibrium Calculation Configuration File
+# Equilibrium Calculation Configuration
 
-# Input Data File
+# Input Data
 input:
   thermo_data_file: "Thermodynamics.yaml"  # Path to thermodynamic data file
+  use_cantera_database: false  # Use our custom thermodynamic data from Thermodynamics.yaml
 
 # Calculation Parameters
 calculation:
-  temperature_range: [100, 6000]  # K (min, max)
-  temperature_points: 500  # Number of temperature points to calculate
+  temperature_range: [200, 2000]  # K (min, max)
+  log_temperature: true  # Use logarithmic spacing for better low-temp resolution
+  temperature_points: 100  # Number of temperature points to calculate
   pressure: 101325  # Pa (1 atm)
   solver_tolerance: 1.0e-8  # Solver tolerance for equilibrium calculations
   max_iterations: 500  # Maximum iterations for equilibrium solver
 
-# Output Configuration
+# Initial Mixture Composition (mole fractions)
+initial_mixture:
+  N2: 0.78084
+  O2: 0.20946
+  Ar: 0.00934
+  CO2: 0.00041
+  H2O: 0.00500  # ~50% relative humidity
+  CH4: 0.00000179  # ~1.79 ppm
+  N2O: 0.00000033  # ~330 ppb
+
+# Output Settings
 output:
-  directory: "results"  # Directory to save results
-  csv_file: "equilibrium_results.csv"  # Main results file
-  create_plots: true  # Whether to generate plots
-  plot_format: "png"  # Format for plot files (png, pdf, svg)
-  plots_per_page: 24  # Number of plots per page for summary
-  plots_per_row: 4  # Number of plots per row in layout
-  log_scale: true  # Use log scale for concentration axis
-  focus_species: []  # List of species to highlight (empty for all)
-  exclude_species: []  # List of species to exclude from plots
+  directory: "results"
+  save_csv: true
+  csv_file: "equilibrium_results.csv"
+  plot_results: true
+  plot_format: "png"
+  plots_per_page: 24
+  plots_per_row: 4
+  log_scale: true
+  plot_type: "concentration"  # Options: concentration, mole_fraction, partial_pressure
+  plot_scale: "log"  # Options: linear, log
+  focus_species:  # List of species to include in focus plots (empty means all)
+    - O3
+    - NO
+    - NO2
+    - OH
+    - HO2
+    - H2O2
+    - SO2
+    - SO3
   concentration_threshold: 1.0e-12  # Minimum concentration to include in results
   log_max_concentrations: true  # Log maximum concentrations for each species
   log_initial_mixture: true  # Log initial mixture composition
-
-# Initial Gas Mixture (mole fractions)
-initial_mixture:
-  # Major atmospheric components
-  N2: 0.7808    # 78.08% - Primary component of air
-  O2: 0.2095    # 20.95% - Secondary component of air
-  Ar: 0.0093    # 0.93% - Third most abundant gas in atmosphere
-
-  # Greenhouse gases and trace gases
-  CO2: 0.000419  # 419 ppm - Current atmospheric level (2023)
-  CH4: 0.000002  # ~2 ppm - Methane concentration
-  H2O: 0.01      # ~1% (highly variable 0.1-5% depending on location)
-  N2O: 0.000336  # 336 ppb - Nitrous oxide
-  CO: 0.00015    # ~150 ppb - Carbon monoxide
-
-  # Noble gases (trace)
-  He: 0.0000052  # 5.2 ppm - Helium
-  Ne: 0.0000018  # 1.8 ppm - Neon
-  Xe: 0.000000087  # 87 ppb - Xenon
-
-  # Other trace gases
-  H2: 0.0000005  # 0.5 ppm - Hydrogen

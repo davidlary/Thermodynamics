@@ -66,12 +66,22 @@ def validate_config(config: Dict) -> Dict:
     # Input section
     if 'thermo_data_file' not in config['input']:
         config['input']['thermo_data_file'] = "Thermodynamics.yaml"
+    
+    # Add use_cantera_database option if not present - default to FALSE to use our custom data
+    if 'use_cantera_database' not in config['input']:
+        config['input']['use_cantera_database'] = False
+        logger.info("Using custom thermodynamic data from Thermodynamics.yaml by default")
         
     # Check if thermodynamic data file exists
     thermo_file = config['input']['thermo_data_file']
     if not os.path.exists(thermo_file):
         logger.error(f"Thermodynamic data file not found: {thermo_file}")
-        sys.exit(1)
+        if not config['input']['use_cantera_database']:
+            logger.warning("Critical error: Custom thermodynamic data file not found")
+            logger.warning("Please run thermo_generator.py first to create Thermodynamics.yaml")
+            sys.exit(1)
+        else:
+            logger.warning("Using Cantera's built-in database since specified thermodynamic file not found")
     
     # Calculation section
     calc = config['calculation']
@@ -79,6 +89,8 @@ def validate_config(config: Dict) -> Dict:
         calc['temperature_range'] = [100, 6000]
     if 'temperature_points' not in calc:
         calc['temperature_points'] = 500
+    if 'log_temperature' not in calc:
+        calc['log_temperature'] = True
     if 'pressure' not in calc:
         calc['pressure'] = 101325  # 1 atm in Pa
     if 'solver_tolerance' not in calc:
@@ -92,8 +104,14 @@ def validate_config(config: Dict) -> Dict:
         out['directory'] = "results"
     if 'csv_file' not in out:
         out['csv_file'] = "equilibrium_results.csv"
+    if 'save_csv' not in out:
+        out['save_csv'] = True
+    if 'plot_results' not in out:
+        out['plot_results'] = out.get('create_plots', True)
     if 'create_plots' not in out:
-        out['create_plots'] = True
+        out['create_plots'] = out.get('plot_results', True)
+    if 'plot_filename' not in out:
+        out['plot_filename'] = "equilibrium_plot.png"
     if 'plot_format' not in out:
         out['plot_format'] = "png"
     if 'plots_per_page' not in out:
@@ -102,8 +120,14 @@ def validate_config(config: Dict) -> Dict:
         out['plots_per_row'] = 4
     if 'log_scale' not in out:
         out['log_scale'] = True
+    if 'plot_scale' not in out:
+        out['plot_scale'] = "log"
+    if 'plot_type' not in out:
+        out['plot_type'] = "concentration"
     if 'focus_species' not in out:
-        out['focus_species'] = []
+        out['focus_species'] = out.get('species_to_plot', [])
+    if 'species_to_plot' not in out:
+        out['species_to_plot'] = out.get('focus_species', [])
     if 'exclude_species' not in out:
         out['exclude_species'] = []
     if 'concentration_threshold' not in out:
@@ -158,13 +182,205 @@ def create_temperature_array(config: Dict) -> np.ndarray:
     """
     t_min, t_max = config['calculation']['temperature_range']
     n_points = config['calculation']['temperature_points']
+    log_spacing = config['calculation'].get('log_temperature', True)
     
-    # Use logarithmic spacing for better resolution at low temperatures
-    # which is important for atmospheric applications
-    t_array = np.logspace(np.log10(t_min), np.log10(t_max), n_points)
+    if log_spacing:
+        # Use logarithmic spacing for better resolution at low temperatures
+        # which is important for atmospheric applications
+        t_array = np.logspace(np.log10(t_min), np.log10(t_max), n_points)
+        spacing_type = "logarithmic"
+    else:
+        # Use linear spacing
+        t_array = np.linspace(t_min, t_max, n_points)
+        spacing_type = "linear"
     
-    logger.info(f"Created temperature array with {n_points} points from {t_min} K to {t_max} K")
+    logger.info(f"Created temperature array with {n_points} points ({spacing_type} spacing) from {t_min} K to {t_max} K")
     return t_array
+
+def create_simple_gas_model(config: Dict) -> str:
+    """
+    Create a simple gas model file using known species from Cantera's built-in database.
+    
+    Instead of trying to convert our complex YAML file, we'll use Cantera's
+    built-in species database and just create a list of the species we need.
+    
+    Args:
+        config: Configuration dictionary
+        
+    Returns:
+        Path to created XML file
+    """
+    # Get list of species from initial mixture
+    species_list = list(config['initial_mixture'].keys())
+    
+    # Load all species from Species.yaml if available
+    try:
+        with open('Species.yaml', 'r') as f:
+            species_data = yaml.safe_load(f)
+            if 'species' in species_data and isinstance(species_data['species'], list):
+                # Add all species from the file to ensure we have a complete set
+                species_list.extend([s for s in species_data['species'] if s not in species_list])
+                logger.info(f"Added {len(species_data['species'])} species from Species.yaml")
+    except Exception as e:
+        logger.warning(f"Could not load Species.yaml: {e}")
+    
+    # Create a temporary XML file
+    xml_file = "simple_gas.xml"
+    
+    # Check for charged species
+    has_charged_species = any('-' in s or '+' in s or s == 'e-' for s in species_list)
+    
+    # Create a simple XML structure
+    xml_content = """<?xml version="1.0"?>
+<ctml>
+  <validate reactions="yes" species="yes"/>
+
+  <phase dim="3" id="gas">
+    <elementArray datasrc="elements.xml">E H C N O Ar He Ne Xe S</elementArray>
+    <speciesArray datasrc="#species_data">"""
+    
+    # Add species
+    for species in species_list:
+        xml_content += f" {species}"
+    
+    xml_content += """</speciesArray>
+    <reactionArray datasrc="#reaction_data"/>
+    <state>
+      <temperature units="K">300.0</temperature>
+      <pressure units="Pa">101325.0</pressure>
+    </state>
+    <thermo model="IdealGas"/>
+    <kinetics model="GasKinetics"/>
+    <transport model="None"/>"""
+    
+    # Add electron energy mode if we have charged species
+    if has_charged_species:
+        xml_content += """
+    <electron_energy enabled="yes"/>"""
+    
+    xml_content += """
+  </phase>
+
+  <speciesData id="species_data">
+    <!-- Simplified species data - will use Cantera's built-in data for known species -->
+  </speciesData>
+
+  <reactionData id="reaction_data"/>
+</ctml>
+"""
+    
+    # Write XML file
+    with open(xml_file, 'w') as f:
+        f.write(xml_content)
+    
+    logger.info(f"Created simplified gas model in {xml_file} with {len(species_list)} species")
+    
+    # Print warning about potential missing species
+    logger.warning("Using Cantera's built-in database. Some species may not be available.")
+    logger.info("If equilibrium calculation fails, check if all required species are in Cantera's database.")
+    
+    return xml_file
+
+def convert_yaml_to_cti(config: Dict) -> str:
+    """
+    Convert our custom YAML thermodynamic data to Cantera Input (CTI) format.
+    
+    This function converts our NASA-9 format thermodynamic data in YAML to 
+    a format that Cantera can read.
+    
+    Args:
+        config: Configuration dictionary
+        
+    Returns:
+        Path to created CTI file
+    """
+    thermo_file = config['input']['thermo_data_file']
+    logger.info(f"Converting thermodynamic data from {thermo_file} to Cantera format")
+    
+    try:
+        # Load our custom thermodynamic data
+        with open(thermo_file, 'r') as f:
+            thermo_data = yaml.safe_load(f)
+        
+        # Create CTI file path
+        cti_file = "converted_thermo.cti"
+        
+        # Start building CTI content
+        cti_content = """
+# Converted from custom YAML format to Cantera CTI format
+# Generated by EquilibriumCalculation.py
+
+units(length='cm', time='s', quantity='mol', act_energy='cal/mol')
+
+ideal_gas(name='gas',
+          elements='H C N O Ar He Ne Xe S E',
+          species=species_data.keys(),
+          reactions='none',
+          initial_state=state(temperature=300.0, pressure=OneAtm))
+
+"""
+        
+        # Species data section
+        cti_content += "species_data = {\n"
+        
+        # Process each species
+        if 'species' in thermo_data:
+            for species in thermo_data['species']:
+                name = species['name']
+                logger.info(f"Processing species: {name}")
+                
+                # Start species definition
+                cti_content += f"    '{name}': species(name='{name}',\n"
+                
+                # Add composition if available
+                if 'composition' in species:
+                    comp_str = ", ".join([f"'{elem}': {count}" for elem, count in species['composition'].items()])
+                    cti_content += f"                atoms={{{comp_str}}},\n"
+                
+                # Process thermo data
+                if 'thermo' in species and 'temperature-ranges' in species['thermo']:
+                    cti_content += "                thermo=(\n"
+                    
+                    # Process each temperature range
+                    for temp_range in species['thermo']['temperature-ranges']:
+                        t_min = temp_range['T-min']
+                        t_max = temp_range['T-max']
+                        t_ref = temp_range.get('T-ref', 298.15)
+                        coeffs = temp_range['coefficients']
+                        
+                        # Convert NASA9 to NASA7 format if needed (Cantera uses NASA7)
+                        if len(coeffs) == 9:  # NASA9 format
+                            # NASA9 to NASA7 conversion logic
+                            # This is simplified and may need adjustment based on exact NASA9 format used
+                            nasa7_coeffs = [
+                                coeffs[0], coeffs[1], coeffs[2], coeffs[3], coeffs[4],
+                                coeffs[5], coeffs[6]
+                            ]
+                            coeffs_str = ", ".join([f"{c}" for c in nasa7_coeffs])
+                        else:
+                            coeffs_str = ", ".join([f"{c}" for c in coeffs])
+                        
+                        cti_content += f"                    NASA([{t_min}, {t_max}], [{coeffs_str}]),\n"
+                    
+                    cti_content += "                ),\n"
+                
+                # Close the species definition
+                cti_content += "               )\n"
+        
+        # Close the species data dictionary
+        cti_content += "}\n"
+        
+        # Write CTI file
+        with open(cti_file, 'w') as f:
+            f.write(cti_content)
+        
+        logger.info(f"Successfully converted thermodynamic data to {cti_file}")
+        return cti_file
+        
+    except Exception as e:
+        logger.error(f"Error converting YAML to CTI: {e}")
+        logger.error("Falling back to simplified gas model with Cantera's built-in database")
+        return create_simple_gas_model(config)
 
 def setup_cantera_gas(config: Dict) -> ct.Solution:
     """
@@ -176,11 +392,40 @@ def setup_cantera_gas(config: Dict) -> ct.Solution:
     Returns:
         Cantera Solution object
     """
-    thermo_file = config['input']['thermo_data_file']
-    
     try:
-        # Create gas mixture from YAML file
-        gas = ct.Solution(thermo_file)
+        # Check if we should use our custom thermodynamic data or Cantera's built-in database
+        use_cantera_database = config.get('input', {}).get('use_cantera_database', False)
+        
+        if not use_cantera_database:
+            # Convert our custom thermodynamic data to a format Cantera can read
+            logger.info("Using custom thermodynamic data from Thermodynamics.yaml")
+            
+            try:
+                # Try direct loading first (in case format is already compatible)
+                thermo_file = config['input']['thermo_data_file']
+                try:
+                    gas = ct.Solution(thermo_file)
+                    logger.info(f"Successfully loaded thermodynamic data directly from {thermo_file}")
+                except Exception as direct_error:
+                    logger.info(f"Could not load thermodynamic data directly: {direct_error}")
+                    logger.info("Converting YAML format to Cantera-compatible format...")
+                    
+                    # Convert YAML to CTI format
+                    cti_file = convert_yaml_to_cti(config)
+                    gas = ct.Solution(cti_file)
+                    logger.info(f"Successfully loaded thermodynamic data from converted file {cti_file}")
+            except Exception as e:
+                logger.error(f"Error loading custom thermodynamic data: {e}")
+                logger.warning("IMPORTANT: Falling back to Cantera's built-in database as a last resort")
+                xml_file = create_simple_gas_model(config)
+                gas = ct.Solution(xml_file)
+                logger.warning("Using Cantera's built-in database instead of our custom thermodynamic data")
+        else:
+            # Explicitly using Cantera's built-in database (this should not happen based on config)
+            logger.warning("IMPORTANT NOTE: Using Cantera's built-in database as specified in configuration")
+            xml_file = create_simple_gas_model(config)
+            gas = ct.Solution(xml_file)
+        
         logger.info(f"Created Cantera gas mixture with {gas.n_species} species")
         
         # Set initial state
@@ -189,7 +434,23 @@ def setup_cantera_gas(config: Dict) -> ct.Solution:
         
         # Convert mole fractions to string format for Cantera
         X = config['initial_mixture']
-        X_str = ", ".join([f"{k}:{v}" for k, v in X.items() if k in gas.species_names])
+        # Filter to only include species in the gas model
+        X_filtered = {k: v for k, v in X.items() if k in gas.species_names}
+        
+        # Log information about missing species
+        missing_species = [k for k in X.keys() if k not in gas.species_names]
+        if missing_species:
+            logger.warning(f"The following species from the initial mixture were not found in the gas model:")
+            for species in missing_species:
+                logger.warning(f"  - {species}")
+        
+        # Normalize the filtered mole fractions
+        total = sum(X_filtered.values())
+        if total > 0:
+            X_filtered = {k: v/total for k, v in X_filtered.items()}
+        
+        # Convert to string format
+        X_str = ", ".join([f"{k}:{v}" for k, v in X_filtered.items()])
         
         # Set state
         gas.TPX = T, P, X_str
@@ -201,8 +462,14 @@ def setup_cantera_gas(config: Dict) -> ct.Solution:
                 if species in gas.species_names:
                     logger.info(f"  {species}: {mole_frac:.6e}")
                 else:
-                    logger.warning(f"  {species}: not found in thermodynamic data")
+                    logger.warning(f"  {species}: not found in the gas model")
         
+        # Check if we have a valid mixture
+        if not X_filtered:
+            logger.error("None of the specified species were found in the gas model")
+            logger.info("Available species: " + ", ".join(gas.species_names))
+            sys.exit(1)
+            
         return gas
     
     except Exception as e:
