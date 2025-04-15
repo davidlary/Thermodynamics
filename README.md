@@ -30,7 +30,9 @@ pip install cantera pyyaml requests
 
 ## Usage
 
-1. Define your species in `Species.yaml`:
+### 1. Define Chemical Species
+
+Define your species in `Species.yaml`:
 
 ```yaml
 # List of chemical species
@@ -42,7 +44,9 @@ species:
   # Add more species as needed
 ```
 
-2. Generate thermodynamic data:
+### 2. Generate Thermodynamic Data
+
+Generate NASA-9 polynomial thermodynamic data:
 
 ```bash
 python thermo_generator.py
@@ -50,7 +54,41 @@ python thermo_generator.py
 
 This will create a `Thermodynamics.yaml` file with the NASA-9 polynomial data ready for use in Cantera.
 
-3. Use the data for equilibrium calculations (future implementation).
+### 3. Configure Equilibrium Calculations
+
+Customize your equilibrium calculation parameters in `EquilibriumCalculation.yaml`:
+
+```yaml
+# Input data file
+input:
+  thermo_data_file: "Thermodynamics.yaml"
+
+# Calculation parameters
+calculation:
+  temperature_range: [100, 6000]  # K
+  temperature_points: 500
+  pressure: 101325  # Pa (1 atm)
+
+# Initial gas mixture (mole fractions)
+initial_mixture:
+  N2: 0.7808
+  O2: 0.2095
+  # Add more species with their mole fractions
+```
+
+### 4. Run Equilibrium Calculations
+
+Calculate equilibrium concentrations across the temperature range:
+
+```bash
+python EquilibriumCalculation.py
+```
+
+This will:
+- Calculate equilibrium concentrations at each temperature point
+- Generate concentration vs. temperature plots for each species
+- Create summary plots with multiple species per page
+- Save all results to CSV files for further analysis
 
 ## How It Works
 
@@ -124,6 +162,40 @@ The system employs sophisticated optimization techniques to ensure thermodynamic
 
 4. **Validation Metadata**: All output includes detailed validation information including transition diagnostics and optimization details.
 
+## Equilibrium Concentration Calculator
+
+The `EquilibriumCalculation.py` script provides powerful capabilities for calculating chemical equilibrium concentrations using Cantera and the NASA-9 thermodynamic data:
+
+### Features
+
+- **Temperature Range Scanning**: Calculates equilibrium at each point across a specified temperature range
+- **Customizable Initial Mixture**: Define arbitrary initial gas compositions with precise mole fractions
+- **Comprehensive Output**: Generates both numerical data (CSV) and visual representations (plots)
+- **Species Filtering**: Focus on specific species of interest or exclude others
+- **Visualization Options**: Individual species plots and multi-species summary plots
+- **Performance Optimization**: Logarithmic temperature distribution for better resolution at lower temperatures
+- **Detailed Logging**: Tracks progress, initial conditions, and maximum concentrations
+
+### Configuration Options
+
+The `EquilibriumCalculation.yaml` file provides extensive configuration options:
+
+- **Input Data**: Specify which thermodynamic data file to use
+- **Temperature Range**: Define minimum and maximum temperatures and number of points
+- **Pressure**: Set pressure for equilibrium calculations
+- **Solver Parameters**: Customize tolerance and maximum iterations for the equilibrium solver
+- **Output Options**: Control file formats, plotting styles, and what information to log
+- **Initial Mixture**: Define the starting gas composition with precise mole fractions
+
+### Output Files
+
+The calculator generates several types of output:
+
+1. **CSV Data File**: Contains all equilibrium concentrations at each temperature
+2. **Individual Species Plots**: Concentration vs. temperature for each species
+3. **Summary Plots**: Multiple species per page, organized by concentration
+4. **Log File**: Records calculation progress and important results
+
 ## Applications
 
 This tool is particularly useful for:
@@ -136,11 +208,11 @@ This tool is particularly useful for:
 
 ## Future Work
 
-- Advanced equilibrium concentration calculations
-- Temperature and pressure dependency visualization
-- Reaction pathway analysis
-- Graphical interface for atmospheric research applications
+- Multi-pressure calculations and pressure-temperature phase diagrams
+- Reaction pathway analysis for key chemical transformations
+- Species sensitivity analysis to identify key components
 - Integration with atmospheric transport models
+- Web-based visualization interface for interactive exploration
 
 ## License
 
