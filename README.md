@@ -2,9 +2,11 @@
 
 This project calculates thermodynamic equilibrium concentrations of chemical species as a function of temperature and pressure using the Cantera library, with a special focus on accuracy in the cold temperature range (100-400K) for atmospheric research applications.
 
+Developed by David Lary (davidlary@me.com)
+
 The project consists of two main components:
 1. **Thermodynamic Data Generator** (`thermo_generator.py`): Creates NASA-9 polynomial thermodynamic data from multiple sources, with special focus on cold temperature accuracy for atmospheric research
-2. **Equilibrium Concentration Calculator** (`EquilibriumCalculation.py`): Calculates equilibrium concentrations across a temperature range using Cantera, with support for both custom thermodynamic data and Cantera's built-in database
+2. **Equilibrium Concentration Calculator** (`EquilibriumCalculation.py`): Calculates equilibrium concentrations across a temperature range using Cantera, with our custom thermodynamic data
 
 ## Features
 
@@ -239,4 +241,16 @@ This tool is particularly useful for:
 
 ## License
 
-MIT
+MIT License
+
+Copyright (c) 2025 David Lary (davidlary@me.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
