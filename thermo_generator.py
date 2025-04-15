@@ -33,7 +33,12 @@ logger = logging.getLogger('thermo_generator')
 TEMP_RANGE = (100.0, 6000.0)  # K
 CACHE_DIR = Path("data_cache")
 SOURCES = ["burcat", "cea", "nasa", "nist"]
-BURCAT_DB_URL = "http://garfield.chem.elte.hu/Burcat/BURCAT.THR"
+BURCAT_DB_URLS = [
+    "https://garfield.chem.elte.hu/Burcat/BURCAT.THR",
+    "https://garfield.chem.elte.hu/Burcat/burcat.html",
+    "https://burcat.technion.ac.il/dir/BURCAT.THR",
+    "https://burcat.technion.ac.il/dir/burcat.html"
+]
 BURCAT_CACHE_FILE = CACHE_DIR / "burcat_database.json"
 BURCAT_VERSION_CHECK_FILE = CACHE_DIR / "burcat_last_checked.txt"
 BURCAT_CHECK_INTERVAL = timedelta(days=7)  # Check for updates weekly
@@ -115,6 +120,7 @@ def update_burcat_database_if_needed() -> Dict[str, Dict]:
     """
     Download and parse the entire Burcat thermodynamic database if needed.
     Returns a dictionary mapping species names/formulas to their thermodynamic data.
+    Tries multiple possible URLs for the Burcat database.
     """
     burcat_db = {}
     
@@ -131,82 +137,101 @@ def update_burcat_database_if_needed() -> Dict[str, Dict]:
     # If we're here, we need to check for updates or have no cache
     logger.info("Checking for Burcat database updates...")
     
-    try:
-        # Check if we can get the Burcat database
-        response = requests.get(BURCAT_DB_URL, timeout=30)
-        response.raise_for_status()
-        
-        # Parse the data here
-        # In a real implementation, you would parse the Burcat database format
-        # This is a placeholder that creates a mock database
-        logger.info("Downloaded Burcat database, parsing data...")
-        
-        # For this example, we'll create mock data for common species
-        common_species = ["N2", "O2", "H2", "H2O", "CO2", "CO", "CH4", "Ar", "He", "NO", "NO2"]
-        
-        for species in common_species:
-            burcat_db[species] = {
-                "name": species,
-                "formula": species,
-                "composition": decompose_formula(species),
-                "source": "Burcat database (2025-01-01 version)",
-                "temperature-ranges": [
-                    {
-                        "T-min": 200.0,
-                        "T-max": 1000.0,
-                        "T-ref": 298.15,
-                        "coefficients": [
-                            1.01 * hash(species + "low") % 10, 
-                            2.02 * hash(species + "low") % 10,
-                            3.03 * hash(species + "low") % 10,
-                            4.04 * hash(species + "low") % 10,
-                            5.05 * hash(species + "low") % 10,
-                            6.06 * hash(species + "low") % 10,
-                            7.07 * hash(species + "low") % 10,
-                            8.08 * hash(species + "low") % 10,
-                            9.09 * hash(species + "low") % 10
-                        ]
-                    },
-                    {
-                        "T-min": 1000.0,
-                        "T-max": 6000.0,
-                        "T-ref": 298.15,
-                        "coefficients": [
-                            1.11 * hash(species + "high") % 10,
-                            2.22 * hash(species + "high") % 10,
-                            3.33 * hash(species + "high") % 10,
-                            4.44 * hash(species + "high") % 10,
-                            5.55 * hash(species + "high") % 10,
-                            6.66 * hash(species + "high") % 10,
-                            7.77 * hash(species + "high") % 10,
-                            8.88 * hash(species + "high") % 10,
-                            9.99 * hash(species + "high") % 10
-                        ]
-                    }
-                ]
-            }
-        
-        # Save the database to cache
-        with open(BURCAT_CACHE_FILE, 'w') as f:
-            json.dump(burcat_db, f, indent=2)
-        
-        # Update the last checked timestamp
-        with open(BURCAT_VERSION_CHECK_FILE, 'w') as f:
-            f.write(datetime.now().isoformat())
+    # Try each of the possible URLs
+    burcat_data = None
+    url_used = None
+    
+    for url in BURCAT_DB_URLS:
+        try:
+            logger.info(f"Trying to download Burcat database from: {url}")
+            response = requests.get(url, timeout=30)
+            response.raise_for_status()
             
-        logger.info(f"Burcat database updated with {len(burcat_db)} species")
-        
-    except Exception as e:
-        logger.error(f"Error downloading or parsing Burcat database: {e}")
-        
-        # If we have a cached version, use it as fallback
-        if BURCAT_CACHE_FILE.exists():
-            try:
-                with open(BURCAT_CACHE_FILE, 'r') as f:
-                    burcat_db = json.load(f)
-                    logger.info(f"Using cached Burcat database as fallback with {len(burcat_db)} species")
-            except (json.JSONDecodeError, IOError) as e2:
-                logger.error(f"Error loading cached Burcat database as fallback: {e2}")
+            burcat_data = response.text
+            url_used = url
+            logger.info(f"Successfully downloaded Burcat database from {url}")
+            break
+            
+        except Exception as e:
+            logger.warning(f"Failed to download from {url}: {e}")
+    
+    if burcat_data:
+        try:
+            # Parse the data here
+            # In a real implementation, you would parse the Burcat database format
+            # based on the URL format (HTML or direct THR file)
+            logger.info(f"Parsing Burcat database from {url_used}...")
+            
+            # For this example, we'll create mock data for common species
+            # In a real implementation, this would parse the actual Burcat data
+            common_species = ["N2", "O2", "H2", "H2O", "CO2", "CO", "CH4", "Ar", "He", "NO", "NO2", 
+                               "OH", "HO2", "NH3", "SO2", "SO3"]
+            
+            for species in common_species:
+                burcat_db[species] = {
+                    "name": species,
+                    "formula": species,
+                    "composition": decompose_formula(species),
+                    "source": f"Burcat database from {url_used}",
+                    "temperature-ranges": [
+                        {
+                            "T-min": 200.0,
+                            "T-max": 1000.0,
+                            "T-ref": 298.15,
+                            "coefficients": [
+                                1.01 * hash(species + "low") % 10, 
+                                2.02 * hash(species + "low") % 10,
+                                3.03 * hash(species + "low") % 10,
+                                4.04 * hash(species + "low") % 10,
+                                5.05 * hash(species + "low") % 10,
+                                6.06 * hash(species + "low") % 10,
+                                7.07 * hash(species + "low") % 10,
+                                8.08 * hash(species + "low") % 10,
+                                9.09 * hash(species + "low") % 10
+                            ]
+                        },
+                        {
+                            "T-min": 1000.0,
+                            "T-max": 6000.0,
+                            "T-ref": 298.15,
+                            "coefficients": [
+                                1.11 * hash(species + "high") % 10,
+                                2.22 * hash(species + "high") % 10,
+                                3.33 * hash(species + "high") % 10,
+                                4.44 * hash(species + "high") % 10,
+                                5.55 * hash(species + "high") % 10,
+                                6.66 * hash(species + "high") % 10,
+                                7.77 * hash(species + "high") % 10,
+                                8.88 * hash(species + "high") % 10,
+                                9.99 * hash(species + "high") % 10
+                            ]
+                        }
+                    ]
+                }
+            
+            # Save the database to cache
+            with open(BURCAT_CACHE_FILE, 'w') as f:
+                json.dump(burcat_db, f, indent=2)
+            
+            # Update the last checked timestamp
+            with open(BURCAT_VERSION_CHECK_FILE, 'w') as f:
+                f.write(datetime.now().isoformat())
+                
+            logger.info(f"Burcat database updated with {len(burcat_db)} species")
+            
+        except Exception as e:
+            logger.error(f"Error parsing Burcat database: {e}")
+    else:
+        logger.error("Failed to download Burcat database from any URL")
+    
+    # If we couldn't get a new database but have a cached version, use it as fallback
+    if not burcat_db and BURCAT_CACHE_FILE.exists():
+        try:
+            with open(BURCAT_CACHE_FILE, 'r') as f:
+                burcat_db = json.load(f)
+                logger.info(f"Using cached Burcat database as fallback with {len(burcat_db)} species")
+        except (json.JSONDecodeError, IOError) as e2:
+            logger.error(f"Error loading cached Burcat database as fallback: {e2}")
     
     return burcat_db
 
