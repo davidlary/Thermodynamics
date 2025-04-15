@@ -131,19 +131,47 @@ def fetch_nasa_data(species: str) -> Optional[Dict]:
     # Simulate network delay
     time.sleep(0.2)
     
-    # Return mock data for this demonstration
-    # This is not real NASA-9 data
-    if species in ["H2O", "CO2", "N2"]:
+    # Return realistic-structure mock data for common species
+    # Note: These are NOT real NASA-9 coefficients, just placeholders
+    if species in ["H2O", "CO2", "N2", "O2", "H2"]:
+        # NASA-9 polynomial format requires 9 coefficients per temperature range
+        # For realistic format, we include both low (300-1000K) and high (1000-6000K) temperature ranges
         data = {
             "name": species,
             "composition": decompose_formula(species),
             "temperature-ranges": [
                 {
-                    "T-min": 100.0,
-                    "T-max": 6000.0,
+                    "T-min": 200.0,
+                    "T-max": 1000.0,
+                    "T-ref": 298.15,
                     "coefficients": [
-                        1.0, 2.0, 3.0, 4.0, 5.0,
-                        6.0, 7.0, 8.0, 9.0
+                        # These are placeholder a1-a9 coefficients for the low temperature range
+                        1.01 * hash(species + "low") % 10, 
+                        2.02 * hash(species + "low") % 10,
+                        3.03 * hash(species + "low") % 10,
+                        4.04 * hash(species + "low") % 10,
+                        5.05 * hash(species + "low") % 10,
+                        6.06 * hash(species + "low") % 10,
+                        7.07 * hash(species + "low") % 10,
+                        8.08 * hash(species + "low") % 10,
+                        9.09 * hash(species + "low") % 10
+                    ]
+                },
+                {
+                    "T-min": 1000.0,
+                    "T-max": 6000.0,
+                    "T-ref": 298.15,
+                    "coefficients": [
+                        # These are placeholder a1-a9 coefficients for the high temperature range
+                        1.11 * hash(species + "high") % 10,
+                        2.22 * hash(species + "high") % 10,
+                        3.33 * hash(species + "high") % 10,
+                        4.44 * hash(species + "high") % 10,
+                        5.55 * hash(species + "high") % 10,
+                        6.66 * hash(species + "high") % 10,
+                        7.77 * hash(species + "high") % 10,
+                        8.88 * hash(species + "high") % 10,
+                        9.99 * hash(species + "high") % 10
                     ]
                 }
             ]
@@ -167,25 +195,44 @@ def fetch_nist_data(species: str) -> Optional[Dict]:
     # Simulate network delay
     time.sleep(0.3)
     
-    # Mock data for all species
-    # This is not real NASA-9 data
+    # Mock data with proper NASA-9 format structure for all species
+    # These are placeholder coefficients, not real data
     data = {
         "name": species,
         "composition": decompose_formula(species),
         "temperature-ranges": [
             {
-                "T-min": 100.0,
-                "T-max": 6000.0,
+                "T-min": 200.0,
+                "T-max": 1000.0,
+                "T-ref": 298.15,
                 "coefficients": [
-                    0.1 * hash(species) % 10,
-                    0.2 * hash(species) % 10,
-                    0.3 * hash(species) % 10,
-                    0.4 * hash(species) % 10,
-                    0.5 * hash(species) % 10,
-                    0.6 * hash(species) % 10,
-                    0.7 * hash(species) % 10,
-                    0.8 * hash(species) % 10,
-                    0.9 * hash(species) % 10
+                    # These are placeholder a1-a9 coefficients for the low temperature range
+                    0.11 * hash(species + "low") % 10,
+                    0.22 * hash(species + "low") % 10,
+                    0.33 * hash(species + "low") % 10,
+                    0.44 * hash(species + "low") % 10,
+                    0.55 * hash(species + "low") % 10,
+                    0.66 * hash(species + "low") % 10,
+                    0.77 * hash(species + "low") % 10,
+                    0.88 * hash(species + "low") % 10,
+                    0.99 * hash(species + "low") % 10
+                ]
+            },
+            {
+                "T-min": 1000.0,
+                "T-max": 6000.0,
+                "T-ref": 298.15,
+                "coefficients": [
+                    # These are placeholder a1-a9 coefficients for the high temperature range
+                    0.10 * hash(species + "high") % 10,
+                    0.20 * hash(species + "high") % 10,
+                    0.30 * hash(species + "high") % 10,
+                    0.40 * hash(species + "high") % 10,
+                    0.50 * hash(species + "high") % 10,
+                    0.60 * hash(species + "high") % 10,
+                    0.70 * hash(species + "high") % 10,
+                    0.80 * hash(species + "high") % 10,
+                    0.90 * hash(species + "high") % 10
                 ]
             }
         ]

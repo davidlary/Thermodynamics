@@ -62,6 +62,19 @@ The system follows these steps:
 4. Locally caches all retrieved data to speed up future runs
 5. Generates a Cantera-compatible YAML file with the complete thermodynamic data
 
+### NASA-9 Polynomial Format
+
+This project uses the NASA-9 polynomial format for thermodynamic data which provides:
+
+- Two temperature ranges for each species (typically 200-1000K and 1000-6000K)
+- Nine coefficients (a₁-a₉) for each temperature range
+- These coefficients define polynomial expressions for:
+  - Heat capacity: Cp°/R = a₁ + a₂T + a₃T² + a₄T³ + a₅T⁴
+  - Enthalpy: H°/RT = a₁ + (a₂/2)T + (a₃/3)T² + (a₄/4)T³ + (a₅/5)T⁴ + a₆/T
+  - Entropy: S°/R = a₁ln(T) + a₂T + (a₃/2)T² + (a₄/3)T³ + (a₅/4)T⁴ + a₇
+
+Where T is temperature in Kelvin and R is the gas constant.
+
 ## Future Work
 
 - Equilibrium concentration calculations

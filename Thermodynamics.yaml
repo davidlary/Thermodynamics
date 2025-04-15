@@ -107,18 +107,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 1.0
-      - 2.0
-      - 3.0
-      - 4.0
-      - 5.0
-      - 6.0
-      - 7.0
       - 8.0
-      - 9.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 4.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 0.0
+      - 4.0
   data-source: nasa
 - name: O2
   composition:
@@ -126,38 +140,66 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
+      - 4.0
       - 8.0
-  data-source: nist
+      - 6.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 4.0
+  data-source: nasa
 - name: H2
   composition:
     H: 2
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 4.0
+      - 2.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
       - 2.0
       - 4.0
       - 4.0
+      - 0.0
       - 8.0
-      - 4.0
+      - 0.0
       - 8.0
-      - 6.0
-      - 6.0
-      - 4.0
-  data-source: nist
+      - 8.0
+  data-source: nasa
 - name: H2O
   composition:
     H: 2
@@ -165,18 +207,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 1.0
-      - 2.0
-      - 3.0
-      - 4.0
-      - 5.0
-      - 6.0
-      - 7.0
       - 8.0
-      - 9.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 6.0
+      - 4.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 0.0
+      - 6.0
+      - 6.0
+      - 0.0
+      - 0.0
+      - 2.0
+      - 2.0
   data-source: nasa
 - name: CO2
   composition:
@@ -185,18 +241,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 1.0
-      - 2.0
-      - 3.0
-      - 4.0
-      - 5.0
       - 6.0
-      - 7.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
+      - 6.0
       - 8.0
-      - 9.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 2.0
   data-source: nasa
 - name: CO
   composition:
@@ -205,18 +275,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
-      - 4.0
+      - 8.0
       - 4.0
       - 6.0
+      - 6.0
       - 8.0
+      - 8.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
       - 2.0
-      - 8.0
-      - 8.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 6.0
   data-source: nist
 - name: NO2
   composition:
@@ -225,17 +309,31 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
+      - 0.0
       - 4.0
       - 8.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 2.0
+      - 2.0
       - 8.0
   data-source: nist
 - name: N2O
@@ -245,18 +343,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
       - 6.0
       - 4.0
       - 8.0
-      - 2.0
-      - 8.0
-      - 8.0
       - 0.0
+      - 4.0
   data-source: nist
 - name: O3
   composition:
@@ -264,18 +376,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 2.0
       - 4.0
       - 8.0
+      - 8.0
+      - 6.0
       - 4.0
       - 6.0
-      - 8.0
       - 0.0
+      - 2.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 0.0
+      - 2.0
   data-source: nist
 - name: OH
   composition:
@@ -284,18 +410,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 4.0
       - 8.0
+      - 0.0
       - 6.0
+      - 2.0
+      - 0.0
       - 8.0
       - 2.0
-      - 8.0
-      - 6.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 2.0
       - 4.0
-      - 0.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 4.0
   data-source: nist
 - name: HO2
   composition:
@@ -304,18 +444,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 6.0
       - 2.0
+      - 6.0
       - 4.0
       - 6.0
+      - 2.0
+      - 2.0
       - 8.0
       - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 8.0
       - 2.0
       - 4.0
-      - 6.0
       - 8.0
+      - 2.0
   data-source: nist
 - name: H
   composition:
@@ -323,17 +477,31 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
+      - 4.0
+      - 8.0
       - 4.0
       - 6.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
       - 0.0
+      - 8.0
+      - 6.0
+      - 4.0
       - 2.0
   data-source: nist
 - name: O
@@ -342,18 +510,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 2.0
       - 4.0
+      - 8.0
+      - 2.0
       - 6.0
       - 8.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 2.0
       - 0.0
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
   data-source: nist
 - name: N
   composition:
@@ -361,18 +543,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 8.0
-      - 6.0
-      - 8.0
       - 2.0
       - 4.0
+      - 4.0
+      - 8.0
+      - 2.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 6.0
+      - 0.0
   data-source: nist
 - name: NH3
   composition:
@@ -381,18 +577,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 2.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 0.0
       - 0.0
-      - 2.0
+      - 4.0
       - 0.0
       - 4.0
-      - 4.0
-      - 2.0
-      - 0.0
       - 8.0
+      - 4.0
+      - 0.0
+      - 2.0
   data-source: nist
 - name: NH2
   composition:
@@ -401,18 +611,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
       - 8.0
+      - 4.0
+      - 0.0
       - 6.0
       - 6.0
-      - 2.0
-      - 6.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 2.0
       - 4.0
-      - 4.0
+      - 8.0
+      - 8.0
+      - 2.0
       - 6.0
+      - 0.0
+      - 6.0
+      - 0.0
   data-source: nist
 - name: NH
   composition:
@@ -421,18 +645,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 2.0
+      - 4.0
+      - 2.0
       - 8.0
-      - 0.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
       - 8.0
-      - 6.0
-      - 6.0
+      - 4.0
       - 0.0
       - 6.0
+      - 4.0
+      - 8.0
+      - 2.0
   data-source: nist
 - name: HNO3
   composition:
@@ -442,18 +680,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 0.0
+      - 2.0
+      - 4.0
+      - 0.0
+      - 2.0
+      - 4.0
+      - 0.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
-      - 8.0
+      - 0.0
       - 4.0
+      - 2.0
       - 0.0
       - 6.0
-      - 4.0
       - 8.0
-      - 2.0
+      - 6.0
   data-source: nist
 - name: HONO
   composition:
@@ -463,17 +715,31 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
+      - 0.0
+      - 0.0
       - 2.0
+      - 0.0
+      - 2.0
+      - 4.0
       - 6.0
       - 0.0
-      - 4.0
-      - 8.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 8.0
+      - 0.0
+      - 0.0
+      - 6.0
       - 6.0
   data-source: nist
 - name: HNO
@@ -484,17 +750,31 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 0.0
       - 0.0
       - 0.0
       - 0.0
+      - 4.0
       - 0.0
+      - 4.0
       - 0.0
-      - 0.0
-      - 0.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 6.0
       - 0.0
   data-source: nist
 - name: H2O2
@@ -504,18 +784,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 9.0
+      - 8.0
+      - 8.0
+      - 6.0
       - 4.0
-      - 8.0
+      - 6.0
+      - 0.0
+      - 2.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 8.0
       - 6.0
+      - 0.0
       - 2.0
       - 6.0
+      - 0.0
       - 2.0
-      - 2.0
-      - 8.0
+      - 4.0
+      - 0.0
   data-source: nist
 - name: CH4
   composition:
@@ -524,18 +818,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
       - 6.0
+      - 0.0
+      - 0.0
       - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 4.0
       - 8.0
+      - 0.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
       - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 6.0
+      - 6.0
+      - 6.0
   data-source: nist
 - name: CH2
   composition:
@@ -544,18 +852,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 0.0
+      - 4.0
       - 8.0
-      - 6.0
-      - 8.0
+      - 0.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 2.0
       - 4.0
-      - 6.0
+      - 2.0
+      - 8.0
       - 8.0
       - 4.0
+      - 8.0
       - 6.0
+      - 0.0
   data-source: nist
 - name: CH
   composition:
@@ -564,18 +886,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 8.0
+      - 6.0
+      - 6.0
       - 2.0
-      - 0.0
+      - 8.0
       - 2.0
+      - 8.0
       - 4.0
       - 6.0
-      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 6.0
   data-source: nist
 - name: CH3
   composition:
@@ -584,18 +920,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
+      - 4.0
       - 8.0
       - 4.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
       - 0.0
-      - 6.0
       - 2.0
-      - 8.0
-      - 4.0
+      - 6.0
+      - 6.0
+      - 6.0
   data-source: nist
 - name: CH2O
   composition:
@@ -605,8 +955,9 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 8.0
       - 6.0
@@ -614,9 +965,22 @@ species:
       - 2.0
       - 6.0
       - 0.0
-      - 2.0
       - 4.0
+      - 4.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
       - 0.0
+      - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 8.0
+      - 6.0
   data-source: nist
 - name: CHO
   composition:
@@ -626,18 +990,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 0.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 2.0
       - 4.0
-      - 8.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 2.0
-      - 6.0
       - 0.0
+      - 8.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 8.0
   data-source: nist
 - name: CHOOH
   composition:
@@ -647,18 +1025,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 4.0
       - 8.0
-      - 6.0
+      - 0.0
       - 6.0
       - 2.0
+      - 0.0
+      - 8.0
       - 2.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
       - 2.0
       - 6.0
       - 4.0
       - 4.0
+      - 2.0
+      - 4.0
+      - 8.0
+      - 0.0
   data-source: nist
 - name: HCN
   composition:
@@ -668,18 +1060,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 8.0
       - 6.0
+      - 0.0
       - 2.0
       - 2.0
+      - 0.0
+      - 6.0
       - 4.0
       - 4.0
-      - 4.0
-      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 0.0
       - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
   data-source: nist
 - name: N2H4
   composition:
@@ -688,18 +1094,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
       - 8.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
       - 6.0
+      - 0.0
       - 6.0
       - 2.0
-      - 6.0
-      - 2.0
+      - 0.0
+      - 0.0
       - 4.0
-      - 4.0
-      - 6.0
   data-source: nist
 - name: NCO
   composition:
@@ -709,18 +1129,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
       - 6.0
       - 2.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
       - 8.0
+      - 8.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
       - 4.0
       - 2.0
       - 8.0
+      - 6.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 4.0
   data-source: nist
 - name: NCN
   composition:
@@ -729,18 +1163,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
       - 8.0
       - 6.0
       - 8.0
       - 2.0
-      - 4.0
       - 6.0
       - 0.0
-      - 4.0
-      - 4.0
   data-source: nist
 - name: HCNO
   composition:
@@ -751,16 +1199,30 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 0.0
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
       - 0.0
       - 4.0
       - 0.0
-      - 2.0
-      - 8.0
       - 6.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 8.0
+      - 2.0
+      - 0.0
       - 0.0
       - 8.0
   data-source: nist
@@ -771,18 +1233,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
       - 8.0
       - 6.0
-      - 6.0
-      - 4.0
+      - 8.0
       - 2.0
       - 0.0
+      - 6.0
       - 2.0
+      - 4.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
       - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 6.0
+      - 8.0
+      - 0.0
   data-source: nist
 - name: CN-
   composition:
@@ -791,16 +1267,30 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 8.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 0.0
       - 0.0
-      - 8.0
-      - 0.0
-      - 4.0
       - 6.0
       - 0.0
+      - 2.0
+      - 2.0
+      - 6.0
       - 0.0
       - 4.0
   data-source: nist
@@ -811,18 +1301,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
       - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
       - 4.0
       - 0.0
+      - 8.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 8.0
   data-source: nist
 - name: NO-
   composition:
@@ -831,18 +1335,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 8.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
+      - 2.0
       - 6.0
       - 0.0
+      - 4.0
+      - 8.0
       - 2.0
-      - 2.0
+      - 8.0
   data-source: nist
 - name: NO2+
   composition:
@@ -851,18 +1369,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 6.0
       - 2.0
-      - 4.0
-      - 0.0
       - 8.0
       - 4.0
       - 0.0
       - 6.0
-      - 6.0
       - 2.0
+      - 8.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
   data-source: nist
 - name: NO2-
   composition:
@@ -871,17 +1403,31 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
       - 4.0
       - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 6.0
-      - 6.0
-      - 2.0
+      - 0.0
       - 2.0
   data-source: nist
 - name: NO3-
@@ -891,18 +1437,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 8.0
       - 0.0
+      - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 8.0
+      - 6.0
   data-source: nist
 - name: O-
   composition:
@@ -910,18 +1470,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
       - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
+      - 6.0
       - 4.0
       - 2.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 4.0
       - 8.0
-      - 8.0
+      - 2.0
+      - 0.0
+      - 4.0
   data-source: nist
 - name: O2-
   composition:
@@ -929,18 +1503,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
+      - 0.0
       - 0.0
       - 4.0
-      - 2.0
       - 0.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
       - 8.0
       - 8.0
       - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
   data-source: nist
 - name: O2+
   composition:
@@ -948,18 +1536,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 4.0
-      - 8.0
-      - 0.0
       - 2.0
       - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 8.0
   data-source: nist
 - name: O+
   composition:
@@ -967,18 +1569,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
+      - 0.0
       - 6.0
-      - 6.0
+      - 8.0
+      - 0.0
+      - 0.0
+      - 2.0
       - 4.0
-      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 0.0
-      - 2.0
       - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 4.0
   data-source: nist
 - name: O3+
   composition:
@@ -986,18 +1602,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
       - 4.0
       - 8.0
+      - 2.0
       - 6.0
+      - 0.0
+      - 4.0
+      - 4.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 0.0
+      - 8.0
   data-source: nist
 - name: N2+
   composition:
@@ -1005,17 +1635,31 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
       - 8.0
       - 6.0
+      - 0.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 4.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
       - 6.0
       - 4.0
       - 2.0
+      - 0.0
       - 8.0
-      - 2.0
+      - 6.0
+      - 4.0
       - 2.0
   data-source: nist
 - name: N+
@@ -1024,18 +1668,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
       - 8.0
       - 6.0
-      - 8.0
+      - 0.0
       - 2.0
       - 6.0
       - 0.0
+      - 4.0
+      - 4.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 6.0
   data-source: nist
 - name: N-
   composition:
@@ -1043,18 +1701,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 8.0
       - 6.0
+      - 6.0
+      - 2.0
+      - 0.0
       - 2.0
       - 4.0
       - 4.0
       - 6.0
-      - 8.0
-      - 8.0
-      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 4.0
+      - 6.0
+      - 4.0
   data-source: nist
 - name: N2-
   composition:
@@ -1062,18 +1734,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 2.0
       - 4.0
-      - 6.0
+      - 4.0
       - 8.0
       - 0.0
+      - 8.0
       - 2.0
-      - 0.0
       - 6.0
-      - 2.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 0.0
+      - 0.0
+      - 4.0
   data-source: nist
 - name: H+
   composition:
@@ -1081,18 +1767,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 2.0
       - 4.0
-      - 6.0
       - 8.0
-      - 0.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 6.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 2.0
-      - 6.0
-      - 6.0
+      - 4.0
+      - 0.0
       - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
+      - 2.0
   data-source: nist
 - name: H-
   composition:
@@ -1100,18 +1800,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 2.0
       - 4.0
       - 6.0
       - 8.0
-      - 0.0
       - 2.0
+      - 2.0
+      - 6.0
+      - 6.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
       - 8.0
       - 6.0
-      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 0.0
   data-source: nist
 - name: H2+
   composition:
@@ -1119,18 +1833,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 2.0
+      - 4.0
       - 4.0
       - 8.0
       - 6.0
+      - 8.0
+      - 2.0
       - 6.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 8.0
+      - 2.0
       - 4.0
-      - 2.0
       - 0.0
       - 2.0
-      - 0.0
   data-source: nist
 - name: H2O+
   composition:
@@ -1139,17 +1867,31 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 4.0
       - 8.0
+      - 4.0
       - 6.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 6.0
       - 2.0
-      - 6.0
+      - 0.0
+      - 4.0
       - 2.0
-      - 4.0
-      - 4.0
+      - 0.0
+      - 8.0
+      - 8.0
       - 6.0
   data-source: nist
 - name: H2O-
@@ -1159,18 +1901,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
+      - 0.0
+      - 4.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 8.0
       - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
   data-source: nist
 - name: H3O+
   composition:
@@ -1179,18 +1935,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 2.0
       - 4.0
+      - 8.0
+      - 0.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 6.0
       - 2.0
       - 8.0
-      - 8.0
-      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 8.0
       - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
       - 0.0
+      - 4.0
+      - 4.0
   data-source: nist
 - name: HO2-
   composition:
@@ -1199,18 +1969,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 6.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
+      - 2.0
+      - 4.0
       - 4.0
       - 4.0
       - 6.0
       - 8.0
-      - 0.0
-      - 8.0
-      - 0.0
+      - 6.0
   data-source: nist
 - name: OH+
   composition:
@@ -1219,18 +2003,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
       - 0.0
       - 4.0
+      - 0.0
+      - 4.0
+      - 8.0
       - 2.0
       - 0.0
-      - 8.0
-      - 8.0
-      - 6.0
+      - 4.0
   data-source: nist
 - name: OH-
   composition:
@@ -1239,18 +2037,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 8.0
       - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
-      - 4.0
       - 6.0
+      - 2.0
+      - 6.0
+      - 2.0
+      - 0.0
       - 4.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 0.0
       - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 8.0
+      - 6.0
   data-source: nist
 - name: CO+
   composition:
@@ -1259,8 +2071,9 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
@@ -1268,9 +2081,22 @@ species:
       - 4.0
       - 0.0
       - 6.0
-      - 4.0
+      - 2.0
       - 8.0
       - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
   data-source: nist
 - name: CO2+
   composition:
@@ -1279,18 +2105,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
       - 2.0
       - 4.0
       - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
       - 6.0
-      - 6.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 0.0
   data-source: nist
 - name: CO-
   composition:
@@ -1299,18 +2139,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 8.0
       - 6.0
-      - 4.0
+      - 6.0
       - 2.0
       - 0.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
       - 8.0
+      - 6.0
       - 6.0
       - 4.0
       - 2.0
+      - 2.0
+      - 2.0
+      - 8.0
   data-source: nist
 - name: CO2-
   composition:
@@ -1319,18 +2173,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 0.0
       - 0.0
-      - 8.0
+      - 6.0
       - 0.0
       - 8.0
+      - 2.0
       - 6.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
       - 4.0
-      - 0.0
       - 6.0
+      - 0.0
+      - 4.0
   data-source: nist
 - name: CH+
   composition:
@@ -1339,18 +2207,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
       - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 6.0
-      - 8.0
+      - 2.0
       - 0.0
-      - 2.0
-      - 2.0
       - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 8.0
+      - 6.0
   data-source: nist
 - name: CHO+
   composition:
@@ -1360,18 +2242,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
+      - 0.0
       - 0.0
       - 2.0
-      - 6.0
       - 0.0
+      - 6.0
       - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
       - 4.0
       - 8.0
+      - 0.0
+      - 2.0
   data-source: nist
 - name: C+
   composition:
@@ -1379,18 +2275,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
       - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
       - 0.0
       - 4.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
       - 6.0
       - 0.0
-      - 0.0
       - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
   data-source: nist
 - name: C-
   composition:
@@ -1398,16 +2308,30 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
-      - 6.0
+      - 0.0
       - 6.0
       - 8.0
-      - 2.0
-      - 2.0
+      - 0.0
+      - 4.0
       - 2.0
       - 2.0
   data-source: nist
@@ -1418,18 +2342,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
+      - 4.0
       - 6.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
       - 6.0
+      - 0.0
       - 2.0
       - 2.0
       - 4.0
+      - 0.0
       - 2.0
-      - 4.0
   data-source: nist
 - name: HNO2+
   composition:
@@ -1439,18 +2377,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
+      - 0.0
+      - 0.0
       - 4.0
+      - 0.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
       - 4.0
       - 2.0
       - 8.0
       - 6.0
-      - 8.0
+      - 4.0
+      - 4.0
       - 6.0
+      - 2.0
   data-source: nist
 - name: HNO3+
   composition:
@@ -1460,18 +2412,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
       - 8.0
-      - 2.0
       - 6.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 4.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
       - 0.0
       - 4.0
       - 8.0
       - 2.0
-      - 6.0
+      - 0.0
+      - 4.0
   data-source: nist
 - name: HNO+
   composition:
@@ -1481,18 +2447,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 0.0
+      - 6.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 2.0
+      - 6.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 2.0
       - 4.0
-      - 4.0
+      - 6.0
       - 8.0
-      - 8.0
-      - 8.0
+      - 0.0
+      - 2.0
       - 4.0
       - 6.0
-      - 6.0
+      - 2.0
   data-source: nist
 - name: SO
   composition:
@@ -1501,18 +2481,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 4.0
+      - 8.0
       - 2.0
+      - 6.0
       - 4.0
       - 4.0
+      - 2.0
+      - 2.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
       - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
+      - 0.0
       - 6.0
       - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 8.0
   data-source: nist
 - name: SO2
   composition:
@@ -1521,18 +2515,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
-      - 4.0
       - 6.0
-      - 4.0
-      - 8.0
+      - 6.0
+      - 0.0
+      - 2.0
       - 0.0
       - 2.0
       - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 0.0
   data-source: nist
 - name: SO3
   composition:
@@ -1541,16 +2549,30 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 2.0
+      - 0.0
+      - 4.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 8.0
       - 6.0
-      - 8.0
+      - 0.0
       - 2.0
-      - 4.0
       - 6.0
-      - 8.0
+      - 0.0
+      - 4.0
       - 4.0
       - 8.0
   data-source: nist
@@ -1560,18 +2582,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 2.0
       - 4.0
-      - 4.0
+      - 0.0
       - 8.0
-      - 8.0
-      - 8.0
+      - 0.0
+      - 0.0
       - 8.0
       - 6.0
       - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
   data-source: nist
 - name: Ar
   composition:
@@ -1579,18 +2615,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 8.0
       - 6.0
+      - 4.0
       - 2.0
-      - 8.0
-      - 4.0
       - 0.0
+      - 8.0
       - 6.0
       - 4.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 4.0
+      - 6.0
       - 8.0
       - 4.0
+      - 6.0
   data-source: nist
 - name: He
   composition:
@@ -1598,18 +2648,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
       - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
       - 0.0
       - 6.0
       - 2.0
       - 8.0
+      - 0.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 6.0
       - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 8.0
+      - 0.0
   data-source: nist
 - name: He+
   composition:
@@ -1617,18 +2681,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 8.0
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
       - 6.0
-      - 0.0
-      - 2.0
+      - 8.0
       - 8.0
       - 0.0
       - 0.0
-      - 4.0
-      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 6.0
   data-source: nist
 - name: Ne
   composition:
@@ -1636,18 +2714,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 0.0
+      - 0.0
+    - T-min: 1000.0
       T-max: 6000.0
+      T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
       - 4.0
-      - 0.0
-      - 2.0
       - 6.0
+      - 2.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 0.0
   data-source: nist
 - name: Xe
   composition:
@@ -1655,18 +2747,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 8.0
-      - 0.0
       - 6.0
       - 2.0
+      - 8.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 8.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
       - 0.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 4.0
+      - 8.0
   data-source: nist
 - name: Xe+
   composition:
@@ -1674,18 +2780,32 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
       - 6.0
-      - 2.0
       - 0.0
       - 4.0
+      - 2.0
       - 6.0
       - 0.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 0.0
-      - 8.0
-      - 8.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
   data-source: nist
 - name: e-
   composition:
@@ -1693,16 +2813,30 @@ species:
   thermo:
     model: NASA9
     temperature-ranges:
-    - T-min: 100.0
-      T-max: 6000.0
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
       coefficients:
       - 2.0
       - 4.0
+      - 6.0
       - 8.0
-      - 8.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
       - 4.0
+      - 8.0
+      - 0.0
       - 6.0
-      - 6.0
-      - 6.0
-      - 6.0
+      - 8.0
+      - 0.0
+      - 4.0
+      - 2.0
+      - 2.0
   data-source: nist
