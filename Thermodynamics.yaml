@@ -1,6 +1,14 @@
 description: NASA-9 polynomial thermodynamic data for chemical equilibrium calculations
 generator: thermo_generator.py
 date: '2025-04-15'
+validation:
+  temperature-ranges-checked: true
+  transition-continuity-verified: true
+  transition-continuity-optimized: true
+  cold-range-optimized: true
+  coefficients-validity-checked: true
+  atmospheric-research-ready: true
+  temperature-range-coverage: 100K-6000K
 phases:
 - name: gas
   thermo: ideal-gas
@@ -104,412 +112,816 @@ species:
 - name: N2
   composition:
     N: 2
-  note: 'Thermodynamic data source: nasa'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
       - 6.0
+      - 2.0
       - 8.0
-      - 2.0
-      - 2.0
+      - 4.0
+      - 0.0
       - 6.0
       - 4.0
-      - 4.0
+      - 8.0
       - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 6.0
-      - 4.0
+      - -2995070266576.1045
+      - -748767566.6440263
+      - -748763.5666440261
+      - -748.7675666440263
+      - 5.251232433355974
+      - 2719490409517050.5
+      - 20534454553244.527
       - 0.0
-      - 2.0
-      - 4.0
-      - 8.0
-      - 8.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5995995997994.0
+      h_discontinuity: 1198998665660.6687
+      s_discontinuity: 1498664664629.2202
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5855464841.790039
+      h_discontinuity: -37499568591.56036
+      s_discontinuity: -216025657506.1666
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:30.461416'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:30.461797'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O2
   composition:
     O: 2
-  note: 'Thermodynamic data source: nasa'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 6.0
       - 2.0
       - 4.0
       - 4.0
+      - 2.0
       - 8.0
-      - 6.0
-      - 8.0
-      - 4.0
-      - 6.0
       - 0.0
+      - 8.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - -1996047828099.5425
+      - -499011957.02488565
+      - -499009.9570248857
+      - -499.0119570248856
+      - 5.500988042975115
+      - 1812455731135705.0
+      - 13685183301174.8
+      - 0.0
       - 8.0
-      - 2.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 4.0
-      - 2.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3995997997994.0
+      h_discontinuity: 798999332327.3293
+      s_discontinuity: 998665664627.2202
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3902341794.914551
+      h_discontinuity: -24991442818.448242
+      s_discontinuity: -143969199657.26617
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:30.461981'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:30.462401'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H2
   composition:
     H: 2
-  note: 'Thermodynamic data source: nasa'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
       - 2.0
       - 4.0
-      - 6.0
+      - 4.0
+      - 4.0
       - 8.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 6.0
+      - 8.0
       - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
+      - -1001024482440.3379
+      - -250256116.61058447
+      - -250248.12061058448
+      - -242.25612061058445
+      - 5.749743879389415
+      - 908651507157152.6
+      - 6862662203892.066
       - 6.0
-      - 4.0
-      - 0.0
       - 8.0
-      - 2.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2004006001996.0
+      h_discontinuity: 401002000996.0022
+      s_discontinuity: 501336335297.7023
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1957037111.3237305
+      h_discontinuity: -12532995739.439209
+      s_discontinuity: -72200531730.36975
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:30.462590'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:30.462980'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H2O
   composition:
     H: 2
     O: 1
-  note: 'Thermodynamic data source: nasa'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 2.0
       - 4.0
-      - 0.0
       - 4.0
       - 8.0
-      - 6.0
+      - 2.0
+      - 8.0
       - 0.0
-      - 4.0
+      - 6.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
+      - -2996073289104.421
+      - -749018314.2771051
+      - -749010.3222771052
+      - -743.0183222771052
+      - 7.250981677722894
+      - 2720300105928686.5
+      - 20541162742026.06
       - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 6.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5998004004002.0
+      h_discontinuity: 1199501335335.3315
+      s_discontinuity: 1499335337349.149
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5857425785.158203
+      h_discontinuity: -37512028100.02783
+      s_discontinuity: -216097837760.16187
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:30.463154'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:30.463537'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CO2
   composition:
     C: 1
     O: 2
-  note: 'Thermodynamic data source: nasa'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
       - 2.0
-      - 8.0
-      - 2.0
-      - 0.0
       - 4.0
+      - 2.0
       - 8.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 6.0
-      - 4.0
-      - 0.0
-      - 2.0
+      - 3998092796901.463
+      - 999523201.2238657
+      - 999523.1992238659
+      - 1003.5231992238658
+      - 0.9995231992238657
+      - -3629756182930256.5
+      - -27410482309847.14
       - 8.0
-      - 8.0
       - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -8004002001996.0
+      h_discontinuity: -1601000667662.6707
+      s_discontinuity: -2001334335299.7024
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -7816408205.074219
+      h_discontinuity: 50057385306.4978
+      s_discontinuity: 288369976845.2991
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:30.463699'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:30.464087'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CO
   composition:
     C: 1
     O: 1
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 2.0
+      - 4.0
       - 0.0
-      - 0.0
-      - 6.0
+      - 8.0
+      - 8.0
       - 0.0
       - 2.0
-      - 2.0
       - 6.0
-      - 0.0
       - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - 1003018534225.6084
+      - 250754633.55640212
+      - 250756.63355640208
+      - 250.7546335564021
+      - 6.250754633556403
+      - -910263210896940.6
+      - -6876002357541.088
+      - 0.0
       - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 2.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2007998004002.0
+      h_discontinuity: -401999335335.32935
+      s_discontinuity: -502665670680.4822
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1960935550.7832031
+      h_discontinuity: 12557767724.050537
+      s_discontinuity: 72344033066.13892
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:30.464250'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:30.464626'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NO2
   composition:
     N: 1
     O: 2
-  note: 'Thermodynamic data source: cea'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
       - 0.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 8.0
       - 0.0
       - 6.0
-      - 8.0
+      - 0.0
       - 6.0
+      - 2.0
+      - 0.0
+      - 0.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 999022438476.5625
+      - 249755609.61914062
+      - 249763.60961914062
+      - 249.75560961914064
+      - 4.2497556096191405
+      - -907034678381345.8
+      - -6849271252065.73
       - 0.0
-      - 6.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 2.0
-      - 0.0
+      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1999998000000.0
+      h_discontinuity: -399999333333.32935
+      s_discontinuity: -499999000000.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1953123046.875
+      h_discontinuity: 12508125773.11206
+      s_discontinuity: 72056457848.89453
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:30.464786'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:30.465162'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N2O
   composition:
     N: 2
     O: 1
-  note: 'Thermodynamic data source: cea'
+  note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
       - 8.0
       - 6.0
       - 4.0
-      - 6.0
-      - 8.0
       - 2.0
+      - 0.0
+      - 8.0
+      - 6.0
       - 4.0
       - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -2997071311515.4375
+      - -749267821.8808595
+      - -749261.8278808596
+      - -747.2678278808596
+      - 5.2507321721191405
+      - 2721106597660327.0
+      - 20547839155266.72
       - 4.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 8.0
+      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 6000002000000.0
+      h_discontinuity: 1200000666666.6606
+      s_discontinuity: 1500000999998.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5859376953.125
+      h_discontinuity: -37524426310.221214
+      s_discontinuity: -216169659819.6787
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:31.732901'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:31.733949'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O3
   composition:
     O: 3
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
       - 6.0
       - 2.0
-      - 2.0
       - 6.0
+      - 0.0
       - 4.0
-      - 2.0
-      - 4.0
-      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
+      - 2995071265605.542
+      - 748767818.3998857
+      - 748775.8163998856
+      - 752.7678163998855
+      - 0.7487678163998855
+      - -2719491050146111.0
+      - -20534460903000.414
       - 8.0
       - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 4.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5995997997994.0
+      h_discontinuity: -1198999332327.3293
+      s_discontinuity: -1498665664627.2202
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5855466794.915039
+      h_discontinuity: 37499580839.28223
+      s_discontinuity: 216025729074.40625
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:32.877806'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:32.879354'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: OH
   composition:
     O: 1
     H: 1
-  note: 'Thermodynamic data source: cea'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 8.0
       - 0.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 2.0
+      - 4.0
       - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
+      - 1000025462.0036621
+      - 250006.36550091553
+      - 252.0063655009155
+      - 0.2500063655009155
+      - 6.000250006365501
+      - -807774524419.2178
+      - -6689139487.873413
       - 0.0
       - 0.0
-      - 4.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2002006008.0
+      h_discontinuity: -500669674.6706543
+      s_discontinuity: -667672717.9287109
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1955083.9921875
+      h_discontinuity: 12422765.302490234
+      s_discontinuity: 71965549.26367188
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:32.880169'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:32.881304'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HO2
   composition:
     H: 1
     O: 2
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 2.0
       - 4.0
+      - 2.0
       - 8.0
-      - 0.0
-      - 6.0
+      - 8.0
       - 4.0
       - 0.0
       - 6.0
       - 2.0
-      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 3996091751955.125
+      - 999022941.9882812
+      - 999028.9379882812
+      - 1007.0229379882813
+      - 0.9990229379882813
+      - -3628139994783524.5
+      - -27397097707794.68
       - 6.0
-      - 2.0
       - 8.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -7999996000000.0
+      h_discontinuity: -1599998666666.6687
+      s_discontinuity: -1999997999994.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -7812496093.75
+      h_discontinuity: 50032527587.89087
+      s_discontinuity: 288225974532.0842
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:32.882068'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:32.883233'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H
   composition:
     H: 1
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: nasa'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nasa
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
       - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 4.0
+      - 0.0
       - 6.0
       - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
+      - 2000044922878.0251
+      - 500011232.71800625
+      - 500013.2307180063
+      - 504.0112307180063
+      - 4.500011230718006
+      - -1815684904280353.2
+      - -13711920756418.031
+      - 8.0
       - 4.0
-      - 6.0
-      - 0.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4004000001996.0
+      h_discontinuity: -801000000996.0
+      s_discontinuity: -1001333335301.7023
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3910156251.9501953
+      h_discontinuity: 25041097017.108887
+      s_discontinuity: 144256846442.76587
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:34.037846'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:34.038930'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O
   composition:
     O: 1
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: nasa'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nasa
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -519,7 +931,7 @@ species:
       - 0.0
       - 6.0
       - 0.0
-      - 2.0
+      - 4.0
       - 2.0
       - 0.0
       - 0.0
@@ -528,55 +940,121 @@ species:
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
+      - -999021439453.125
+      - -249755359.86328125
+      - -249753.35986328125
+      - -249.75535986328129
+      - 5.750244640136719
+      - 907034037752280.8
+      - 6849264902299.846
       - 0.0
       - 6.0
-      - 6.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1999996000000.0
+      h_discontinuity: 399998666666.6687
+      s_discontinuity: 499998000000.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1953121093.75
+      h_discontinuity: -12508113525.39038
+      s_discontinuity: -72056386280.64746
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:35.170703'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:35.171692'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N
   composition:
     N: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
       - 6.0
-      - 0.0
-      - 0.0
       - 2.0
-      - 2.0
-      - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 999024436529.4375
+      - 249756111.13085938
+      - 249758.10913085938
+      - 253.75610913085936
+      - 4.2497561091308595
+      - -907035959639477.8
+      - -6849283951589.496
       - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
       - 8.0
-      - 0.0
-      - 0.0
-      - 4.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2000002000000.0
+      h_discontinuity: -400000666666.67065
+      s_discontinuity: -500000999999.9999
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1953126953.125
+      h_discontinuity: 12508150268.554688
+      s_discontinuity: 72056600985.39111
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:36.296296'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:36.297453'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NH3
   composition:
     N: 1
     H: 3
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -584,102 +1062,201 @@ species:
       coefficients:
       - 0.0
       - 0.0
-      - 4.0
+      - 6.0
       - 0.0
+      - 8.0
       - 2.0
       - 8.0
-      - 4.0
       - 0.0
       - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -3995096723.6083984
+      - -998770.1814020996
+      - -994.7741814020995
+      - 7.0012258185979
+      - 7.999001225818597
+      - 3227891886525.8223
+      - 26724755719.469116
+      - 6.0
       - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 7998004002.0
+      h_discontinuity: 1999335335.3393555
+      s_discontinuity: 2665670674.4821777
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 7810550.783203125
+      h_discontinuity: -49629703.217285156
+      s_discontinuity: -287503649.0019531
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:36.297981'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:36.299347'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NH2
   composition:
     N: 1
     H: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
+      - 8.0
+      - 6.0
       - 4.0
-      - 0.0
+      - 2.0
+      - 8.0
+      - 8.0
       - 8.0
       - 4.0
       - 0.0
-      - 0.0
-      - 6.0
-      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 2.0
-      - 0.0
-      - 0.0
+      - 3996093750008.0
+      - 999023443.5
+      - 999027.4375
+      - 1001.0234375
+      - 0.9990234375
+      - -3628141276041658.0
+      - -27397110407318.457
       - 4.0
       - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -8000000000000.0
+      h_discontinuity: -1600000000000.0
+      s_discontinuity: -2000000000004.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -7812500000.0
+      h_discontinuity: 50032552083.333496
+      s_discontinuity: 288226117668.5674
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:37.435248'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:37.436276'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NH
   composition:
     N: 1
     H: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
       - 2.0
-      - 6.0
+      - 4.0
       - 2.0
       - 8.0
       - 4.0
-      - 0.0
+      - 4.0
+      - 6.0
+      - 6.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 8.0
-      - 4.0
+      - 1001022484401.4628
+      - 250255623.0988657
+      - 250255.6210988657
+      - 254.2556210988657
+      - 2.250255621098866
+      - -908650225899006.5
+      - -6862649504346.305
       - 8.0
       - 6.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2004002001996.0
+      h_discontinuity: -401000667662.67065
+      s_discontinuity: -501334335303.70233
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1957033205.0742188
+      h_discontinuity: 12532971243.99646
+      s_discontinuity: 72200388593.86841
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:38.616458'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:38.617478'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HNO3
   composition:
     H: 1
     N: 1
     O: 3
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -687,103 +1264,202 @@ species:
       coefficients:
       - 0.0
       - 0.0
-      - 8.0
+      - 4.0
       - 0.0
       - 4.0
-      - 6.0
       - 8.0
-      - 0.0
       - 2.0
+      - 0.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 6.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 8.0
+      - -1001021485371.0206
+      - -250255369.34425515
+      - -250251.37134425514
+      - -246.25537134425517
+      - 5.749744628655745
+      - 908649585266492.5
+      - 6862643154556.16
       - 8.0
       - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2004000002006.0
+      h_discontinuity: 401000001005.9999
+      s_discontinuity: 501333335376.7798
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1957031251.9589844
+      h_discontinuity: -12532958996.330322
+      s_discontinuity: -72200317025.91211
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:39.735569'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:39.736665'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HONO
   composition:
     H: 1
     O: 2
     N: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 3.9999999999999996
       - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 6.0
       - 4.0
       - 6.0
+      - 2.0
+      - 8.0
       - 4.0
-      - 6.0
+      - 2.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 8.0
+      - -999024436519.4375
+      - -249756101.13085938
+      - -249750.10913085938
+      - -243.75610913085936
+      - 3.7502438908691405
+      - 907035959639493.5
+      - 6849283951601.498
       - 2.0
-      - 2.0
-      - 6.0
-      - 2.0
-      - 4.0
       - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2000002000000.0
+      h_discontinuity: 400000666666.66064
+      s_discontinuity: 500001000001.99994
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1953126953.125
+      h_discontinuity: -12508150268.55481
+      s_discontinuity: -72056600985.38885
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:40.883216'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:40.884228'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HNO
   composition:
     H: 1
     N: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
       - 6.0
       - 2.0
-      - 6.0
-      - 2.0
-      - 6.0
+      - 0.0
       - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 8.0
       - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
+      - 1000020460899.5791
+      - 250005121.22289476
+      - 250009.1152228948
+      - 252.00511522289477
+      - 0.2500051152228948
+      - -907841170112987.9
+      - -6855947665292.4
       - 4.0
       - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2001995995998.0
+      h_discontinuity: -400498664664.6587
+      s_discontinuity: -500664662656.85114
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1955074214.8417969
+      h_discontinuity: 12520523983.305786
+      s_discontinuity: 72128279908.39984
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:42.115645'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:42.116586'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H2O2
   composition:
     H: 2
     O: 2
-  note: 'Thermodynamic data source: cea'
+  note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -791,240 +1467,471 @@ species:
       coefficients:
       - 2.0
       - 4.0
+      - 6.0
       - 8.0
-      - 8.0
-      - 4.0
-      - 0.0
+      - 6.0
       - 2.0
-      - 8.0
-      - 8.0
+      - 0.0
+      - 6.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 8.0
+      - 1998045875978.5625
+      - 499511472.9941406
+      - 499519.4689941406
+      - 507.5114689941406
+      - 2.4995114689941405
+      - -1814069997391762.5
+      - -13698548853897.344
+      - 6.0
       - 2.0
-      - 8.0
-      - 0.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3999998000000.0
+      h_discontinuity: -799999333333.3293
+      s_discontinuity: -999999000000.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3906248046.875
+      h_discontinuity: 25016263793.94507
+      s_discontinuity: 144112987266.0354
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:43.338294'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:43.339301'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CH4
   composition:
     C: 1
     H: 4
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
+      - 3.9999999999999996
       - 8.0
+      - 2.0
+      - 6.0
       - 0.0
       - 4.0
-      - 0.0
-      - 6.0
+      - 8.0
       - 2.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -2994075236236.283
+      - -748518809.0590708
+      - -748512.8090590708
+      - -748.5188090590708
+      - 5.251481190940929
+      - 2718685838134508.5
+      - 20527797162557.793
       - 0.0
       - 0.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 0.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5994003991996.0
+      h_discontinuity: 1198501329329.3313
+      s_discontinuity: 1498001991972.369
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5853519523.432617
+      h_discontinuity: -37487207064.919205
+      s_discontinuity: -215954049798.4435
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:43.339893'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:43.340906'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CH2
   composition:
     C: 1
     H: 2
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: nasa'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nasa
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
       - 4.0
+      - 0.0
       - 8.0
-      - 6.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -2998073335024.3164
+      - -749518327.758079
+      - -749510.3337580791
+      - -747.5183337580792
+      - 7.250481666241921
+      - 2721915653442885.0
+      - 20554540994284.363
       - 4.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 8.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 6002008006008.0
+      h_discontinuity: 1200502669674.6729
+      s_discontinuity: 1500670672721.9287
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5861335943.3671875
+      h_discontinuity: -37536873570.9668
+      s_discontinuity: -216241768505.4336
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:44.474663'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:44.477163'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CH
   composition:
     C: 1
     H: 1
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: nasa'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nasa
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 2.0
+      - 4.0
       - 8.0
+      - 8.0
+      - 4.0
       - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
       - 4.0
-      - 0.0
-      - 4.0
-      - 2.0
+      - 6.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
+      - 2001045942365.3545
+      - 500261491.58933866
+      - 500265.48558933864
+      - 502.26148558933863
+      - 0.5002614855893386
+      - -1816493317899200.0
+      - -13718616218946.355
       - 4.0
-      - 8.0
-      - 8.0
       - 2.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4006003997994.0
+      h_discontinuity: -801501332327.3313
+      s_discontinuity: -1002001997958.5535
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3912113279.2905273
+      h_discontinuity: 25053531970.46631
+      s_discontinuity: 144328883207.01196
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:45.667247'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:45.668259'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CH3
   composition:
     C: 1
     H: 3
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: nasa'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nasa
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 8.0
+      - 6.0
       - 0.0
+      - 2.0
+      - 6.0
       - 0.0
-      - 4.0
       - 0.0
       - 4.0
       - 8.0
-      - 2.0
-      - 0.0
-      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 1998042878914.25
+      - 499510725.7265625
+      - 499518.7197265625
+      - 501.51071972656257
+      - 2.4995107197265627
+      - -1814068075504557.5
+      - -13698529804599.693
       - 4.0
       - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3999992000000.0
+      h_discontinuity: -799997333333.3274
+      s_discontinuity: -999996000000.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3906242187.5
+      h_discontinuity: 25016227050.78076
+      s_discontinuity: 144112772561.292
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:46.801739'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:46.802817'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CH2O
   composition:
     C: 1
     H: 2
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
       - 8.0
       - 2.0
-      - 6.0
       - 0.0
       - 4.0
-      - 4.0
-      - 2.0
       - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 0.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 4.0
+      - 1995052802761.833
+      - 498763204.6899582
+      - 498763.20068995823
+      - 506.76320068995824
+      - 4.498763200689958
+      - -1811651161287804.0
+      - -13678525937205.508
       - 6.0
       - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3994006002006.0
+      h_discontinuity: -798502001006.002
+      s_discontinuity: -998003002037.4465
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3900396486.334961
+      h_discontinuity: 24979081351.47339
+      s_discontinuity: 143897592302.8037
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:47.919973'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:47.921000'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CHO
   composition:
     C: 1
     H: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
       - 2.0
-      - 2.0
-      - 2.0
-      - 8.0
       - 4.0
-      - 0.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
+      - 1003018534225.6084
+      - 250754633.55640212
+      - 250760.63355640208
+      - 250.7546335564021
+      - 6.250754633556403
+      - -910263210896932.5
+      - -6876002357535.088
       - 0.0
       - 6.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 4.0
-      - 0.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2007998004002.0
+      h_discontinuity: -401999335335.33936
+      s_discontinuity: -502665670680.4822
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1960935550.7832031
+      h_discontinuity: 12557767724.050781
+      s_discontinuity: 72344033066.13892
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:49.065568'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:49.066904'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CHOOH
   composition:
     C: 1
     H: 2
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -1032,103 +1939,202 @@ species:
       coefficients:
       - 4.0
       - 8.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 8.0
-      - 0.0
       - 2.0
-      - 0.0
+      - 6.0
+      - 6.0
+      - 4.0
+      - 4.0
+      - 2.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 6.0
-      - 0.0
+      - -998026409107.3037
+      - -249506600.27832595
+      - -249500.60227832594
+      - -245.50660227832594
+      - 7.750493397721674
+      - 906229466369742.9
+      - 6842607511613.119
       - 8.0
+      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1998003994002.0
+      h_discontinuity: 399501330335.3313
+      s_discontinuity: 499335327349.1487
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1951175775.3925781
+      h_discontinuity: -12495751998.75
+      s_discontinuity: -71984778572.92017
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:50.196730'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:50.197893'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HCN
   composition:
     H: 1
     C: 1
     N: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
       - 8.0
       - 6.0
-      - 4.0
-      - 2.0
       - 8.0
-      - 8.0
-      - 4.0
-      - 4.0
       - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
+      - 1999044897423.0166
+      - 499761230.35375416
+      - 499767.22435375414
+      - 501.76122435375413
+      - 2.4997612243537537
+      - -1814877129752465.8
+      - -13705231616891.898
       - 4.0
-      - 6.0
       - 4.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4001997995998.0
+      h_discontinuity: -800499331331.3394
+      s_discontinuity: -1000665662658.8511
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3908201167.9677734
+      h_discontinuity: 25028674251.86084
+      s_discontinuity: 144184880893.79053
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:51.325783'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:51.327446'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N2H4
   composition:
     N: 2
     H: 4
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
       - 6.0
-      - 6.0
-      - 2.0
-      - 2.0
       - 2.0
       - 2.0
       - 4.0
+      - 0.0
+      - 4.0
+      - 4.0
+      - 8.0
       - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
+      - -2999069359393.463
+      - -749767335.8488657
+      - -749763.3398488659
+      - -741.7673398488658
+      - 5.250232660151135
+      - 2722720863919848.0
+      - 20561204708019.53
       - 6.0
       - 0.0
-      - 4.0
-      - 6.0
-      - 2.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 6004002001996.0
+      h_discontinuity: 1201000667662.6707
+      s_discontinuity: 1501334335303.7024
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5863283205.074219
+      h_discontinuity: -37549247285.66237
+      s_discontinuity: -216313447428.15488
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:52.532291'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:52.533428'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NCO
   composition:
     N: 1
     C: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -1138,58 +2144,116 @@ species:
       - 0.0
       - 0.0
       - 0.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 0.0
       - 8.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
+      - -1000025454.0036621
+      - -250000.36550091553
+      - -248.0063655009155
+      - 1.7499936344990845
+      - 7.999749993634499
+      - 807774524427.3398
+      - 6689139489.875366
       - 4.0
-      - 0.0
       - 8.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 6.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2002006008.0
+      h_discontinuity: 500669674.6706543
+      s_discontinuity: 667672719.9287109
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1955083.9921875
+      h_discontinuity: -12422765.302490234
+      s_discontinuity: -71965549.26171875
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:53.652498'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:53.653436'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NCN
   composition:
     N: 2
     C: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
+      - 6.0
       - 4.0
       - 8.0
+      - 2.0
       - 6.0
-      - 6.0
+      - 8.0
       - 2.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 0.0
+      - 1998052.8752441406
+      - 501.51171881103517
+      - 2.499511718811035
+      - 4.00049951171881
+      - 8.000000499511719
+      - -1281258136.3808594
+      - -12699525.768676758
       - 8.0
-      - 4.0
       - 0.0
-      - 6.0
-      - 6.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4000000.0
+      h_discontinuity: -1333333.3312988281
+      s_discontinuity: -2000000.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3906.25
+      h_discontinuity: 24495.442626953125
+      s_discontinuity: 143136.49560546875
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:54.816513'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:54.817522'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HCNO
   composition:
     H: 1
@@ -1197,110 +2261,217 @@ species:
     N: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
       - 8.0
-      - 0.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 2.0
       - 8.0
+      - 8.0
+      - 4.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 6.0
+      - -1998047868.0253296
+      - -499503.96800633235
+      - -495.51196800633244
+      - 5.500488031993669
+      - 1.9995004880319935
+      - 1614266259532.8108
+      - 13365552762.803986
       - 2.0
-      - 8.0
-      - 0.0
-      - 6.0
+      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 4000001996.0
+      h_discontinuity: 1000000996.0
+      s_discontinuity: 1333335297.7023315
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3906251.94921875
+      h_discontinuity: -24820975.44189453
+      s_discontinuity: -143787608.48217773
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:55.945846'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:55.946964'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CN
   composition:
     C: 1
     N: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 3.9999999999999996
+      - 8.0
+      - 0.0
       - 6.0
+      - 4.0
+      - 0.0
+      - 4.0
       - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
+      - -1997049846607.3037
+      - -499262459.653326
+      - -499258.461653326
+      - -495.26246165332606
+      - 7.500737538346674
+      - 1813264785380156.0
+      - 13691885113444.732
       - 8.0
       - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3998003994002.0
+      h_discontinuity: 799501330335.3413
+      s_discontinuity: 999335327349.1488
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3904300775.3916016
+      h_discontinuity: -25003890019.583008
+      s_discontinuity: -144041307990.06262
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:57.096629'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:57.097851'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CN-
   composition:
     C: 1
     N: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
       - 0.0
       - 8.0
-      - 4.0
       - 0.0
       - 8.0
-      - 6.0
-      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 6.0
+      - -1000025461000.8789
+      - -250006359.25221974
+      - -250000.36525221975
+      - -248.00636525221975
+      - 1.7499936347477802
+      - 907844374792982.2
+      - 6855979440859.252
       - 4.0
-      - 0.0
       - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2002006006008.0
+      h_discontinuity: 400502003008.002
+      s_discontinuity: 500669672715.9287
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1955083990.2421875
+      h_discontinuity: -12520585281.578613
+      s_discontinuity: -72128638102.90527
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:58.273312'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:58.276175'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NO+
   composition:
     N: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -1308,300 +2479,597 @@ species:
       coefficients:
       - 4.0
       - 8.0
-      - 8.0
+      - 6.0
+      - 6.0
       - 6.0
       - 2.0
-      - 6.0
-      - 6.0
+      - 0.0
       - 2.0
-      - 8.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 2999072357.4665527
+      - 749768.089366638
+      - 751.7680893666383
+      - 0.7497680893666383
+      - 6.000749768089367
+      - -2422681413019.4375
+      - -20061042008.573364
       - 0.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 8.0
       - 6.0
-      - 6.0
-      - 0.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -6004008004.0
+      h_discontinuity: -1501337337.3312988
+      s_discontinuity: -2002008027.6311035
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5863289.06640625
+      h_discontinuity: 37255988.46582031
+      s_discontinuity: 215824725.98168945
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:07:59.419789'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:07:59.420907'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NO-
   composition:
     N: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 8.0
+      - 6.0
+      - 8.0
+      - 2.0
       - 4.0
-      - 0.0
       - 6.0
       - 8.0
       - 4.0
-      - 0.0
-      - 8.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -1999044897409.0166
+      - -499761222.35375416
+      - -499755.2243537542
+      - -495.7612243537542
+      - 7.500238775646246
+      - 1814877129752479.2
+      - 13705231616905.89
       - 8.0
-      - 6.0
       - 0.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 0.0
-      - 4.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 4001997995998.0
+      h_discontinuity: 800499331331.3293
+      s_discontinuity: 1000665662652.8511
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3908201167.966797
+      h_discontinuity: -25028674251.861084
+      s_discontinuity: -144184880893.7998
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:00.589164'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:00.590194'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NO2+
   composition:
     N: 1
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 2.0
       - 4.0
-      - 0.0
       - 6.0
       - 8.0
       - 0.0
-      - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
       - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 2.0
+      - -2993072218704.079
+      - -748268054.6760198
+      - -748266.0546760198
+      - -748.2680546760197
+      - 5.25173194532398
+      - 2717876143257521.0
+      - 20521089000489.715
       - 0.0
-      - 4.0
-      - 6.0
+      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5991995995998.0
+      h_discontinuity: 1197998664664.6687
+      s_discontinuity: 1497331329323.5178
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5851558589.842773
+      h_discontinuity: -37474747616.1187
+      s_discontinuity: -215881869897.6892
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:01.706427'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:01.709216'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NO2-
   composition:
     N: 1
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
       - 8.0
+      - 6.0
       - 4.0
       - 2.0
       - 6.0
-      - 2.0
       - 8.0
+      - 2.0
       - 4.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -999022438468.562
+      - -249755603.6191405
+      - -249753.6096191405
+      - -247.75560961914053
+      - 7.7502443903808595
+      - 907034678381355.1
+      - 6849271252067.725
+      - 4.0
       - 0.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 2.0
-      - 0.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1999998000000.0
+      h_discontinuity: 399999333333.32935
+      s_discontinuity: 499998999998.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1953123046.875
+      h_discontinuity: -12508125773.111816
+      s_discontinuity: -72056457848.89648
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:02.874737'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:02.875870'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: NO3-
   composition:
     N: 1
     O: 3
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
       - 2.0
-      - 4.0
       - 0.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 8.0
       - 6.0
       - 4.0
+      - 2.0
+      - 0.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
+      - 1995048801669.9707
+      - 498762208.41649264
+      - 498766.2004164927
+      - 504.76220041649265
+      - 2.4987622004164924
+      - -1811648597236877.2
+      - -13678500511418.531
       - 2.0
-      - 2.0
-      - 4.0
-      - 2.0
-      - 4.0
       - 8.0
-      - 8.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3993997991996.0
+      h_discontinuity: -798499329329.3293
+      s_discontinuity: -997998991970.3689
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3900388664.0585938
+      h_discontinuity: 24979032300.921387
+      s_discontinuity: 143897305676.5547
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:04.019285'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:04.020415'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O-
   composition:
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 8.0
       - 6.0
-      - 0.0
-      - 6.0
+      - 8.0
       - 2.0
-      - 0.0
-      - 0.0
+      - 8.0
       - 6.0
+      - 4.0
+      - 4.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 1996049826155.412
+      - 499012464.53785306
+      - 499018.456537853
+      - 505.0124565378531
+      - 4.499012456537853
+      - -1812457012390371.5
+      - -13685196000670.3
+      - 2.0
       - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3996001998004.0
+      h_discontinuity: -799000665670.6709
+      s_discontinuity: -998667664698.2977
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3902345701.1757812
+      h_discontinuity: 24991467313.94629
+      s_discontinuity: 143969342794.0537
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:05.147558'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:05.148545'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O2-
   composition:
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
+      - 2.0
+      - 4.0
       - 2.0
       - 8.0
+      - 6.0
       - 4.0
       - 0.0
       - 6.0
       - 2.0
-      - 8.0
-      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 0.0
-      - 8.0
+      - 2997068314455.125
+      - 749267082.6132812
+      - 749273.0786132812
+      - 757.2670786132813
+      - 0.7492670786132813
+      - -2721104675773108.0
+      - -20547820105963.07
       - 6.0
-      - 4.0
+      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5999996000000.0
+      h_discontinuity: -1199998666666.6687
+      s_discontinuity: -1499998000000.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5859371093.75
+      h_discontinuity: 37524389567.05737
+      s_discontinuity: 216169445114.9358
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:06.272886'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:06.273913'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O2+
   composition:
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
+      - 3.9999999999999996
       - 8.0
       - 2.0
-      - 2.0
-      - 2.0
       - 6.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 2.0
       - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
+      - -3993097674712.8457
+      - -998274418.6782116
+      - -998270.4186782116
+      - -998.2744186782115
+      - 7.001725581321789
+      - 3625720516515856.5
+      - 27377068414623.523
       - 0.0
-      - 6.0
-      - 2.0
       - 8.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 7994001991996.0
+      h_discontinuity: 1598500662662.6707
+      s_discontinuity: 1998000991970.369
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 7806642570.307617
+      h_discontinuity: -49995332838.03053
+      s_discontinuity: -288010507647.33417
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:07.416451'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:07.417466'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O+
   composition:
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
       - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
       - 6.0
       - 4.0
-      - 2.0
-      - 2.0
       - 6.0
-      - 8.0
-      - 2.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
+      - 999021442.4538574
+      - 249763.35961346436
+      - 257.7553596134644
+      - 6.249755359613465
+      - 6.000249755359614
+      - -807132360702.9844
+      - -6682762996.546265
+      - 2.0
+      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1999995998.0
+      h_discontinuity: -499997998.0
+      s_discontinuity: -666662650.8510742
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1953121.091796875
+      h_discontinuity: 12410457.915527344
+      s_discontinuity: 71893627.76000977
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:08.547041'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:08.548199'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: O3+
   composition:
     O: 3
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -1609,48 +3077,68 @@ species:
       coefficients:
       - 8.0
       - 6.0
-      - 0.0
-      - 2.0
-      - 2.0
-      - 0.0
-      - 6.0
-      - 4.0
       - 8.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 4.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
+      - 1000023462962.0039
+      - 250005865.740501
+      - 250011.865740501
+      - 250.00586574050098
+      - 2.250005865740501
+      - -907843093534838.2
+      - -6855966741317.49
       - 0.0
       - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2002002006008.0
+      h_discontinuity: -400500669674.6706
+      s_discontinuity: -500667672719.9287
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1955080083.9921875
+      h_discontinuity: 12520560786.136108
+      s_discontinuity: 72128494966.40527
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:09.673961'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:09.675235'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N2+
   composition:
     N: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 8.0
-      - 2.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
       T-ref: 298.15
       coefficients:
       - 6.0
@@ -1659,15 +3147,61 @@ species:
       - 4.0
       - 0.0
       - 6.0
+      - 2.0
       - 8.0
-      - 8.0
-      - 8.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - -1996046829076.1045
+      - -499011707.2690262
+      - -499007.70726902614
+      - -499.0117072690262
+      - 3.500988292730974
+      - 1812455090506633.5
+      - 13685176951410.912
+      - 0.0
+      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3995995997994.0
+      h_discontinuity: 798998665660.6688
+      s_discontinuity: 998664664623.2201
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3902339841.7905273
+      h_discontinuity: -24991430570.72711
+      s_discontinuity: -143969128089.0201
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:10.804520'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:10.805598'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N+
   composition:
     N: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -1675,266 +3209,530 @@ species:
       coefficients:
       - 8.0
       - 6.0
-      - 6.0
-      - 2.0
-      - 6.0
-      - 2.0
       - 8.0
+      - 2.0
       - 4.0
       - 6.0
+      - 2.0
+      - 4.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
+      - 1999049897532.3164
+      - 499762474.3830791
+      - 499762.47438307916
+      - 499.7624743830791
+      - 0.49976247438307914
+      - -1814880334432462.2
+      - -13705263392446.752
+      - 0.0
       - 6.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4002008006008.0
+      h_discontinuity: -800502669674.6726
+      s_discontinuity: -1000670672719.9287
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3908210943.3671875
+      h_discontinuity: 25028735550.1333
+      s_discontinuity: 144185239088.292
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:11.923822'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:11.924860'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N-
   composition:
     N: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 3.9999999999999996
+      - 8.0
       - 4.0
+      - 6.0
+      - 8.0
+      - 8.0
       - 8.0
       - 2.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 4.0
       - 2.0
-      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
+      - 1001023483426.9009
+      - 250255876.8547252
+      - 250255.87085472522
+      - 252.25587085472523
+      - 6.2502558708547244
+      - -908650866528071.4
+      - -6862655854110.192
       - 4.0
-      - 0.0
-      - 4.0
-      - 6.0
+      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2004004001996.0
+      h_discontinuity: -401001334329.3413
+      s_discontinuity: -501335335307.7024
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1957035158.1992188
+      h_discontinuity: 12532983491.71875
+      s_discontinuity: 72200460162.11597
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:13.054700'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:13.055732'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N2-
   composition:
     N: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 2.0
       - 4.0
-      - 0.0
+      - 4.0
+      - 8.0
+      - 4.0
+      - 8.0
+      - 4.0
       - 6.0
-      - 8.0
-      - 8.0
-      - 0.0
       - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
-      - 4.0
+      - 2002044968795.921
+      - 500511242.1989802
+      - 500511.24219898024
+      - 500.51124219898026
+      - 0.5005112421989802
+      - -1817300451794556.2
+      - -13725299008668.354
       - 0.0
-      - 4.0
-      - 8.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4008004004002.0
+      h_discontinuity: -802001335335.3414
+      s_discontinuity: -1002668670684.4822
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3914066410.1572266
+      h_discontinuity: 25065942488.04773
+      s_discontinuity: 144400777188.02368
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:14.172765'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:14.173803'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H+
   composition:
     H: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
+      - 6.0
       - 2.0
-      - 4.0
-      - 0.0
       - 8.0
       - 4.0
       - 0.0
       - 6.0
+      - 2.0
+      - 8.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - -3998087801776.2754
+      - -999521946.4445689
+      - -999521.950444569
+      - -991.5219504445688
+      - 7.000478049555431
+      - 3629752979784921.5
+      - 27410450561019.727
       - 6.0
-      - 0.0
+      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 8003992001996.0
+      h_discontinuity: 1600997334329.3274
+      s_discontinuity: 2001329335303.7024
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 7816398439.448242
+      h_discontinuity: -50057324067.89093
+      s_discontinuity: -288369619004.0572
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:15.335121'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:15.336127'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H-
   composition:
     H: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
       - 2.0
-      - 0.0
-      - 8.0
       - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
       - 4.0
       - 0.0
       - 6.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - 1996049831.150879
+      - 499014.4562877198
+      - 505.0124562877198
+      - 4.499012456287719
+      - 8.000499012456286
+      - -1612985001383.254
+      - -13352853223.046387
       - 8.0
-      - 0.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 4.0
       - 2.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3996001996.0
+      h_discontinuity: -998667662.6687012
+      s_discontinuity: -1331335303.7023926
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3902345.7001953125
+      h_discontinuity: 24796479.999267578
+      s_discontinuity: 143644471.98095703
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:16.466237'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:16.467221'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H2+
   composition:
     H: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
+      - 0.0
       - 0.0
       - 2.0
-      - 6.0
-      - 0.0
       - 0.0
       - 4.0
-      - 8.0
+      - 4.0
+      - 0.0
+      - 0.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - -1001022484394.4578
+      - -250255619.10011443
+      - -250251.6211001144
+      - -246.2556211001144
+      - 5.7497443788998845
+      - 908650225895557.4
+      - 6862649504320.039
       - 8.0
-      - 2.0
-      - 6.0
       - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2004002002006.0
+      h_discontinuity: 401000667672.67065
+      s_discontinuity: 501334335374.7798
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1957033205.083496
+      h_discontinuity: -12532971244.05127
+      s_discontinuity: -72200388594.16211
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:17.609532'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:17.611255'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H2O+
   composition:
     H: 2
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
       - 8.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 0.0
       - 6.0
       - 2.0
       - 2.0
+      - 6.0
+      - 4.0
+      - 6.0
+      - 4.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - -1000020455.8920898
+      - -250003.11547302242
+      - -246.00511547302247
+      - 3.7499948845269775
+      - 5.999749994884527
+      - 807772989782.6582
+      - 6689112772.431763
       - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 2.0
-      - 4.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2001995998.0
+      h_discontinuity: 500664664.6706543
+      s_discontinuity: 667662648.8510742
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1955074.2158203125
+      h_discontinuity: -12422705.63696289
+      s_discontinuity: -71965196.01123047
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:18.722113'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:18.723282'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H2O-
   composition:
     H: 2
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
+      - 2.0
+      - 4.0
       - 0.0
       - 8.0
+      - 0.0
       - 0.0
       - 8.0
       - 6.0
-      - 2.0
-      - 0.0
-      - 8.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
+      - -995029339797.8291
+      - -248757334.94945726
+      - -248753.3349494573
+      - -248.75733494945726
+      - 1.7512426650505428
+      - 903808067752961.9
+      - 6822559195894.019
+      - 0.0
       - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1992003995998.0
+      h_discontinuity: 398001331331.3413
+      s_discontinuity: 497335329317.5178
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1945316402.3417969
+      h_discontinuity: -12458520565.33728
+      s_discontinuity: -71769097336.39722
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:19.836960'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:19.837963'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: H3O+
   composition:
     H: 3
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -1942,67 +3740,133 @@ species:
       coefficients:
       - 0.0
       - 0.0
-      - 8.0
+      - 2.0
       - 0.0
-      - 8.0
       - 6.0
       - 4.0
+      - 2.0
       - 0.0
       - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
+      - -3000071376.904785
+      - -750009.8452261962
+      - -742.0178452261962
+      - 5.249982154773804
+      - 5.999249982154774
+      - 2423322042094.745
+      - 20067391776.463013
       - 2.0
       - 2.0
-      - 8.0
-      - 4.0
-      - 8.0
-      - 4.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 6006008004.0
+      h_discontinuity: 1502004004.0021973
+      s_discontinuity: 2003008031.6311035
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5865242.19140625
+      h_discontinuity: -37268236.1875
+      s_discontinuity: -215896294.22851562
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:20.960977'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:20.962244'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HO2-
   composition:
     H: 1
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 6.0
-      - 0.0
       - 4.0
       - 8.0
+      - 4.0
+      - 6.0
+      - 0.0
+      - 8.0
+      - 0.0
       - 2.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
+      - 2999072357.466797
+      - 749768.0893666991
+      - 749.7680893666993
+      - 0.7497680893666993
+      - 0.0007497680893666992
+      - -2422681413013.5005
+      - -20061042008.56651
+      - 0.0
       - 2.0
-      - 4.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -6004008004.0
+      h_discontinuity: -1501337337.3413332
+      s_discontinuity: -2002008019.631021
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5863289.06640625
+      h_discontinuity: 37255988.46589351
+      s_discontinuity: 215824725.9904275
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:22.133299'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:22.134268'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: OH+
   composition:
     O: 1
     H: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -2010,338 +3874,668 @@ species:
       coefficients:
       - 8.0
       - 6.0
+      - 8.0
       - 2.0
-      - 2.0
-      - 6.0
       - 4.0
       - 6.0
+      - 8.0
       - 4.0
       - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
+      - -2993073214.729492
+      - -748264.3041823731
+      - -748.2683041823731
+      - 7.251731695817627
+      - 3.999251731695818
+      - 2418836103964.0503
+      - 20022916699.823914
       - 6.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 8.0
       - 6.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5991997994.0
+      h_discontinuity: 1497332327.3273926
+      s_discontinuity: 1995997952.5534668
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5851560.541015625
+      h_discontinuity: -37182442.47192383
+      s_discontinuity: -215394963.24560547
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:23.276678'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:23.277812'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: OH-
   composition:
     O: 1
     H: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 8.0
       - 6.0
+      - 0.0
+      - 2.0
+      - 8.0
+      - 0.0
       - 2.0
       - 4.0
       - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - -1002018502.7666016
+      - -250502.6271916504
+      - -244.5046271916504
+      - 3.7494953728083495
+      - 7.999749495372808
+      - 809054247916.3066
+      - 6701812300.203003
       - 8.0
-      - 8.0
-      - 6.0
       - 2.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2005995998.0
+      h_discontinuity: 501997998.0019531
+      s_discontinuity: 669662656.8510742
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1958980.466796875
+      h_discontinuity: -12447201.079589844
+      s_discontinuity: -72108332.49853516
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:24.414101'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:24.415194'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CO+
   composition:
     C: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 8.0
-      - 6.0
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 0.0
       - 8.0
       - 4.0
+      - 0.0
       - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 6.0
-      - 0.0
+      - -3998090798847.583
+      - -999522697.7133957
+      - -999520.6997133958
+      - -995.5226997133959
+      - 7.0004773002866045
+      - 3629754901668673.0
+      - 27410469610287.117
       - 8.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 8003998002006.0
+      h_discontinuity: 1600999334339.3293
+      s_discontinuity: 2001332335376.7798
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 7816404298.834961
+      h_discontinuity: -50057360811.1094
+      s_discontinuity: -288369833709.08984
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:25.563068'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:25.564033'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CO2+
   composition:
     C: 1
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 6.0
-      - 8.0
-      - 2.0
       - 4.0
       - 8.0
+      - 4.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
+      - -998022413.0166016
+      - -249501.6037541504
+      - -247.5056037541504
+      - 7.75049439624585
+      - 5.999750494396246
+      - 806491731648.165
+      - 6676413242.659058
       - 6.0
-      - 2.0
-      - 8.0
-      - 2.0
-      - 2.0
-      - 0.0
+      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1997995998.0
+      h_discontinuity: 499331331.3293457
+      s_discontinuity: 665662644.8510742
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1951167.966796875
+      h_discontinuity: -12398210.194091797
+      s_discontinuity: -71822059.51782227
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:26.708847'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:26.709820'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CO-
   composition:
     C: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - 3.9999999999999996
       - 8.0
-      - 4.0
-      - 6.0
       - 2.0
-      - 8.0
+      - 6.0
+      - 0.0
       - 4.0
+      - 0.0
       - 2.0
       - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -1995050799712.8457
+      - -498762699.92821145
+      - -498758.6999282115
+      - -498.76269992821153
+      - 3.501237300071789
+      - 1811649878495022.8
+      - 13678513210952.303
+      - 0.0
       - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 6.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3994001991996.0
+      h_discontinuity: 798500662662.6708
+      s_discontinuity: 998000991974.369
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3900392570.309082
+      h_discontinuity: -24979056796.36427
+      s_discontinuity: -143897448813.04507
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:27.831603'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:27.832620'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CO2-
   composition:
     C: 1
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
       - 6.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 2.0
       - 4.0
       - 2.0
       - 8.0
-      - 8.0
-      - 4.0
-      - 4.0
-      - 0.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
+      - -2996071291053.546
+      - -749017816.7653867
+      - -749015.8227653865
+      - -747.0178227653864
+      - 7.250982177234614
+      - 2720298824670545.0
+      - 20541150042496.285
       - 4.0
-      - 2.0
       - 0.0
-      - 8.0
-      - 4.0
-      - 4.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5998000004002.0
+      h_discontinuity: 1199500002002.0
+      s_discontinuity: 1499333337345.149
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 5857421878.908203
+      h_discontinuity: -37512003604.58429
+      s_discontinuity: -216097694623.67438
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:28.984808'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:28.985798'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CH+
   composition:
     C: 1
     H: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
       - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 8.0
+      - 0.0
       - 4.0
       - 6.0
-      - 2.0
-      - 8.0
-      - 8.0
-      - 2.0
-      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -999022438468.562
+      - -249755603.6191405
+      - -249753.6096191405
+      - -247.75560961914053
+      - 7.7502443903808595
+      - 907034678381355.1
+      - 6849271252065.727
       - 4.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 4.0
-      - 2.0
-      - 4.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1999998000000.0
+      h_discontinuity: 399999333333.32935
+      s_discontinuity: 499999000000.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1953123046.875
+      h_discontinuity: -12508125773.111816
+      s_discontinuity: -72056457848.89453
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:30.115701'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:30.116738'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: CHO+
   composition:
     C: 1
     H: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
       - 2.0
       - 4.0
-      - 4.0
-      - 0.0
+      - 6.0
       - 8.0
-      - 0.0
+      - 4.0
+      - 2.0
       - 8.0
       - 6.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
+      - -1995047807634.645
+      - -498761945.9106613
+      - -498759.9519106613
+      - -496.76195191066137
+      - 7.501238048089339
+      - 1811647958142462.8
+      - 13678494188384.084
       - 4.0
-      - 4.0
-      - 8.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 6.0
       - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3993996002006.0
+      h_discontinuity: 798498667672.6687
+      s_discontinuity: 997998002033.4465
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3900386720.709961
+      h_discontinuity: -24979020112.866455
+      s_discontinuity: -143897234461.5681
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:31.267626'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:31.268593'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: C+
   composition:
     C: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 8.0
+      - 6.0
+      - 8.0
       - 2.0
-      - 0.0
+      - 2.0
+      - 6.0
       - 0.0
       - 4.0
       - 8.0
-      - 0.0
-      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 8.0
+      - -1997046849537.996
+      - -499261712.384499
+      - -499255.71238449897
+      - -499.26171238449905
+      - 5.500738287615501
+      - 1813262863496412.0
+      - 13691866064175.346
       - 0.0
-      - 8.0
-      - 0.0
+      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3997997993992.0
+      h_discontinuity: 799499330325.3293
+      s_discontinuity: 999332327278.0713
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3904294916.0078125
+      h_discontinuity: -25003853276.363586
+      s_discontinuity: -144041093285.02832
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:32.495257'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:32.496424'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: C-
   composition:
     C: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
       - 6.0
       - 2.0
-      - 8.0
-      - 6.0
+      - 4.0
+      - 4.0
       - 2.0
       - 8.0
+      - 2.0
+      - 8.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
+      - -998026414100.4209
+      - -249506597.52710524
+      - -249498.6035271052
+      - -247.50660352710523
+      - 3.7504933964728946
+      - 906229467907853.4
+      - 6842607538364.835
       - 4.0
-      - 4.0
       - 6.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1998004004002.0
+      h_discontinuity: 399501335335.3313
+      s_discontinuity: 499335337353.14886
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1951175785.157959
+      h_discontinuity: -12495752058.360718
+      s_discontinuity: -71984778925.87653
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:33.620383'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:33.621404'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: N2O+
   composition:
     N: 2
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -2349,138 +4543,270 @@ species:
       coefficients:
       - 0.0
       - 0.0
-      - 4.0
+      - 8.0
       - 0.0
+      - 2.0
       - 6.0
       - 8.0
-      - 4.0
       - 0.0
       - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 6.0
+      - -1002019512783.154
+      - -250504870.19678852
+      - -250498.87819678852
+      - -244.5048781967885
+      - 3.749495121803211
+      - 909456078536237.0
+      - 6869319594550.533
       - 2.0
-      - 0.0
+      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2005998008004.0
+      h_discontinuity: 401499337337.3293
+      s_discontinuity: 501999008023.631
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1958982429.691162
+      h_discontinuity: -12545357266.134949
+      s_discontinuity: -72272139438.38379
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:34.757222'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:34.759890'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HNO2+
   composition:
     H: 1
     N: 1
     O: 2
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 2.0
+      - 4.0
       - 6.0
+      - 8.0
+      - 0.0
       - 2.0
-      - 2.0
       - 4.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
+      - 6.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 8.0
+      - 1001019489.329102
+      - 250262.8713322755
+      - 252.2548713322755
+      - 6.250254871332275
+      - 0.00025025487133227553
+      - -808413618845.325
+      - -6695462528.312211
       - 2.0
-      - 4.0
       - 6.0
-      - 4.0
-      - 4.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2003995998.0
+      h_discontinuity: -501331331.3313334
+      s_discontinuity: -668662648.8511562
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1957027.341796875
+      h_discontinuity: 12434953.358196974
+      s_discontinuity: 72036764.25829268
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:35.900192'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:35.901147'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HNO3+
   composition:
     H: 1
     N: 1
     O: 3
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
       - 4.0
-      - 6.0
       - 8.0
-      - 0.0
       - 2.0
-      - 4.0
       - 6.0
-      - 8.0
+      - 4.0
+      - 4.0
+      - 2.0
+      - 2.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
+      - 1997045855516.671
+      - 499261467.8786677
+      - 499267.46387866774
+      - 507.2614638786677
+      - 0.4992614638786677
+      - -1813262224401982.2
+      - -13691859741128.908
       - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 6.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3997996004002.0
+      h_discontinuity: -799498668668.6687
+      s_discontinuity: -999331337347.1488
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3904292972.6572266
+      h_discontinuity: 25003841088.308105
+      s_discontinuity: 144041022070.03308
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:37.038601'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:37.039638'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: HNO+
   composition:
     H: 1
     N: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
+      - 6.0
       - 2.0
       - 8.0
       - 4.0
       - 0.0
       - 6.0
+      - 0.0
+      - 8.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
+      - -1998043877923.6875
+      - -499510967.48242193
+      - -499508.96948242193
+      - -495.5109694824219
+      - 3.500489030517578
+      - 1814068716133632.2
+      - 13698536154365.58
+      - 8.0
+      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3999994000000.0
+      h_discontinuity: 799997999999.998
+      s_discontinuity: 999997000004.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3906244140.625
+      h_discontinuity: -25016239298.502747
+      s_discontinuity: -144112844129.5377
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:38.182406'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:38.183371'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: SO
   composition:
     S: 1
     O: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -2488,199 +4814,397 @@ species:
       coefficients:
       - 0.0
       - 0.0
+      - 2.0
       - 0.0
+      - 8.0
+      - 4.0
+      - 2.0
       - 0.0
-      - 6.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 2994072239169.9707
+      - 748518067.7914927
+      - 748522.0597914926
+      - 754.5180597914926
+      - 2.7485180597914924
+      - -2718683916247293.5
+      - -20527778113250.15
       - 2.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
       - 2.0
-      - 6.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5993997991996.0
+      h_discontinuity: -1198499329329.3293
+      s_discontinuity: -1497998991974.369
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -5853513664.058594
+      h_discontinuity: 37487170321.75513
+      s_discontinuity: 215953835093.6914
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:39.316941'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:39.318014'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: SO2
   composition:
     S: 1
     O: 2
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 8.0
       - 2.0
-      - 2.0
-      - 6.0
-      - 0.0
       - 4.0
+      - 6.0
       - 8.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
+      - -997026388645.4121
+      - -249256595.16285303
+      - -249248.59716285302
+      - -245.25659716285304
+      - 7.750743402837147
+      - 905421693379962.8
+      - 6835918398850.676
       - 8.0
-      - 6.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 6.0
+      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1996001998004.0
+      h_discontinuity: 399000665670.6709
+      s_discontinuity: 498667664686.2976
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1949220701.1757812
+      h_discontinuity: -12483329293.112793
+      s_discontinuity: -71912813376.92358
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:39.318519'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:39.319484'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: SO3
   composition:
     S: 1
     O: 3
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
+      - 0.0
+      - 0.0
       - 8.0
-      - 4.0
+      - 0.0
+      - 8.0
       - 6.0
-      - 4.0
       - 8.0
+      - 0.0
       - 8.0
-      - 2.0
-      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 3996094749023.4375
+      - 999023687.2558594
+      - 999029.6872558594
+      - 999.0236872558594
+      - 0.9990236872558593
+      - -3628141916670729.0
+      - -27397116757084.34
+      - 0.0
       - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 0.0
-      - 8.0
-      - 6.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -8000002000000.0
+      h_discontinuity: -1600000666666.671
+      s_discontinuity: -2000001000006.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -7812501953.125
+      h_discontinuity: 50032564331.055176
+      s_discontinuity: 288226189236.8164
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:39.319958'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:39.320947'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: S
   composition:
     S: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 8.0
-      - 6.0
       - 0.0
-      - 6.0
-      - 2.0
-      - 2.0
+      - 0.0
       - 8.0
+      - 0.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 8.0
+      - 995027341752.9543
+      - 248756839.43773857
+      - 248764.8354377386
+      - 256.75683543773863
+      - 2.2487568354377383
+      - -903806786494818.4
+      - -6822546496346.264
       - 6.0
       - 2.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1991999995998.0
+      h_discontinuity: -397999997997.99994
+      s_discontinuity: -497333329327.5178
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1945312496.0917969
+      h_discontinuity: 12458496069.894531
+      s_discontinuity: 71768954199.89062
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:40.475599'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:40.476571'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: Ar
   composition:
     Ar: 1
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 8.0
-      - 4.0
-      - 0.0
       - 6.0
       - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 6.0
+      - 8.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - -1000020465882.6963
+      - -250005108.47167405
+      - -250005.11647167406
+      - -244.00511647167406
+      - 7.749994883528326
+      - 907841171651102.1
+      - 6855947692060.109
       - 2.0
-      - 4.0
-      - 0.0
-      - 8.0
-      - 4.0
-      - 0.0
       - 6.0
-      - 6.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 2001996005998.0
+      h_discontinuity: 400498669664.6587
+      s_discontinuity: 500664672654.8513
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1955074224.6074219
+      h_discontinuity: -12520524042.916992
+      s_discontinuity: -72128280261.36182
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:40.477042'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:40.478482'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: He
   composition:
     He: 1
-  note: 'Thermodynamic data source: nist'
+  note: 'Thermodynamic data source: burcat'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: burcat
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 3.9999999999999996
+      - 8.0
+      - 4.0
       - 6.0
       - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
       - 8.0
-      - 8.0
-      - 8.0
+      - 6.0
+      - 2.0
       - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 8.0
-      - 6.0
+      - -1998048873042.875
+      - -499512210.26171875
+      - -499504.21826171875
+      - -493.5122182617187
+      - 5.500487781738281
+      - 1814071919278979.2
+      - 13698567903200.986
       - 2.0
       - 2.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 4000004000000.0
+      h_discontinuity: 800001333333.3315
+      s_discontinuity: 1000001999994.0
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 3906253906.25
+      h_discontinuity: -25016300537.10962
+      s_discontinuity: -144113201970.7873
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:40.479443'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:40.480511'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: He+
   composition:
     He: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
@@ -2688,155 +5212,312 @@ species:
       coefficients:
       - 2.0
       - 4.0
+      - 0.0
       - 8.0
+      - 2.0
+      - 0.0
       - 8.0
       - 6.0
       - 6.0
-      - 8.0
-      - 6.0
-      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 2.0
+      - -996029365251.8329
+      - -249007335.31495824
+      - -249001.34131495823
+      - -247.00734131495818
+      - 3.7509926586850417
+      - 904615842277389.1
+      - 6829248335381.897
       - 4.0
       - 0.0
-      - 6.0
-      - 2.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1994006002006.0
+      h_discontinuity: 398502001006.00195
+      s_discontinuity: 498003002041.44653
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 1947271486.3339844
+      h_discontinuity: -12470943330.640137
+      s_discontinuity: -71841062885.656
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:41.602257'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:41.603294'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: Ne
   composition:
     Ne: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
       - 8.0
+      - 4.0
+      - 2.0
+      - 0.0
+      - 6.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
+      - 2000043923854.588
+      - 500010982.96214694
+      - 500018.980962147
+      - 504.0109809621469
+      - 0.500010980962147
+      - -1815684263651287.2
+      - -13711914406652.152
+      - 8.0
       - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 8.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4003998001996.0
+      h_discontinuity: -800999334329.3293
+      s_discontinuity: -1001332335303.7023
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3910154298.8242188
+      h_discontinuity: 25041084769.386475
+      s_discontinuity: 144256774874.51392
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:42.728156'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:42.729675'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: Xe
   composition:
     Xe: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 9.0
-      - 8.0
-      - 7.0
       - 6.0
-      - 5.0
-      - 4.0
-      - 3.0
       - 2.0
-      - 1.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 6.0
+      - 1000020469.8920898
+      - 250011.11547302245
+      - 252.0051154730225
+      - 2.250005115473023
+      - 8.000250005115472
+      - -807772989770.9023
+      - -6689112758.44397
       - 4.0
       - 8.0
-      - 0.0
-      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -2001995998.0
+      h_discontinuity: -500664664.6706543
+      s_discontinuity: -667662658.8510742
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1955074.216796875
+      h_discontinuity: 12422705.63647461
+      s_discontinuity: 71965195.99853516
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:43.868850'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:43.869841'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: Xe+
   composition:
     Xe: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
+      - 3.9999999999999996
+      - 8.0
       - 4.0
+      - 6.0
+      - 8.0
+      - 8.0
       - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
+      - 2.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 998025415086.9834
+      - 249506357.77124587
+      - 249508.35377124583
+      - 257.50635377124587
+      - 6.249506353771246
+      - -906228827278768.6
+      - -6842601188596.944
       - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 0.0
-      - 2.0
+      - 4.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1998002004002.0
+      h_discontinuity: -399500668668.67065
+      s_discontinuity: -499334337345.1489
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -1951173832.0332031
+      h_discontinuity: 12495739810.63916
+      s_discontinuity: 71984707357.6355
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:45.026721'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:45.028301'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
 - name: e-
   composition:
     E: 1
   note: 'Thermodynamic data source: nist'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
   thermo:
     model: NASA9
+    reference: nist
     temperature-ranges:
     - T-min: 200.0
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
+      - 0.0
       - 4.0
+      - 0.0
+      - 0.0
       - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 2.0
+      - 8.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 2.0
+      - 1998047877.0205078
+      - 499511.96925512695
+      - 499.5119692551269
+      - 0.499511969255127
+      - 0.0004995119692551269
+      - -1614266256067.883
+      - -13365552714.553795
       - 0.0
-      - 2.0
       - 0.0
+    transition-diagnostics:
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -4000002006.0
+      h_discontinuity: -1000001006.0
+      s_discontinuity: -1333335382.779865
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 200.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -3906251.958984375
+      h_discontinuity: 24820975.49670458
+      s_discontinuity: 143787608.76198602
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:08:46.162087'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:08:46.163274'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001

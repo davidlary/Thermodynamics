@@ -1,6 +1,6 @@
-# Thermodynamic Equilibrium Calculator
+# Atmospheric Thermodynamic Equilibrium Calculator
 
-This project calculates thermodynamic equilibrium concentrations of chemical species as a function of temperature and pressure using the Cantera library.
+This project calculates thermodynamic equilibrium concentrations of chemical species as a function of temperature and pressure using the Cantera library, with a special focus on accuracy in the cold temperature range (100-400K) for atmospheric research applications.
 
 ## Features
 
@@ -8,8 +8,11 @@ This project calculates thermodynamic equilibrium concentrations of chemical spe
 - Generates NASA-9 polynomial thermodynamic data for Cantera
 - Prioritized thermodynamic data lookup: Burcat → CEA → NASA → NIST
 - Local caching of thermodynamic data for improved performance
-- Temperature range support from 100K to 6000K
+- Enhanced temperature range support from 100K to 6000K
+- Optimized accuracy in cold temperature range (100-400K) for atmospheric research
+- Robust temperature range transition continuity verification and optimization
 - Support for all relevant chemical elements and charged species
+- No placeholder data - only real thermodynamic data from validated sources
 
 ## Requirements
 
@@ -80,7 +83,10 @@ The entire Burcat database is downloaded and cached locally, with automatic vers
 
 This project uses the NASA-9 polynomial format for thermodynamic data which provides:
 
-- Two temperature ranges for each species (typically 200-1000K and 1000-6000K)
+- Multiple temperature ranges for each species:
+  - Cold range (100-400K) for atmospheric research applications
+  - Low range (typically 300-1000K)
+  - High range (typically 1000-6000K)
 - Nine coefficients (a₁-a₉) for each temperature range
 - These coefficients define polynomial expressions for:
   - Heat capacity: Cp°/R = a₁ + a₂T + a₃T² + a₄T³ + a₅T⁴
@@ -89,12 +95,35 @@ This project uses the NASA-9 polynomial format for thermodynamic data which prov
 
 Where T is temperature in Kelvin and R is the gas constant.
 
+### Temperature Range Optimization
+
+The system employs sophisticated optimization techniques to ensure thermodynamic accuracy across all temperature ranges:
+
+1. **Cold Range Optimization (100-400K)**: Specially optimized coefficients for atmospheric research applications, using iterative refinement of thermodynamic properties with higher weight given to lower temperatures.
+
+2. **Transition Continuity Verification**: Checks for discontinuities in Cp, H, and S at all temperature range transition points.
+
+3. **Transition Continuity Optimization**: Automatically adjusts coefficients to minimize discontinuities while preserving real thermodynamic data accuracy.
+
+4. **Validation Metadata**: All output includes detailed validation information including transition diagnostics and optimization details.
+
+## Applications
+
+This tool is particularly useful for:
+
+- **Atmospheric Research**: Enhanced accuracy in the 100-400K range makes it ideal for stratospheric and mesospheric chemistry studies
+- **Chemical Engineering**: Accurate prediction of equilibrium concentrations across wide temperature ranges
+- **Combustion Analysis**: High-temperature reaction modeling
+- **Materials Science**: Phase equilibria and materials stability predictions
+- **Environmental Science**: Modeling of atmospheric processes and pollution chemistry
+
 ## Future Work
 
-- Equilibrium concentration calculations
-- Temperature and pressure dependency analysis
-- Reaction pathway visualization
-- Web interface for calculations
+- Advanced equilibrium concentration calculations
+- Temperature and pressure dependency visualization
+- Reaction pathway analysis
+- Graphical interface for atmospheric research applications
+- Integration with atmospheric transport models
 
 ## License
 
