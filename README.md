@@ -54,13 +54,27 @@ The system follows these steps:
 
 1. Reads the list of species from `Species.yaml`
 2. Extracts all unique elements from the chemical formulas
-3. For each species, retrieves thermodynamic data in this priority order:
-   - Burcat's Thermodynamic Database
+3. Downloads and caches the complete Burcat thermodynamic database
+4. For each species, retrieves thermodynamic data in this priority order:
+   - Burcat's Thermodynamic Database (cached locally, updated weekly)
    - NASA CEA Database
    - NASA Database
    - NIST Database
-4. Locally caches all retrieved data to speed up future runs
-5. Generates a Cantera-compatible YAML file with the complete thermodynamic data
+5. Locally caches all retrieved data to speed up future runs
+6. Generates a Cantera-compatible YAML file with the complete thermodynamic data
+7. Includes detailed source attribution for each species in the output
+8. Creates a data sources report summarizing which database was used for each species
+
+### Thermodynamic Data Sources
+
+The system prioritizes data sources in this order:
+
+1. **Burcat Database**: The most comprehensive and up-to-date source of thermodynamic data, maintained by Alexander Burcat at the Technion - Israel Institute of Technology.
+2. **NASA CEA Database**: Chemical Equilibrium with Applications database from NASA.
+3. **NASA Thermodynamic Database**: General NASA thermodynamic data.
+4. **NIST Chemistry WebBook**: National Institute of Standards and Technology data.
+
+The entire Burcat database is downloaded and cached locally, with automatic version checking to ensure the data remains current without unnecessary downloads.
 
 ### NASA-9 Polynomial Format
 

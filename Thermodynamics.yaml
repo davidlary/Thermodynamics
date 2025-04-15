@@ -104,6 +104,7 @@ species:
 - name: N2
   composition:
     N: 2
+  note: 'Thermodynamic data source: nasa'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -115,28 +116,28 @@ species:
       - 6.0
       - 8.0
       - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 4.0
       - 2.0
+      - 6.0
+      - 4.0
+      - 4.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 0.0
       - 6.0
       - 2.0
-      - 0.0
+      - 6.0
       - 4.0
-  data-source: nasa
+      - 0.0
+      - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
 - name: O2
   composition:
     O: 2
+  note: 'Thermodynamic data source: nasa'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -144,32 +145,32 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 2.0
+      - 4.0
       - 4.0
       - 8.0
       - 6.0
-      - 6.0
+      - 8.0
       - 4.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 2.0
+      - 6.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
-      - 4.0
+      - 2.0
       - 6.0
-      - 8.0
-      - 8.0
-      - 2.0
-      - 2.0
+      - 6.0
       - 4.0
-  data-source: nasa
+      - 4.0
+      - 2.0
+      - 2.0
 - name: H2
   composition:
     H: 2
+  note: 'Thermodynamic data source: nasa'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -177,33 +178,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 2.0
       - 4.0
+      - 6.0
       - 8.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 4.0
-      - 2.0
       - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 4.0
+      - 8.0
+      - 0.0
       - 6.0
+      - 4.0
+      - 0.0
+      - 8.0
       - 2.0
-      - 4.0
-      - 4.0
       - 0.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 8.0
-  data-source: nasa
 - name: H2O
   composition:
     H: 2
     O: 1
+  note: 'Thermodynamic data source: nasa'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -211,33 +212,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 4.0
       - 8.0
       - 6.0
-      - 2.0
-      - 2.0
-      - 6.0
+      - 0.0
       - 4.0
-      - 6.0
-      - 4.0
-      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 6.0
+      - 2.0
+      - 2.0
       - 4.0
+      - 4.0
+      - 4.0
+      - 2.0
       - 8.0
-      - 0.0
       - 6.0
-      - 6.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 2.0
-  data-source: nasa
 - name: CO2
   composition:
     C: 1
     O: 2
+  note: 'Thermodynamic data source: nasa'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -245,33 +246,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 6.0
       - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 2.0
+      - 0.0
+      - 4.0
       - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 4.0
-      - 8.0
-      - 4.0
       - 6.0
       - 2.0
-  data-source: nasa
+      - 6.0
+      - 4.0
+      - 0.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 4.0
 - name: CO
   composition:
     C: 1
     O: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -279,33 +280,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 8.0
       - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 4.0
       - 8.0
+      - 2.0
       - 6.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 2.0
+      - 0.0
+      - 4.0
+      - 0.0
       - 2.0
       - 4.0
-      - 6.0
-  data-source: nist
 - name: NO2
   composition:
     N: 1
     O: 2
+  note: 'Thermodynamic data source: cea'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -313,33 +314,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
+      - 0.0
+      - 8.0
       - 2.0
-      - 0.0
-      - 4.0
+      - 6.0
       - 8.0
       - 0.0
-      - 4.0
+      - 6.0
       - 8.0
-      - 0.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 8.0
+      - 0.0
       - 6.0
-      - 2.0
-      - 6.0
-      - 2.0
-      - 2.0
+      - 0.0
       - 8.0
-  data-source: nist
+      - 8.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 0.0
 - name: N2O
   composition:
     N: 2
     O: 1
+  note: 'Thermodynamic data source: cea'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -347,32 +348,32 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 8.0
       - 4.0
-      - 0.0
+      - 8.0
       - 6.0
+      - 4.0
       - 6.0
       - 8.0
-      - 8.0
+      - 2.0
+      - 4.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 6.0
+      - 4.0
+      - 4.0
       - 4.0
       - 8.0
       - 0.0
-      - 4.0
-  data-source: nist
+      - 8.0
+      - 0.0
+      - 8.0
+      - 8.0
 - name: O3
   composition:
     O: 3
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -380,33 +381,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
       - 8.0
       - 6.0
-      - 4.0
+      - 2.0
+      - 2.0
       - 6.0
-      - 0.0
+      - 4.0
       - 2.0
       - 4.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
+      - 8.0
+      - 6.0
+      - 8.0
       - 2.0
       - 4.0
       - 6.0
-      - 0.0
-      - 2.0
-  data-source: nist
+      - 8.0
+      - 4.0
+      - 6.0
 - name: OH
   composition:
     O: 1
     H: 1
+  note: 'Thermodynamic data source: cea'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -414,33 +415,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 2.0
       - 0.0
       - 8.0
+      - 8.0
+      - 8.0
       - 2.0
-      - 0.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
+      - 6.0
       - 8.0
       - 6.0
       - 4.0
       - 2.0
-      - 6.0
+      - 0.0
+      - 0.0
       - 4.0
-  data-source: nist
+      - 6.0
 - name: HO2
   composition:
     H: 1
     O: 2
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -448,32 +449,32 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
-      - 2.0
-      - 6.0
       - 4.0
-      - 6.0
-      - 2.0
-      - 2.0
       - 8.0
       - 0.0
+      - 6.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
       - 6.0
-      - 4.0
-      - 8.0
       - 2.0
-      - 4.0
       - 8.0
-      - 2.0
-  data-source: nist
+      - 4.0
 - name: H
   composition:
     H: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -483,30 +484,30 @@ species:
       coefficients:
       - 4.0
       - 8.0
-      - 4.0
+      - 2.0
       - 6.0
+      - 0.0
+      - 4.0
       - 8.0
-      - 8.0
       - 2.0
-      - 2.0
-      - 2.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 8.0
-      - 6.0
-      - 4.0
+      - 0.0
+      - 0.0
       - 2.0
       - 0.0
-      - 8.0
-      - 6.0
-      - 4.0
       - 2.0
-  data-source: nist
+      - 4.0
+      - 6.0
+      - 0.0
+      - 2.0
 - name: O
   composition:
     O: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -514,32 +515,32 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
+      - 0.0
+      - 0.0
       - 6.0
-      - 8.0
-      - 4.0
-      - 6.0
+      - 0.0
       - 2.0
-      - 4.0
+      - 2.0
+      - 0.0
+      - 0.0
+      - 8.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 2.0
       - 0.0
-  data-source: nist
+      - 6.0
+      - 6.0
+      - 0.0
+      - 0.0
+      - 2.0
+      - 2.0
 - name: N
   composition:
     N: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -547,33 +548,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
       - 4.0
       - 8.0
-      - 2.0
-      - 8.0
-      - 2.0
+      - 0.0
       - 6.0
-      - 4.0
+      - 0.0
+      - 0.0
+      - 2.0
+      - 2.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
       - 8.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 4.0
       - 6.0
       - 0.0
-  data-source: nist
+      - 2.0
+      - 8.0
+      - 0.0
+      - 0.0
+      - 4.0
+      - 4.0
 - name: NH3
   composition:
     N: 1
     H: 3
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -581,33 +582,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
+      - 0.0
+      - 0.0
       - 4.0
-      - 6.0
+      - 0.0
+      - 2.0
       - 8.0
       - 4.0
-      - 2.0
-      - 8.0
+      - 0.0
       - 6.0
-      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 2.0
       - 4.0
-      - 0.0
       - 4.0
       - 8.0
-      - 4.0
-      - 0.0
-      - 2.0
-  data-source: nist
+      - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 8.0
 - name: NH2
   composition:
     N: 1
     H: 2
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -615,33 +616,33 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 6.0
       - 2.0
+      - 4.0
+      - 0.0
       - 8.0
       - 4.0
       - 0.0
+      - 0.0
       - 6.0
-      - 6.0
-      - 8.0
-      - 8.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 8.0
+      - 6.0
+      - 0.0
       - 2.0
+      - 2.0
+      - 0.0
+      - 0.0
       - 4.0
-      - 8.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 0.0
-  data-source: nist
+      - 4.0
 - name: NH
   composition:
     N: 1
     H: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -649,34 +650,34 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
       - 8.0
       - 6.0
-      - 4.0
-      - 2.0
       - 6.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
+      - 2.0
       - 6.0
       - 2.0
       - 8.0
       - 4.0
       - 0.0
-      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
       - 4.0
       - 8.0
-      - 2.0
-  data-source: nist
+      - 6.0
+      - 0.0
 - name: HNO3
   composition:
     H: 1
     N: 1
     O: 3
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -684,34 +685,34 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
+      - 0.0
+      - 0.0
       - 8.0
+      - 0.0
+      - 4.0
       - 6.0
+      - 8.0
       - 0.0
       - 2.0
-      - 4.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
       - 6.0
       - 2.0
-      - 0.0
+      - 6.0
       - 4.0
-      - 2.0
-      - 0.0
-      - 6.0
       - 8.0
-      - 6.0
-  data-source: nist
+      - 2.0
+      - 8.0
+      - 8.0
+      - 0.0
 - name: HONO
   composition:
     H: 1
     O: 2
     N: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -719,34 +720,413 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 0.0
-      - 0.0
+      - 8.0
+      - 6.0
       - 2.0
-      - 0.0
       - 2.0
+      - 6.0
       - 4.0
       - 6.0
-      - 0.0
-      - 0.0
+      - 4.0
+      - 6.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
+      - 8.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 6.0
       - 2.0
       - 4.0
       - 0.0
-      - 8.0
-      - 8.0
-      - 0.0
-      - 0.0
-      - 6.0
-      - 6.0
-  data-source: nist
 - name: HNO
   composition:
     H: 1
     N: 1
     O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 0.0
+- name: H2O2
+  composition:
+    H: 2
+    O: 2
+  note: 'Thermodynamic data source: cea'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 2.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 8.0
+      - 2.0
+      - 8.0
+      - 0.0
+      - 0.0
+      - 8.0
+      - 2.0
+      - 0.0
+- name: CH4
+  composition:
+    C: 1
+    H: 4
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 0.0
+      - 8.0
+- name: CH2
+  composition:
+    C: 1
+    H: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 2.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 8.0
+- name: CH
+  composition:
+    C: 1
+    H: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+- name: CH3
+  composition:
+    C: 1
+    H: 3
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 2.0
+      - 0.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+- name: CH2O
+  composition:
+    C: 1
+    H: 2
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 4.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 6.0
+      - 2.0
+- name: CHO
+  composition:
+    C: 1
+    H: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 8.0
+      - 2.0
+      - 4.0
+      - 0.0
+      - 4.0
+- name: CHOOH
+  composition:
+    C: 1
+    H: 2
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 8.0
+- name: HCN
+  composition:
+    H: 1
+    C: 1
+    N: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 4.0
+      - 0.0
+- name: N2H4
+  composition:
+    N: 2
+    H: 4
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 8.0
+- name: NCO
+  composition:
+    N: 1
+    C: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -760,8 +1140,1121 @@ species:
       - 0.0
       - 4.0
       - 0.0
+      - 6.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
       - 4.0
       - 0.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
+      - 2.0
+- name: NCN
+  composition:
+    N: 2
+    C: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
+      - 0.0
+- name: HCNO
+  composition:
+    H: 1
+    C: 1
+    N: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 0.0
+      - 6.0
+- name: CN
+  composition:
+    C: 1
+    N: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 4.0
+- name: CN-
+  composition:
+    C: 1
+    N: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 0.0
+      - 8.0
+- name: NO+
+  composition:
+    N: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 0.0
+      - 8.0
+- name: NO-
+  composition:
+    N: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 0.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 0.0
+      - 4.0
+      - 2.0
+- name: NO2+
+  composition:
+    N: 1
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 0.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 0.0
+      - 4.0
+      - 6.0
+- name: NO2-
+  composition:
+    N: 1
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 0.0
+      - 0.0
+- name: NO3-
+  composition:
+    N: 1
+    O: 3
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 2.0
+- name: O-
+  composition:
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 0.0
+      - 0.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 6.0
+- name: O2-
+  composition:
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 4.0
+- name: O2+
+  composition:
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+- name: O+
+  composition:
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 8.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+- name: O3+
+  composition:
+    O: 3
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 0.0
+      - 2.0
+      - 2.0
+      - 0.0
+      - 6.0
+      - 4.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+- name: N2+
+  composition:
+    N: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 8.0
+      - 2.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 8.0
+- name: N+
+  composition:
+    N: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 4.0
+- name: N-
+  composition:
+    N: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 6.0
+      - 4.0
+      - 4.0
+      - 2.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 6.0
+- name: N2-
+  composition:
+    N: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 0.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 4.0
+      - 8.0
+- name: H+
+  composition:
+    H: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
+      - 0.0
+- name: H-
+  composition:
+    H: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 0.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 0.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 4.0
+      - 2.0
+      - 2.0
+- name: H2+
+  composition:
+    H: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 0.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 0.0
+      - 4.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 2.0
+      - 6.0
+- name: H2O+
+  composition:
+    H: 2
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 2.0
+      - 4.0
+- name: H2O-
+  composition:
+    H: 2
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
+- name: H3O+
+  composition:
+    H: 3
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 8.0
+      - 4.0
+      - 2.0
+- name: HO2-
+  composition:
+    H: 1
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 0.0
+      - 4.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+- name: OH+
+  composition:
+    O: 1
+    H: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 6.0
+      - 4.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 8.0
+- name: OH-
+  composition:
+    O: 1
+    H: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 0.0
+- name: CO+
+  composition:
+    C: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 8.0
+      - 4.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 8.0
+- name: CO2+
+  composition:
+    C: 1
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 4.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 0.0
+- name: CO-
+  composition:
+    C: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 2.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
+- name: CO2-
+  composition:
+    C: 1
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 4.0
+- name: CH+
+  composition:
+    C: 1
+    H: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 4.0
+      - 2.0
+      - 4.0
+- name: CHO+
+  composition:
+    C: 1
+    H: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 0.0
+      - 8.0
       - 6.0
     - T-min: 1000.0
       T-max: 6000.0
@@ -776,11 +2269,482 @@ species:
       - 2.0
       - 6.0
       - 0.0
-  data-source: nist
-- name: H2O2
+- name: C+
   composition:
-    H: 2
+    C: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 2.0
+      - 0.0
+      - 0.0
+      - 4.0
+      - 8.0
+      - 0.0
+      - 4.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 8.0
+      - 0.0
+- name: C-
+  composition:
+    C: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 2.0
+- name: N2O+
+  composition:
+    N: 2
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 0.0
+- name: HNO2+
+  composition:
+    H: 1
+    N: 1
     O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 4.0
+      - 4.0
+      - 0.0
+- name: HNO3+
+  composition:
+    H: 1
+    N: 1
+    O: 3
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+      - 0.0
+      - 2.0
+      - 4.0
+      - 6.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 4.0
+      - 4.0
+      - 6.0
+- name: HNO+
+  composition:
+    H: 1
+    N: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 4.0
+      - 0.0
+      - 2.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+- name: SO
+  composition:
+    S: 1
+    O: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 6.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 2.0
+- name: SO2
+  composition:
+    S: 1
+    O: 2
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 8.0
+      - 6.0
+      - 8.0
+      - 2.0
+      - 2.0
+      - 6.0
+      - 0.0
+      - 4.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 6.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
+- name: SO3
+  composition:
+    S: 1
+    O: 3
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 4.0
+      - 6.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 2.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 0.0
+      - 4.0
+      - 2.0
+      - 0.0
+      - 0.0
+      - 8.0
+      - 6.0
+- name: S
+  composition:
+    S: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 0.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 6.0
+      - 4.0
+      - 2.0
+      - 0.0
+- name: Ar
+  composition:
+    Ar: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 2.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 0.0
+      - 8.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 6.0
+      - 2.0
+- name: He
+  composition:
+    He: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 6.0
+      - 2.0
+      - 4.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 8.0
+      - 6.0
+      - 2.0
+      - 2.0
+      - 8.0
+- name: He+
+  composition:
+    He: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 6.0
+      - 8.0
+      - 6.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 2.0
+      - 8.0
+      - 2.0
+      - 4.0
+      - 0.0
+      - 6.0
+      - 2.0
+- name: Ne
+  composition:
+    Ne: 1
+  note: 'Thermodynamic data source: nist'
+  thermo:
+    model: NASA9
+    temperature-ranges:
+    - T-min: 200.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 8.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 2.0
+      - 4.0
+      - 4.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 8.0
+      - 6.0
+      - 8.0
+- name: Xe
+  composition:
+    Xe: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -790,632 +2754,13 @@ species:
       coefficients:
       - 9.0
       - 8.0
-      - 8.0
+      - 7.0
       - 6.0
+      - 5.0
       - 4.0
-      - 6.0
-      - 0.0
+      - 3.0
       - 2.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 0.0
-  data-source: nist
-- name: CH4
-  composition:
-    C: 1
-    H: 4
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 8.0
-      - 0.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 6.0
-      - 6.0
-      - 6.0
-  data-source: nist
-- name: CH2
-  composition:
-    C: 1
-    H: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 0.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 8.0
-      - 4.0
-      - 8.0
-      - 6.0
-      - 0.0
-  data-source: nist
-- name: CH
-  composition:
-    C: 1
-    H: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 8.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 6.0
-  data-source: nist
-- name: CH3
-  composition:
-    C: 1
-    H: 3
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 2.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 6.0
-      - 6.0
-      - 6.0
-  data-source: nist
-- name: CH2O
-  composition:
-    C: 1
-    H: 2
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 4.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 6.0
-  data-source: nist
-- name: CHO
-  composition:
-    C: 1
-    H: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 8.0
-  data-source: nist
-- name: CHOOH
-  composition:
-    C: 1
-    H: 2
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 6.0
-      - 4.0
-      - 4.0
-      - 2.0
-      - 4.0
-      - 8.0
-      - 0.0
-  data-source: nist
-- name: HCN
-  composition:
-    H: 1
-    C: 1
-    N: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 2.0
-      - 0.0
-      - 6.0
-      - 4.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-  data-source: nist
-- name: N2H4
-  composition:
-    N: 2
-    H: 4
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 0.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: NCO
-  composition:
-    N: 1
-    C: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 4.0
-  data-source: nist
-- name: NCN
-  composition:
-    N: 2
-    C: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-  data-source: nist
-- name: HCNO
-  composition:
-    H: 1
-    C: 1
-    N: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 0.0
-      - 0.0
-      - 8.0
-  data-source: nist
-- name: CN
-  composition:
-    C: 1
-    N: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 4.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 6.0
-      - 8.0
-      - 0.0
-  data-source: nist
-- name: CN-
-  composition:
-    C: 1
-    N: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 2.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: NO+
-  composition:
-    N: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 8.0
-  data-source: nist
-- name: NO-
-  composition:
-    N: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 6.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 8.0
-  data-source: nist
-- name: NO2+
-  composition:
-    N: 1
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-  data-source: nist
-- name: NO2-
-  composition:
-    N: 1
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 8.0
+      - 1.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
@@ -1424,1359 +2769,15 @@ species:
       - 0.0
       - 2.0
       - 0.0
-      - 2.0
-      - 4.0
-      - 8.0
-      - 0.0
-      - 2.0
-  data-source: nist
-- name: NO3-
-  composition:
-    N: 1
-    O: 3
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 6.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 6.0
-  data-source: nist
-- name: O-
-  composition:
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 2.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: O2-
-  composition:
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
-  data-source: nist
-- name: O2+
-  composition:
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 8.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 8.0
-  data-source: nist
-- name: O+
-  composition:
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: O3+
-  composition:
-    O: 3
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 4.0
-      - 2.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 0.0
-      - 8.0
-  data-source: nist
-- name: N2+
-  composition:
-    N: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 4.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-  data-source: nist
-- name: N+
-  composition:
-    N: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 4.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 8.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 6.0
-  data-source: nist
-- name: N-
-  composition:
-    N: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 6.0
-      - 4.0
-  data-source: nist
-- name: N2-
-  composition:
-    N: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 0.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: H+
-  composition:
-    H: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 8.0
-      - 8.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 6.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 0.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 6.0
-      - 2.0
-  data-source: nist
-- name: H-
-  composition:
-    H: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 2.0
-      - 6.0
-      - 6.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-  data-source: nist
-- name: H2+
-  composition:
-    H: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 4.0
-      - 0.0
-      - 2.0
-  data-source: nist
-- name: H2O+
-  composition:
-    H: 2
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 6.0
-  data-source: nist
-- name: H2O-
-  composition:
-    H: 2
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-  data-source: nist
-- name: H3O+
-  composition:
-    H: 3
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 4.0
-  data-source: nist
-- name: HO2-
-  composition:
-    H: 1
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 2.0
-      - 6.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 6.0
-  data-source: nist
-- name: OH+
-  composition:
-    O: 1
-    H: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 6.0
-      - 8.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: OH-
-  composition:
-    O: 1
-    H: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 6.0
-  data-source: nist
-- name: CO+
-  composition:
-    C: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-  data-source: nist
-- name: CO2+
-  composition:
-    C: 1
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 8.0
-      - 0.0
-  data-source: nist
-- name: CO-
-  composition:
-    C: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 6.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 8.0
-  data-source: nist
-- name: CO2-
-  composition:
-    C: 1
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 6.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: CH+
-  composition:
-    C: 1
-    H: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 8.0
-      - 6.0
-  data-source: nist
-- name: CHO+
-  composition:
-    C: 1
-    H: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 8.0
-      - 0.0
-      - 2.0
-  data-source: nist
-- name: C+
-  composition:
-    C: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 8.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-  data-source: nist
-- name: C-
-  composition:
-    C: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 2.0
-  data-source: nist
-- name: N2O+
-  composition:
-    N: 2
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 0.0
-      - 2.0
-  data-source: nist
-- name: HNO2+
-  composition:
-    H: 1
-    N: 1
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 2.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 4.0
-      - 6.0
-      - 2.0
-  data-source: nist
-- name: HNO3+
-  composition:
-    H: 1
-    N: 1
-    O: 3
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 6.0
-      - 4.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 0.0
-      - 4.0
-  data-source: nist
-- name: HNO+
-  composition:
-    H: 1
-    N: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 2.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 6.0
-      - 2.0
-  data-source: nist
-- name: SO
-  composition:
-    S: 1
-    O: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 4.0
-      - 4.0
-      - 2.0
-      - 2.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 0.0
-      - 6.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 8.0
-  data-source: nist
-- name: SO2
-  composition:
-    S: 1
-    O: 2
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 6.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 2.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 0.0
-      - 4.0
-      - 0.0
-  data-source: nist
-- name: SO3
-  composition:
-    S: 1
-    O: 3
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 6.0
-      - 0.0
-      - 4.0
-      - 4.0
-      - 8.0
-  data-source: nist
-- name: S
-  composition:
-    S: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 2.0
-      - 4.0
-      - 0.0
-      - 8.0
-      - 0.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 4.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 2.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 4.0
-      - 8.0
-      - 8.0
-  data-source: nist
-- name: Ar
-  composition:
-    Ar: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-      - 0.0
-      - 8.0
-      - 6.0
-      - 4.0
-      - 2.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 8.0
-      - 6.0
-      - 8.0
-      - 2.0
-      - 4.0
-      - 6.0
-      - 8.0
-      - 4.0
-      - 6.0
-  data-source: nist
-- name: He
-  composition:
-    He: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 6.0
-      - 0.0
-      - 6.0
-      - 2.0
-      - 8.0
-      - 0.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 6.0
-      - 4.0
-      - 8.0
-      - 2.0
-      - 6.0
-      - 8.0
-      - 0.0
-  data-source: nist
-- name: He+
-  composition:
-    He: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 4.0
-      - 0.0
-      - 6.0
-      - 8.0
-      - 8.0
-      - 0.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 6.0
-  data-source: nist
-- name: Ne
-  composition:
-    Ne: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 0.0
-      - 0.0
-      - 2.0
-      - 0.0
-      - 2.0
-      - 4.0
-      - 6.0
-      - 0.0
-      - 0.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
-      - 4.0
-      - 8.0
-      - 4.0
-      - 6.0
-      - 2.0
-      - 8.0
-      - 2.0
-      - 2.0
-      - 0.0
-  data-source: nist
-- name: Xe
-  composition:
-    Xe: 1
-  thermo:
-    model: NASA9
-    temperature-ranges:
-    - T-min: 200.0
-      T-max: 1000.0
-      T-ref: 298.15
-      coefficients:
-      - 6.0
-      - 2.0
-      - 8.0
-      - 4.0
-      - 2.0
       - 6.0
       - 4.0
-      - 8.0
-      - 6.0
-    - T-min: 1000.0
-      T-max: 6000.0
-      T-ref: 298.15
-      coefficients:
       - 8.0
-      - 6.0
-      - 0.0
-      - 2.0
-      - 6.0
       - 0.0
       - 4.0
-      - 4.0
-      - 8.0
-  data-source: nist
 - name: Xe+
   composition:
     Xe: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -2786,30 +2787,30 @@ species:
       coefficients:
       - 0.0
       - 0.0
-      - 6.0
+      - 0.0
       - 0.0
       - 4.0
-      - 2.0
-      - 6.0
       - 0.0
-      - 4.0
+      - 0.0
+      - 0.0
+      - 0.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
       - 0.0
       - 0.0
+      - 6.0
       - 0.0
+      - 6.0
+      - 2.0
+      - 2.0
       - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-      - 0.0
-  data-source: nist
+      - 2.0
 - name: e-
   composition:
     E: 1
+  note: 'Thermodynamic data source: nist'
   thermo:
     model: NASA9
     temperature-ranges:
@@ -2817,26 +2818,25 @@ species:
       T-max: 1000.0
       T-ref: 298.15
       coefficients:
-      - 2.0
       - 4.0
-      - 6.0
       - 8.0
-      - 2.0
-      - 2.0
-      - 2.0
       - 6.0
       - 6.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 2.0
+      - 2.0
     - T-min: 1000.0
       T-max: 6000.0
       T-ref: 298.15
       coefficients:
       - 4.0
       - 8.0
-      - 0.0
       - 6.0
-      - 8.0
-      - 0.0
+      - 6.0
       - 4.0
       - 2.0
+      - 0.0
       - 2.0
-  data-source: nist
+      - 0.0
