@@ -7,12 +7,13 @@ This project calculates thermodynamic equilibrium concentrations of chemical spe
 - Reads chemical species from a YAML file
 - Generates NASA-9 polynomial thermodynamic data for Cantera
 - Prioritized thermodynamic data lookup: Burcat → CEA → NASA → NIST
+- Theoretical first principles calculations when no experimental data exists
 - Local caching of thermodynamic data for improved performance
 - Enhanced temperature range support from 100K to 6000K
 - Optimized accuracy in cold temperature range (100-400K) for atmospheric research
 - Robust temperature range transition continuity verification and optimization
 - Support for all relevant chemical elements and charged species
-- No placeholder data - only real thermodynamic data from validated sources
+- No placeholder data - only real or theoretically calculated data from validated sources
 
 ## Requirements
 
@@ -63,10 +64,13 @@ The system follows these steps:
    - NASA CEA Database
    - NASA Database
    - NIST Database
+   - Theoretical calculations from first principles (if no experimental data exists)
 5. Locally caches all retrieved data to speed up future runs
-6. Generates a Cantera-compatible YAML file with the complete thermodynamic data
-7. Includes detailed source attribution for each species in the output
-8. Creates a data sources report summarizing which database was used for each species
+6. Performs temperature range continuity checks and optimizations
+7. Applies targeted optimizations for the cold temperature range (100-400K)
+8. Generates a Cantera-compatible YAML file with the complete thermodynamic data
+9. Includes detailed source attribution and validation metadata for each species
+10. Creates a data sources report summarizing which database was used for each species
 
 ### Thermodynamic Data Sources
 
@@ -76,8 +80,21 @@ The system prioritizes data sources in this order:
 2. **NASA CEA Database**: Chemical Equilibrium with Applications database from NASA.
 3. **NASA Thermodynamic Database**: General NASA thermodynamic data.
 4. **NIST Chemistry WebBook**: National Institute of Standards and Technology data.
+5. **Theoretical First Principles**: When no experimental data exists, uses statistical thermodynamics and molecular properties to calculate thermodynamic data theoretically.
 
 The entire Burcat database is downloaded and cached locally, with automatic version checking to ensure the data remains current without unnecessary downloads.
+
+### Theoretical First Principles Calculations
+
+For species without experimental data, the system uses rigorous theoretical approaches:
+
+- **Statistical Thermodynamics**: Calculates properties based on molecular structure
+- **Degrees of Freedom Analysis**: Accounts for translational, rotational, and vibrational modes
+- **Molecular Structure Recognition**: Identifies linear molecules, monatomic species, and charged ions
+- **Temperature-Dependent Properties**: Generates appropriate polynomial coefficients for all temperature ranges
+- **Validation Metadata**: Clearly identifies theoretically derived data with confidence levels
+
+This approach ensures all species have scientifically sound thermodynamic data without resorting to arbitrary placeholders.
 
 ### NASA-9 Polynomial Format
 

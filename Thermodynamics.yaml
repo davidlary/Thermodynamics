@@ -9,6 +9,8 @@ validation:
   coefficients-validity-checked: true
   atmospheric-research-ready: true
   temperature-range-coverage: 100K-6000K
+  first-principles-calculations: true
+  theoretical-data-available: true
 phases:
 - name: gas
   thermo: ideal-gas
@@ -105,6 +107,7 @@ phases:
   - Xe
   - Xe+
   - e-
+  - HSO4-
   initial-state:
     T: 300.0
     P: 101325.0
@@ -120,6 +123,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -167,11 +174,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:30.461416'
+      timestamp: '2025-04-15T12:20:06.763632'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:30.461797'
+      timestamp: '2025-04-15T12:20:06.763998'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -186,6 +193,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -233,11 +244,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:30.461981'
+      timestamp: '2025-04-15T12:20:06.764176'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:30.462401'
+      timestamp: '2025-04-15T12:20:06.764539'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -252,6 +263,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -299,11 +314,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:30.462590'
+      timestamp: '2025-04-15T12:20:06.764708'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:30.462980'
+      timestamp: '2025-04-15T12:20:06.765070'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -319,6 +334,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -366,11 +385,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:30.463154'
+      timestamp: '2025-04-15T12:20:06.765231'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:30.463537'
+      timestamp: '2025-04-15T12:20:06.765590'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -386,6 +405,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -433,11 +456,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:30.463699'
+      timestamp: '2025-04-15T12:20:06.765758'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:30.464087'
+      timestamp: '2025-04-15T12:20:06.766113'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -453,6 +476,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -500,11 +527,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:30.464250'
+      timestamp: '2025-04-15T12:20:06.766275'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:30.464626'
+      timestamp: '2025-04-15T12:20:06.766628'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -520,6 +547,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -567,11 +598,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:30.464786'
+      timestamp: '2025-04-15T12:20:06.766786'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:30.465162'
+      timestamp: '2025-04-15T12:20:06.767289'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -587,6 +618,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -634,11 +669,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:31.732901'
+      timestamp: '2025-04-15T12:20:07.943054'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:31.733949'
+      timestamp: '2025-04-15T12:20:07.943987'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -653,6 +688,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -700,11 +739,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:32.877806'
+      timestamp: '2025-04-15T12:20:09.119738'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:32.879354'
+      timestamp: '2025-04-15T12:20:09.120737'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -720,6 +759,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -767,11 +810,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:32.880169'
+      timestamp: '2025-04-15T12:20:09.121413'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:32.881304'
+      timestamp: '2025-04-15T12:20:09.122481'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -787,6 +830,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -834,11 +881,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:32.882068'
+      timestamp: '2025-04-15T12:20:09.123199'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:32.883233'
+      timestamp: '2025-04-15T12:20:09.123918'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -853,6 +900,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nasa
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nasa
@@ -900,11 +951,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:34.037846'
+      timestamp: '2025-04-15T12:20:10.290746'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:34.038930'
+      timestamp: '2025-04-15T12:20:10.291700'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -919,6 +970,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nasa
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nasa
@@ -966,11 +1021,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:35.170703'
+      timestamp: '2025-04-15T12:20:11.446231'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:35.171692'
+      timestamp: '2025-04-15T12:20:11.448323'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -985,6 +1040,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1032,11 +1091,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:36.296296'
+      timestamp: '2025-04-15T12:20:12.658222'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:36.297453'
+      timestamp: '2025-04-15T12:20:12.659158'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1052,6 +1111,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -1099,11 +1162,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:36.297981'
+      timestamp: '2025-04-15T12:20:12.659655'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:36.299347'
+      timestamp: '2025-04-15T12:20:12.660596'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1119,6 +1182,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1166,11 +1233,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:37.435248'
+      timestamp: '2025-04-15T12:20:13.878866'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:37.436276'
+      timestamp: '2025-04-15T12:20:13.879972'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1186,6 +1253,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1233,11 +1304,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:38.616458'
+      timestamp: '2025-04-15T12:20:15.089024'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:38.617478'
+      timestamp: '2025-04-15T12:20:15.089973'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1254,6 +1325,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1301,11 +1376,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:39.735569'
+      timestamp: '2025-04-15T12:20:16.209955'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:39.736665'
+      timestamp: '2025-04-15T12:20:16.211418'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1322,6 +1397,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1369,11 +1448,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:40.883216'
+      timestamp: '2025-04-15T12:20:17.367556'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:40.884228'
+      timestamp: '2025-04-15T12:20:17.368775'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1390,6 +1469,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1437,11 +1520,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:42.115645'
+      timestamp: '2025-04-15T12:20:18.477762'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:42.116586'
+      timestamp: '2025-04-15T12:20:18.478731'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1457,6 +1540,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1504,11 +1591,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:43.338294'
+      timestamp: '2025-04-15T12:20:19.611977'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:43.339301'
+      timestamp: '2025-04-15T12:20:19.612932'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1524,6 +1611,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -1571,11 +1662,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:43.339893'
+      timestamp: '2025-04-15T12:20:19.613908'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:43.340906'
+      timestamp: '2025-04-15T12:20:19.615244'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1591,6 +1682,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nasa
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nasa
@@ -1638,11 +1733,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:44.474663'
+      timestamp: '2025-04-15T12:20:20.732285'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:44.477163'
+      timestamp: '2025-04-15T12:20:20.733254'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1658,6 +1753,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nasa
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nasa
@@ -1705,11 +1804,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:45.667247'
+      timestamp: '2025-04-15T12:20:21.867387'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:45.668259'
+      timestamp: '2025-04-15T12:20:21.868495'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1725,6 +1824,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nasa
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nasa
@@ -1772,11 +1875,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:46.801739'
+      timestamp: '2025-04-15T12:20:23.004477'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:46.802817'
+      timestamp: '2025-04-15T12:20:23.005452'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1793,6 +1896,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1840,11 +1947,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:47.919973'
+      timestamp: '2025-04-15T12:20:24.136174'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:47.921000'
+      timestamp: '2025-04-15T12:20:24.137137'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1861,6 +1968,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1908,11 +2019,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:49.065568'
+      timestamp: '2025-04-15T12:20:25.373024'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:49.066904'
+      timestamp: '2025-04-15T12:20:25.373996'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1929,6 +2040,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -1976,11 +2091,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:50.196730'
+      timestamp: '2025-04-15T12:20:26.509952'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:50.197893'
+      timestamp: '2025-04-15T12:20:26.510916'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -1997,6 +2112,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2044,11 +2163,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:51.325783'
+      timestamp: '2025-04-15T12:20:27.664211'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:51.327446'
+      timestamp: '2025-04-15T12:20:27.665153'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2064,6 +2183,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2111,11 +2234,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:52.532291'
+      timestamp: '2025-04-15T12:20:28.803223'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:52.533428'
+      timestamp: '2025-04-15T12:20:28.804190'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2132,6 +2255,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2179,11 +2306,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:53.652498'
+      timestamp: '2025-04-15T12:20:29.965901'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:53.653436'
+      timestamp: '2025-04-15T12:20:29.966841'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2199,6 +2326,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2246,11 +2377,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:54.816513'
+      timestamp: '2025-04-15T12:20:31.101461'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:54.817522'
+      timestamp: '2025-04-15T12:20:31.101870'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2268,6 +2399,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2315,11 +2450,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:55.945846'
+      timestamp: '2025-04-15T12:20:32.310818'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:55.946964'
+      timestamp: '2025-04-15T12:20:32.311838'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2335,6 +2470,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2382,11 +2521,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:57.096629'
+      timestamp: '2025-04-15T12:20:33.486718'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:57.097851'
+      timestamp: '2025-04-15T12:20:33.487669'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2402,6 +2541,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2449,11 +2592,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:58.273312'
+      timestamp: '2025-04-15T12:20:34.710848'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:58.276175'
+      timestamp: '2025-04-15T12:20:34.711941'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2469,6 +2612,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2516,11 +2663,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:07:59.419789'
+      timestamp: '2025-04-15T12:20:35.870154'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:07:59.420907'
+      timestamp: '2025-04-15T12:20:35.870952'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2536,6 +2683,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2583,11 +2734,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:00.589164'
+      timestamp: '2025-04-15T12:20:37.091608'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:00.590194'
+      timestamp: '2025-04-15T12:20:37.092418'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2603,6 +2754,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2650,11 +2805,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:01.706427'
+      timestamp: '2025-04-15T12:20:38.216941'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:01.709216'
+      timestamp: '2025-04-15T12:20:38.218389'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2670,6 +2825,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2717,11 +2876,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:02.874737'
+      timestamp: '2025-04-15T12:20:39.377835'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:02.875870'
+      timestamp: '2025-04-15T12:20:39.378828'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2737,6 +2896,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2784,11 +2947,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:04.019285'
+      timestamp: '2025-04-15T12:20:40.511355'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:04.020415'
+      timestamp: '2025-04-15T12:20:40.512307'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2803,6 +2966,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2850,11 +3017,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:05.147558'
+      timestamp: '2025-04-15T12:20:41.654481'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:05.148545'
+      timestamp: '2025-04-15T12:20:41.654968'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2869,6 +3036,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2916,11 +3087,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:06.272886'
+      timestamp: '2025-04-15T12:20:42.790082'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:06.273913'
+      timestamp: '2025-04-15T12:20:42.791105'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -2935,6 +3106,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -2982,11 +3157,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:07.416451'
+      timestamp: '2025-04-15T12:20:43.918967'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:07.417466'
+      timestamp: '2025-04-15T12:20:43.919907'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3001,6 +3176,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3048,11 +3227,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:08.547041'
+      timestamp: '2025-04-15T12:20:45.111017'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:08.548199'
+      timestamp: '2025-04-15T12:20:45.112016'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3067,6 +3246,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3114,11 +3297,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:09.673961'
+      timestamp: '2025-04-15T12:20:46.262576'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:09.675235'
+      timestamp: '2025-04-15T12:20:46.263537'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3133,6 +3316,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3180,11 +3367,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:10.804520'
+      timestamp: '2025-04-15T12:20:47.428905'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:10.805598'
+      timestamp: '2025-04-15T12:20:47.429937'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3199,6 +3386,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3246,11 +3437,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:11.923822'
+      timestamp: '2025-04-15T12:20:48.625418'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:11.924860'
+      timestamp: '2025-04-15T12:20:48.626354'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3265,6 +3456,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3312,11 +3507,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:13.054700'
+      timestamp: '2025-04-15T12:20:49.833213'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:13.055732'
+      timestamp: '2025-04-15T12:20:49.834155'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3331,6 +3526,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3378,11 +3577,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:14.172765'
+      timestamp: '2025-04-15T12:20:51.071570'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:14.173803'
+      timestamp: '2025-04-15T12:20:51.072507'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3397,6 +3596,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3444,11 +3647,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:15.335121'
+      timestamp: '2025-04-15T12:20:52.256212'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:15.336127'
+      timestamp: '2025-04-15T12:20:52.257257'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3463,6 +3666,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3510,11 +3717,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:16.466237'
+      timestamp: '2025-04-15T12:20:53.437099'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:16.467221'
+      timestamp: '2025-04-15T12:20:53.438133'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3529,6 +3736,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3576,11 +3787,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:17.609532'
+      timestamp: '2025-04-15T12:20:54.607676'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:17.611255'
+      timestamp: '2025-04-15T12:20:54.608697'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3596,6 +3807,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3643,11 +3858,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:18.722113'
+      timestamp: '2025-04-15T12:20:55.765546'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:18.723282'
+      timestamp: '2025-04-15T12:20:55.766498'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3663,6 +3878,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3710,11 +3929,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:19.836960'
+      timestamp: '2025-04-15T12:20:56.910005'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:19.837963'
+      timestamp: '2025-04-15T12:20:56.910995'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3730,6 +3949,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3777,11 +4000,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:20.960977'
+      timestamp: '2025-04-15T12:20:58.050638'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:20.962244'
+      timestamp: '2025-04-15T12:20:58.051799'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3797,6 +4020,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3844,11 +4071,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:22.133299'
+      timestamp: '2025-04-15T12:20:59.211098'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:22.134268'
+      timestamp: '2025-04-15T12:20:59.212554'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3864,6 +4091,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3911,11 +4142,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:23.276678'
+      timestamp: '2025-04-15T12:21:00.378498'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:23.277812'
+      timestamp: '2025-04-15T12:21:00.379570'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3931,6 +4162,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -3978,11 +4213,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:24.414101'
+      timestamp: '2025-04-15T12:21:01.571772'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:24.415194'
+      timestamp: '2025-04-15T12:21:01.572735'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -3998,6 +4233,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4045,11 +4284,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:25.563068'
+      timestamp: '2025-04-15T12:21:02.801397'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:25.564033'
+      timestamp: '2025-04-15T12:21:02.802828'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4065,6 +4304,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4112,11 +4355,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:26.708847'
+      timestamp: '2025-04-15T12:21:04.043407'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:26.709820'
+      timestamp: '2025-04-15T12:21:04.044342'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4132,6 +4375,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4179,11 +4426,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:27.831603'
+      timestamp: '2025-04-15T12:21:05.173747'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:27.832620'
+      timestamp: '2025-04-15T12:21:05.174747'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4199,6 +4446,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4246,11 +4497,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:28.984808'
+      timestamp: '2025-04-15T12:21:06.388142'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:28.985798'
+      timestamp: '2025-04-15T12:21:06.389116'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4266,6 +4517,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4313,11 +4568,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:30.115701'
+      timestamp: '2025-04-15T12:21:07.564714'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:30.116738'
+      timestamp: '2025-04-15T12:21:07.565986'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4334,6 +4589,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4381,11 +4640,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:31.267626'
+      timestamp: '2025-04-15T12:21:08.753842'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:31.268593'
+      timestamp: '2025-04-15T12:21:08.754904'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4400,6 +4659,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4447,11 +4710,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:32.495257'
+      timestamp: '2025-04-15T12:21:09.921442'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:32.496424'
+      timestamp: '2025-04-15T12:21:09.922457'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4466,6 +4729,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4513,11 +4780,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:33.620383'
+      timestamp: '2025-04-15T12:21:11.047512'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:33.621404'
+      timestamp: '2025-04-15T12:21:11.048459'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4533,6 +4800,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4580,11 +4851,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:34.757222'
+      timestamp: '2025-04-15T12:21:12.200433'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:34.759890'
+      timestamp: '2025-04-15T12:21:12.201441'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4601,6 +4872,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4648,11 +4923,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:35.900192'
+      timestamp: '2025-04-15T12:21:13.340566'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:35.901147'
+      timestamp: '2025-04-15T12:21:13.341530'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4669,6 +4944,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4716,11 +4995,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:37.038601'
+      timestamp: '2025-04-15T12:21:14.479475'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:37.039638'
+      timestamp: '2025-04-15T12:21:14.480419'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4737,6 +5016,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4784,11 +5067,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:38.182406'
+      timestamp: '2025-04-15T12:21:15.640199'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:38.183371'
+      timestamp: '2025-04-15T12:21:15.641143'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4804,6 +5087,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -4851,11 +5138,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:39.316941'
+      timestamp: '2025-04-15T12:21:16.787374'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:39.318014'
+      timestamp: '2025-04-15T12:21:16.789712'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4871,6 +5158,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -4918,11 +5209,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:39.318519'
+      timestamp: '2025-04-15T12:21:16.790418'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:39.319484'
+      timestamp: '2025-04-15T12:21:16.791355'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -4938,6 +5229,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -4985,11 +5280,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:39.319958'
+      timestamp: '2025-04-15T12:21:16.791901'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:39.320947'
+      timestamp: '2025-04-15T12:21:16.792850'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5004,6 +5299,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -5051,11 +5350,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:40.475599'
+      timestamp: '2025-04-15T12:21:17.945375'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:40.476571'
+      timestamp: '2025-04-15T12:21:17.946328'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5070,6 +5369,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -5117,11 +5420,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:40.477042'
+      timestamp: '2025-04-15T12:21:17.946901'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:40.478482'
+      timestamp: '2025-04-15T12:21:17.948038'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5136,6 +5439,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: burcat
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: burcat
@@ -5183,11 +5490,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:40.479443'
+      timestamp: '2025-04-15T12:21:17.948808'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:40.480511'
+      timestamp: '2025-04-15T12:21:17.949725'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5202,6 +5509,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -5249,11 +5560,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:41.602257'
+      timestamp: '2025-04-15T12:21:19.081613'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:41.603294'
+      timestamp: '2025-04-15T12:21:19.082934'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5268,6 +5579,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -5315,11 +5630,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:42.728156'
+      timestamp: '2025-04-15T12:21:20.218352'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:42.729675'
+      timestamp: '2025-04-15T12:21:20.219587'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5334,6 +5649,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -5381,11 +5700,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:43.868850'
+      timestamp: '2025-04-15T12:21:21.364714'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:43.869841'
+      timestamp: '2025-04-15T12:21:21.365655'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5400,6 +5719,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -5447,11 +5770,11 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:45.026721'
+      timestamp: '2025-04-15T12:21:22.520363'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:45.028301'
+      timestamp: '2025-04-15T12:21:22.521363'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
@@ -5466,6 +5789,10 @@ species:
     temperature-range-coverage: 100K-6000K
     property-validation: enthalpy,entropy,specific-heat
     atmospheric-research-ready: true
+    data-source: experimental-database
+    database: nist
+    confidence-level: high
+    is-experimental: true
   thermo:
     model: NASA9
     reference: nist
@@ -5513,11 +5840,122 @@ species:
       within_tolerance: false
     optimizations:
     - type: transition_continuity
-      timestamp: '2025-04-15T12:08:46.162087'
+      timestamp: '2025-04-15T12:21:23.782567'
       applied: true
       tolerance: 0.001
     - type: cold_range_accuracy
-      timestamp: '2025-04-15T12:08:46.163274'
+      timestamp: '2025-04-15T12:21:23.783521'
       temperature_range: 100.0K-400.0K
       applied: true
       tolerance: 0.0001
+- name: HSO4-
+  composition:
+    H: 1
+    S: 1
+    O: 4
+  note: 'Thermodynamic data source: theoretical-first-principles'
+  validation:
+    transition-continuity-checked: true
+    transition-continuity-optimized: true
+    cold-range-optimized: true
+    temperature-range-coverage: 100K-6000K
+    property-validation: enthalpy,entropy,specific-heat
+    atmospheric-research-ready: true
+    data-source: theoretical-first-principles
+    calculation-method: statistical-thermodynamics
+    approximation-level: molecular
+    confidence-level: moderate
+    is-experimental: false
+  thermo:
+    model: NASA9-theoretical
+    reference: theoretical-first-principles
+    temperature-ranges:
+    - T-min: 100.0
+      T-max: 400.0
+      T-ref: 298.15
+      coefficients:
+      - 13.464000000000004
+      - 0.21760000000000002
+      - 0.01632
+      - -0.0005440000000000001
+      - -2.7200000000000007e-05
+      - -1.0
+      - 57693.45573033255
+      - 0.0
+      - 0.0
+    - T-min: 300.0
+      T-max: 1000.0
+      T-ref: 298.15
+      coefficients:
+      - 1416498.932027344
+      - 885.5761825170903
+      - 2.2404604562927255
+      - 0.004173151140731813
+      - -0.0001221671221481705
+      - -513475260.7270379
+      - -8364354.452511521
+      - 0.0
+      - 0.0
+    - T-min: 1000.0
+      T-max: 6000.0
+      T-ref: 298.15
+      coefficients:
+      - 11928891.717947593
+      - 2982.491869486898
+      - 3.009419869486898
+      - 0.001622219869486898
+      - -0.00013301778013051312
+      - -9374850270.219986
+      - -79041825.33563825
+      - 0.0
+      - 0.0
+    transition-diagnostics:
+    - transition_temperature: 400.0
+      range1_to_range2: 100.0-400.0 to 300.0-1000.0
+      cp_discontinuity: -2835742.6640000003
+      h_discontinuity: -569522.0773333333
+      s_discontinuity: -491191.5238324605
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 300.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: 0.0
+      h_discontinuity: 0.0
+      s_discontinuity: 0.0
+      continuity_threshold: 0.001
+      within_tolerance: true
+    - transition_temperature: 400.0
+      range1_to_range2: 100.0-400.0 to 300.0-1000.0
+      cp_discontinuity: -2769.279945312417
+      h_discontinuity: 17732.612401855615
+      s_discontinuity: 89692.20036854155
+      continuity_threshold: 0.001
+      within_tolerance: false
+    - transition_temperature: 1000.0
+      range1_to_range2: 300.0-1000.0 to 1000.0-6000.0
+      cp_discontinuity: -23321.36750331521
+      h_discontinuity: 147931.01003051177
+      s_discontinuity: 857986.3527805209
+      continuity_threshold: 0.001
+      within_tolerance: false
+    optimizations:
+    - type: transition_continuity
+      timestamp: '2025-04-15T12:21:25.156327'
+      applied: true
+      tolerance: 0.001
+    - type: cold_range_accuracy
+      timestamp: '2025-04-15T12:21:25.158259'
+      temperature_range: 100.0K-400.0K
+      applied: true
+      tolerance: 0.0001
+    theoretical:
+      calculation_method: statistical-thermodynamics
+      timestamp: '2025-04-15T12:21:25.155919'
+      approximation_level: molecular
+      properties:
+        cp_r: 13.600000000000001
+        s_r_298: 20.558702653796985
+        is_linear: false
+        atom_count: 6
+        vibrational_dof: 12
+        is_monatomic: false
